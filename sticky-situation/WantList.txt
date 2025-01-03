@@ -1,0 +1,25 @@
+Actual Game Objects:
+	2x Speed portal (GD)*
+	Spring (flip rotation)*
+	Portal (Stop rotation and rotate the map)
+	Finish Line*
+	Starting Point*
+	Collectible Coins
+	
+
+
+
+Game Mechanics:
+	Spinning Stick*
+	Overworld Map like Mario*
+	Keeping track on Game progress
+	speedrun scoreboard for each level
+	3 Tutorial Levels that can be connected together into one
+	WASD to move*
+	Space to speed up movement*
+	Shift to speed up rotation
+	
+Inspirations:
+	Kuru Kuru Kuruin (And Sequels)
+	Geometry Dash
+	Mario
