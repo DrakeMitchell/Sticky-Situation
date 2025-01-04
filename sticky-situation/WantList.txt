@@ -1,7 +1,8 @@
 Actual Game Objects:
 	2x Speed portal (GD)*
-	Spring (flip rotation)*
-	Portal (Stop rotation and rotate the map)
+	Spring (flip rotation) - DONE
+	Portal (Stop rotation and rotate the map) 
+		It works but it's a bit mean, also need to change the checkpoints to make it work better
 	Finish Line*
 	Starting Point*
 	Collectible Coins
@@ -10,7 +11,7 @@ Actual Game Objects:
 
 
 Game Mechanics:
-	Spinning Stick*
+	Spinning Stick - DONE
 	Overworld Map like Mario*
 	Keeping track on Game progress
 	speedrun scoreboard for each level

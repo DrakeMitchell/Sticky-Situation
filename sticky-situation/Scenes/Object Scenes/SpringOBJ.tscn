@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmlpu201iyxi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uura6"]
+
+[node name="SpringObj" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.10606
+scale = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_uura6")
+one_way_collision = true

@@ -4,7 +4,12 @@ class_name Player
 
 const SPEED = 300.0
 
+
 func _physics_process(delta):
+	
+	if(StickSingleton.StickSpinning == true):
+		rotateStick(StickSingleton.SpinDirection);
+	
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -29,7 +34,8 @@ func Wall_Hit(body: Node2D) -> void:
 	self.position.y = 100
 	
 
-
+func rotateStick(dir) -> void:
+	self.rotation += 0.02 * dir
 
 
 func Object_Hit(area: Area2D) -> void:
@@ -37,4 +43,8 @@ func Object_Hit(area: Area2D) -> void:
 		StickSingleton.newCheckPoint(area)
 		pass
 	if area.name.contains("Wall"):
+		StickSingleton.HitWall()
 		position = StickSingleton.CheckPTPosition
+	if area.name.contains("Spring"):
+		#StickSingleton.StickSpinning = false;
+		StickSingleton.SpinDirection *= -1
