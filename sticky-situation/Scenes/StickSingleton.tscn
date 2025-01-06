@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh3sd2bk6rhcb"]
+[gd_scene load_steps=2 format=3 uid="uid://wlyoh86iaf08"]
 
 [ext_resource type="Script" path="res://Scripts/stick_singleton.gd" id="1_1nbay"]
 

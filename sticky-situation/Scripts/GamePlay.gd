@@ -1,5 +1,6 @@
 extends Node2D
 
+var current_scene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,6 +10,16 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if StickSingleton.StickSpinning == false:
-		#for area:Area2D in $"Map Objects".get_children():
-			$MapObjects.rotation +=0.01 *StickSingleton.SpinDirection
+		$MapObjects.rotation +=0.01 *StickSingleton.SpinDirection
 			#pass
+
+func ObjectHit(area: Area2D) -> void:
+	if area.name.contains("Check"):
+		StickSingleton.newCheckPoint(area)
+		pass
+	if area.name.contains("Wall"):
+		StickSingleton.HitWall()
+		$Player.position = StickSingleton.CheckPTPosition
+	if area.name.contains("Spring"):
+		#StickSingleton.StickSpinning = false;
+		StickSingleton.SpinDirection *= -1

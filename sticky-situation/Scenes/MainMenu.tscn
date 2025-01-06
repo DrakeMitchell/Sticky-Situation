@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://cyr1j0ifwm4pd"]
+[gd_scene load_steps=3 format=3 uid="uid://cyr1j0ifwm4pd"]
+
+[ext_resource type="Script" path="res://Scripts/Start_Button.gd" id="1_u7hop"]
+[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/WorldMap.tscn" id="2_6wnpi"]
 
 [node name="MainMenu" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 193.0
+offset_top = 110.0
+offset_right = 291.0
+offset_bottom = 148.0
+script = ExtResource("1_u7hop")
+startLevel = ExtResource("2_6wnpi")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

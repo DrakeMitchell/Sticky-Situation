@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 300.0
+var SaveData = SaveGame.new()
 
 
 func _physics_process(delta):
@@ -27,21 +28,24 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	
+	if Input.is_action_just_pressed("Save"):
+		SaveData.updatePos(self.position)
+		SaveData.saveGame()
+		
+	if Input.is_action_just_pressed("Load"):
+		SaveData.loadGame()
+		self.position = SaveData.StartPos
 
 func rotateStick(dir) -> void:
 	self.rotation += 0.02 * dir
 
 
 func Object_Hit(area: Area2D) -> void:
-	if area.name.contains("Check"):
-		StickSingleton.newCheckPoint(area)
+	#print_debug(get_tree().get_current_scene().name.contains("WorldMap"))
+	if get_tree().get_current_scene().name.contains("WorldMap"):
 		pass
-	if area.name.contains("Wall"):
-		StickSingleton.HitWall()
-		position = StickSingleton.CheckPTPosition
-	if area.name.contains("Spring"):
-		#StickSingleton.StickSpinning = false;
-		StickSingleton.SpinDirection *= -1
+	else:
+		$"..".ObjectHit(area)
+
 	
 		
