@@ -8,7 +8,8 @@ Actual Game Objects:
 	Collectible Coins
 	
 
-
+For Overworld:
+	Need a character sprite
 
 Game Mechanics:
 	Spinning Stick - DONE

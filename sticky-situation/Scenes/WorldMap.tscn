@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=4 format=3 uid="uid://25hyj5hjifo0"]
+
+[ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/Levels/OverworldNode.tscn" id="1_ljhf2"]
+[ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
+[ext_resource type="PackedScene" uid="uid://b615vmlogmc4c" path="res://Scenes/Levels/Area1Gameplay.tscn" id="2_om5pr"]
 
 [node name="WorldMap" type="Node2D"]
+
+[node name="OverworldNode" parent="." instance=ExtResource("1_ljhf2")]
+position = Vector2(168, 65)
+Level_Scene = ExtResource("2_om5pr")
+
+[node name="Player" parent="." instance=ExtResource("2_f2mq4")]
+position = Vector2(-3, 53)
+
+[connection signal="area_entered" from="OverworldNode" to="OverworldNode" method="Node_entered"]

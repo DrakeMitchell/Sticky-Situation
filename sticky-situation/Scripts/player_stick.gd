@@ -13,13 +13,13 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var directionLR = Input.get_axis("ui_left", "ui_right")
+	var directionLR = Input.get_axis("Left", "Right")
 	if directionLR:
 		velocity.x = directionLR * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	var directionUD = Input.get_axis("ui_up", "ui_down")
+	var directionUD = Input.get_axis("Up", "Down")
 	if directionUD:
 		velocity.y = directionUD * SPEED
 	else:
@@ -27,11 +27,6 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-
-func Wall_Hit(body: Node2D) -> void:
-	var xValue = StickSingleton.ClosestCheckPoint.position.x
-	self.position.x = xValue 
-	self.position.y = 100
 	
 
 func rotateStick(dir) -> void:
@@ -48,3 +43,5 @@ func Object_Hit(area: Area2D) -> void:
 	if area.name.contains("Spring"):
 		#StickSingleton.StickSpinning = false;
 		StickSingleton.SpinDirection *= -1
+	
+		
