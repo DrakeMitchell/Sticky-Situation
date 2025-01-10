@@ -6,30 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_i2212"]
 [ext_resource type="Script" path="res://Scenes/Levels/LevelStarting.gd" id="5_t7r85"]
 
-[node name="GamePlayArea1" type="Node2D"]
+[node name="GamePlay" type="Node2D"]
 script = ExtResource("1_30r2q")
-
-[node name="MapObjects2" type="Node2D" parent="."]
-position = Vector2(813, 2)
-
-[node name="SpringObj" parent="MapObjects2" instance=ExtResource("2_mwm8g")]
-position = Vector2(-453, 435)
-rotation = 1.61717
-
-[node name="CheckPointStart2" parent="MapObjects2" instance=ExtResource("3_dpkdj")]
-position = Vector2(-511, 2)
-scale = Vector2(1.68, 1.68)
-
-[node name="CheckPoint2" parent="MapObjects2" instance=ExtResource("3_dpkdj")]
-position = Vector2(150, 234)
-
-[node name="Wall" type="Area2D" parent="MapObjects2"]
-position = Vector2(-631, -58)
-scale = Vector2(1.776, 4.24125)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MapObjects2/Wall"]
-build_mode = 1
-polygon = PackedVector2Array(7.31982, -8.48806, 226.351, -8.48806, 328.829, 2.12201, 349.099, 42.4403, 306.306, 95.4907, 382.883, 94.076, 410.473, 49.2779, 493.806, 53.0504, 565.878, 77.5715, 510.698, 94.076, 507.883, 136.516, 68.1306, 132.272, 70.3829, 99.7347, 189.752, 53.7577, 3.37839, 41.733)
 
 [node name="MapObjects" type="Node2D" parent="."]
 

@@ -25,3 +25,8 @@ Inspirations:
 	Kuru Kuru Kuruin (And Sequels)
 	Geometry Dash
 	Mario
+	
+Up Next:
+	Indicator for level completetion and Sync it to the saving
+	Collectible Item and sync it to the saving
+	

@@ -13,7 +13,9 @@ var CheckPTPosition;
 var SpinDirection = 1;
 var StickSpinning = true;
 
-@export var vcurrentLevel = PackedScene
+var currentLevel = 0;
+
+@export var vcurrentLevelScene = PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

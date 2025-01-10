@@ -5,11 +5,19 @@ class_name Player
 const SPEED = 300.0
 var SaveData = SaveGame.new()
 
+var levelStart = levelSpawning.new()
+
+func _ready() -> void:
+	#position = levelStart.detectSpawnPoint().position
+	pass
+	
+	
 
 func _physics_process(delta):
 	
 	if(StickSingleton.StickSpinning == true):
 		rotateStick(StickSingleton.SpinDirection);
+	
 	
 
 	# Get the input direction and handle the movement/deceleration.
@@ -30,6 +38,7 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("Save"):
 		SaveData.updatePos(self.position)
+		SaveData.updateLevelComp(true)
 		SaveData.saveGame()
 		
 	if Input.is_action_just_pressed("Load"):

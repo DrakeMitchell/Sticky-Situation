@@ -9,26 +9,10 @@
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_gqhbv")
 
-[node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-position = Vector2(483, 61)
-Level_Scene = ExtResource("2_om5pr")
-level = 1
-Resourc = ExtResource("4_6jpv8")
-player = NodePath("../Player")
-
-[node name="Label" type="Label" parent="OverworldNode2"]
-offset_left = -23.0
-offset_top = 29.0
-offset_right = 17.0
-offset_bottom = 52.0
-text = "Completion: False"
-metadata/_edit_use_anchors_ = true
-
-[node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-position = Vector2(232, 54)
+[node name="OverworldNode" parent="." instance=ExtResource("1_ljhf2")]
+position = Vector2(168, 65)
 Level_Scene = ExtResource("2_om5pr")
 Resourc = ExtResource("4_6jpv8")
-player = NodePath("../Player")
 
 [node name="Label" type="Label" parent="OverworldNode"]
 offset_left = -23.0
@@ -36,7 +20,8 @@ offset_top = 29.0
 offset_right = 17.0
 offset_bottom = 52.0
 text = "Completion: False"
-metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_f2mq4")]
 position = Vector2(-3, 53)
+
+[connection signal="area_entered" from="OverworldNode" to="OverworldNode" method="Node_entered"]
