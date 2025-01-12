@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cyr1j0ifwm4pd"]
 
 [ext_resource type="Script" path="res://Scripts/Start_Button.gd" id="1_u7hop"]
-[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/WorldMap.tscn" id="2_6wnpi"]
+[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/Levels/WorldMap.tscn" id="2_6wnpi"]
 
 [node name="MainMenu" type="Node2D"]
 

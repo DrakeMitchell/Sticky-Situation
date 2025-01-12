@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bisijd0hhaxds"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/overworld_node.gd" id="1_3fdj5"]
-[ext_resource type="Texture2D" uid="uid://ga1j45q26aao" path="res://pixil-frame-0.png" id="2_l5cp8"]
+[ext_resource type="Script" path="res://Scripts/Objects/overworld_node.gd" id="1_bxsjc"]
+[ext_resource type="Texture2D" uid="uid://ga1j45q26aao" path="res://pixil-frame-0.png" id="2_tkhbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gokf7"]
 radius = 23.7697
 
 [node name="OverworldNode" type="Area2D"]
-script = ExtResource("1_3fdj5")
+script = ExtResource("1_bxsjc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_gokf7")
@@ -15,7 +15,7 @@ shape = SubResource("CircleShape2D_gokf7")
 [node name="Pixil-frame-0" type="Sprite2D" parent="."]
 position = Vector2(4, 8)
 scale = Vector2(2.365, 2.32373)
-texture = ExtResource("2_l5cp8")
+texture = ExtResource("2_tkhbr")
 
 [connection signal="area_entered" from="." to="." method="Node_entered"]
 [connection signal="area_exited" from="." to="." method="Node_exited"]

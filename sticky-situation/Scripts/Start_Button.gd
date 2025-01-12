@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func _on_button_down() -> void:
 	SaveData.loadGame()
-	get_tree().change_scene_to_packed(StickSingleton.vcurrentLevel) # Replace with function body.
+	get_tree().change_scene_to_packed(startLevel) # Replace with function body.

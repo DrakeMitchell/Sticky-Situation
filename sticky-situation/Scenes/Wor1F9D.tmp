@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://25hyj5hjifo0"]
+
+[ext_resource type="Script" path="res://Scripts/world_map.gd" id="1_gqhbv"]
+[ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/Levels/OverworldNode.tscn" id="1_ljhf2"]
+[ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
+[ext_resource type="PackedScene" uid="uid://b615vmlogmc4c" path="res://Scenes/Levels/Area1Gameplay.tscn" id="2_om5pr"]
+[ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="4_6jpv8"]
+
+[node name="WorldMap" type="Node2D"]
+script = ExtResource("1_gqhbv")
+
+[node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(483, 61)
+Level_Scene = ExtResource("2_om5pr")
+level = 1
+Resourc = ExtResource("4_6jpv8")
+player = NodePath("../Player")
+
+[node name="Label" type="Label" parent="OverworldNode2"]
+offset_left = -23.0
+offset_top = 29.0
+offset_right = 17.0
+offset_bottom = 52.0
+text = "Completion: False"
+metadata/_edit_use_anchors_ = true
+
+[node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(232, 54)
+Level_Scene = ExtResource("2_om5pr")
+Resourc = ExtResource("4_6jpv8")
+player = NodePath("../Player")
+
+[node name="Label" type="Label" parent="OverworldNode"]
+offset_left = -23.0
+offset_top = 29.0
+offset_right = 17.0
+offset_bottom = 52.0
+text = "Completion: False"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_f2mq4")]
+position = Vector2(-3, 53)

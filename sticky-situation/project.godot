@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 StickSingleton="*res://Scripts/stick_singleton.gd"
-LevelStarting="*res://Scenes/Levels/LevelStarting.gd"
+LevelStarting="*res://Scripts/LevelStarting.gd"
 
 [input]
 

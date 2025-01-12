@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://b615vmlogmc4c"]
 
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_30r2q"]
+[ext_resource type="Resource" uid="uid://dn1k82tnh8grt" path="res://Scripts/Resources/Level1Resource.tres" id="2_0ly7q"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="2_mwm8g"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="3_dpkdj"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_i2212"]
-[ext_resource type="Script" path="res://Scenes/Levels/LevelStarting.gd" id="5_t7r85"]
 
 [node name="GamePlayArea1" type="Node2D"]
 script = ExtResource("1_30r2q")
+LevelResource = ExtResource("2_0ly7q")
 
 [node name="MapObjects2" type="Node2D" parent="."]
 position = Vector2(813, 2)
@@ -54,6 +55,3 @@ polygon = PackedVector2Array(7.31982, -8.48806, 226.351, -8.48806, 328.829, 2.12
 
 [node name="Player" parent="." instance=ExtResource("4_i2212")]
 position = Vector2(-500, -2)
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("5_t7r85")
