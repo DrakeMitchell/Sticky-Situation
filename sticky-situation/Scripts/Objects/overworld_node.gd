@@ -6,6 +6,7 @@ extends Area2D
 var StandingOn = false #Touch Detection
 var saveData: SaveGame #Global Save Game
 @export var player: Player #Player object
+@export var totalCollectibles: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,11 +15,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	print_debug(saveData.levelData.Collectible)
+	#print_debug(saveData.levelData.Collectible)
 	if StandingOn == true:
 		#print_debug(saveData.getLevelComp())
 		if Input.is_action_just_pressed("StartLevel"):
 			StickSingleton.currentLevel = level
+			Interactions.TOTAL_COLLECTIBLES = totalCollectibles
 			get_tree().change_scene_to_packed(Level_Scene)
 			#player.getSpawnPoint()
 	if saveData.levelData.Collectible[0]:
@@ -33,6 +35,7 @@ func _LoadData():
 	#Detect if player is touching
 func Node_entered(area: Area2D) -> void:
 	_LoadData()
+	print_debug("ON")
 	StandingOn = true # Replace with function body.
 
 	#Detect if player is no longer touching

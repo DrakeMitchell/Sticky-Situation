@@ -1,25 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://cs5wf6nomhapd"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/player_stick.gd" id="1_m8hie"]
-[ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Test_Stick.png" id="2_7bb3l"]
+[ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Assets/Test_Stick.png" id="2_7bb3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
-size = Vector2(20, 120)
+size = Vector2(16, 128)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_m8hie")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, 0)
-scale = Vector2(0.356305, 0.254184)
+position = Vector2(1.19209e-07, -7.15256e-07)
+scale = Vector2(0.258065, 0.267782)
 texture = ExtResource("2_7bb3l")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -3.25002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -1)
+position = Vector2(0, 3.25002)
 shape = SubResource("RectangleShape2D_li4yw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="area_entered" from="Area2D" to="." method="Object_Hit"]
+[connection signal="area_exited" from="Area2D" to="." method="Object_Exit"]

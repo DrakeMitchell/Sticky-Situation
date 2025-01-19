@@ -1,32 +1,39 @@
 Actual Game Objects:
-	2x Speed portal (GD)*
-	Spring (flip rotation) - DONE
-	Portal (Stop rotation and rotate the map) 
+	2x Speed portal (GD)!
+	Moving Wall/Spikeball thing!
+	Some kind of music~
+	Need basic sprites for things~
+	Portal (Stop rotation and rotate the map)*
 		It works but it's a bit mean, also need to change the checkpoints to make it work better
-	Finish Line*
-	Starting Point*
-	Collectible Coins
+	
+	Finish Line+++
+	Collectible Coins+++
+
+	figure out the 3 levels into 1 gimmick!
 	
 
-For Overworld:
-	Need a character sprite
+
+	
 
 Game Mechanics:
-	Spinning Stick - DONE
-	Overworld Map like Mario*
-	Keeping track on Game progress
-	speedrun scoreboard for each level
-	3 Tutorial Levels that can be connected together into one
-	WASD to move*
-	Space to speed up movement*
-	Shift to speed up rotation
+	Keeping track on Game progress!=
+	speedrun scoreboard for each level~=
+	3 Tutorial Levels that can be connected together into one!
 	
+	
+NEED TO DO: !
+WANT TO DO: ~
+COULD DO: *
+REQUIRES RESEARCH: =
+	
+NEEDS TO BE WORKING WITH SAVES: +++
+
 Inspirations:
 	Kuru Kuru Kuruin (And Sequels)
 	Geometry Dash
 	Mario
 	
 Up Next:
-	Indicator for level completetion and Sync it to the saving
+	Indicator for level completetion and Sync it to the saving *
 	Collectible Item and sync it to the saving
 	

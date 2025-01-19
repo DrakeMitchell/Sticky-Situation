@@ -1,23 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=9 format=3 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
+[ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
 [ext_resource type="PackedScene" uid="uid://b615vmlogmc4c" path="res://Scenes/Levels/Area1Gameplay.tscn" id="2_om5pr"]
+[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="5_x8e8g"]
+[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="6_ruvng"]
+[ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
+[ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
 
 [node name="WorldMap" type="Node2D"]
+script = ExtResource("1_wq2oc")
+
+[node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(307, 376)
+Level_Scene = ExtResource("5_x8e8g")
+level = 100
+player = NodePath("../Player")
+totalCollectibles = 8
+
+[node name="Label" type="Label" parent="OverworldNode4"]
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 58.0
+text = "Caverns Challenge Mode"
 
 [node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(483, 61)
 Level_Scene = ExtResource("2_om5pr")
 level = 1
 player = NodePath("../Player")
+totalCollectibles = 2
 
 [node name="Label" type="Label" parent="OverworldNode2"]
 offset_left = -23.0
 offset_top = 29.0
 offset_right = 17.0
 offset_bottom = 52.0
-text = "Completion: False"
+text = "Area 1 level 2
+"
 metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
@@ -30,8 +52,67 @@ offset_left = -23.0
 offset_top = 29.0
 offset_right = 17.0
 offset_bottom = 52.0
-text = "Completion: False"
+text = "Area 1 Level 1"
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_f2mq4")]
 position = Vector2(-3, 53)
+
+[node name="OverworldNode6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(481, 233)
+Level_Scene = ExtResource("5_x8e8g")
+level = 2
+player = NodePath("../Player")
+totalCollectibles = 8
+
+[node name="Label" type="Label" parent="OverworldNode6"]
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 58.0
+text = "Caverns Level 3"
+
+[node name="OverworldNode5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(306, 224)
+Level_Scene = ExtResource("5_x8e8g")
+level = 1
+player = NodePath("../Player")
+totalCollectibles = 8
+
+[node name="Label" type="Label" parent="OverworldNode5"]
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 58.0
+text = "Caverns Level 2"
+
+[node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(126, 224)
+Level_Scene = ExtResource("5_x8e8g")
+player = NodePath("../Player")
+totalCollectibles = 8
+
+[node name="Label" type="Label" parent="OverworldNode3"]
+offset_left = -57.0
+offset_top = 35.0
+offset_right = 63.0
+offset_bottom = 58.0
+text = "Caverns Level 1"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -412.0
+offset_top = -50.0
+offset_right = -307.0
+offset_bottom = -27.0
+text = "Obstacle Key:"
+
+[node name="Coin" parent="." instance=ExtResource("6_ruvng")]
+position = Vector2(-367, 18)
+
+[node name="SpringObj" parent="." instance=ExtResource("7_o24k5")]
+position = Vector2(-363, 103)
+rotation = 1.5708
+
+[node name="Wind" parent="." instance=ExtResource("8_dvjy2")]
+position = Vector2(-367, 243)
+scale = Vector2(2.72, 1)

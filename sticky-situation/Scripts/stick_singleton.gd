@@ -7,8 +7,10 @@ var Starting = {
 	"StickSpinning": true
 }
 
+
+var moveSpeed = 300
 #Other Variables
-var Collectible = false;
+
 var Health = 3;
 var ClosestCheckPoint: Area2D;
 var CheckPTPosition;
@@ -38,9 +40,12 @@ func HitWall() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-	#Change Spawn Point when you reach a new checkpoint
-func newCheckPoint(checkPoint) -> void:
+func setStick():
 	Starting["SpinDirection"] = SpinDirection
 	Starting["StickSpinning"] = StickSpinning 
-	ClosestCheckPoint = checkPoint
-	CheckPTPosition = checkPoint.position
+	
+	#Change Spawn Point when you reach a new checkpoint
+func newCheckPoint(checkPoint) -> void:
+	setStick()
+	#ClosestCheckPoint = checkPoint
+	##heckPTPosition = checkPoint.position

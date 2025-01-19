@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gmbwxwxvitc6"]
+
+[ext_resource type="Texture2D" uid="uid://cf0wkae7f7gu5" path="res://Scripts/pixil-frame-0 (2).png" id="1_7vios"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xstj5"]
+size = Vector2(16, 56)
+
+[node name="FinishLine" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+texture = ExtResource("1_7vios")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xstj5")

@@ -1,10 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3fdfb28vw1iv"]
+[gd_scene load_steps=3 format=3 uid="uid://c3fdfb28vw1iv"]
+
+[ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/pixil-frame-0 (3).png" id="1_jbm0r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65xx8"]
+size = Vector2(38.4, 38.4)
 
 [node name="CheckPoint" type="Area2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(1.90735e-06, 0)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_65xx8")
+
+[node name="Pixil-frame-0(3)" type="Sprite2D" parent="."]
+position = Vector2(2, 0)
+texture = ExtResource("1_jbm0r")
