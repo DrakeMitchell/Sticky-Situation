@@ -25,8 +25,8 @@ func _process(delta: float) -> void:
 			StickSingleton.resetStick()
 			get_tree().change_scene_to_packed(Level_Scene)
 			#player.getSpawnPoint()
-	if saveData.levelData.Collectible[0]:
-		$Label.text = "Working"
+#	if saveData.levelData.Collectible[0]:
+	#	$Label.text = "Working"
 
 	#Get Save Data
 func _LoadData():

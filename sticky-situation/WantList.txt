@@ -1,13 +1,23 @@
 Actual Game Objects:
-	2x Speed portal (GD)!
+	Power up items - Temp or not
+	2x Speed powerup item (GD)! - Temp
+	.5x Speed - Temp
+	Makes stick smaller - Temp
+	Health - not
+	
 	Moving Wall/Spikeball thing!
 	Some kind of music~
 	Need basic sprites for things~
 	Portal (Stop rotation and rotate the map)*
 		It works but it's a bit mean, also need to change the checkpoints to make it work better
+	Manual rotation toggle
+	Hud for health and total collected coins on map 
+	Pause screen overlay
+	Minotaur?
 	
 	Finish Line+++
 	Collectible Coins+++
+	
 
 	figure out the 3 levels into 1 gimmick!
 	
