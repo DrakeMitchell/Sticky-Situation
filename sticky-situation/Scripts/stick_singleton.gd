@@ -23,8 +23,7 @@ var currentLevel = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Starting["SpinDirection"] = 1;
-	Starting["StickSpinning"] = true # Replace with function body.
+	resetStick() # Replace with function body.
 
 	#Decrease Health and reset rotation to original 
 func HitWall() -> void:
@@ -43,6 +42,12 @@ func _process(delta: float) -> void:
 func setStick():
 	Starting["SpinDirection"] = SpinDirection
 	Starting["StickSpinning"] = StickSpinning 
+
+func resetStick():
+	Starting["SpinDirection"] = 1;
+	Starting["StickSpinning"] = true
+	SpinDirection = 1
+	StickSpinning = true
 	
 	#Change Spawn Point when you reach a new checkpoint
 func newCheckPoint(checkPoint) -> void:

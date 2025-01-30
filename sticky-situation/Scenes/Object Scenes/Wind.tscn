@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgh0aeyfmv805"]
+[gd_scene load_steps=3 format=3 uid="uid://cgh0aeyfmv805"]
+
+[ext_resource type="Texture2D" uid="uid://bkllwfmbt8su7" path="res://Assets/Wind.png" id="1_gs1dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sorwn"]
 
@@ -8,3 +10,11 @@
 position = Vector2(1, 0)
 scale = Vector2(5.09237, 4.91057)
 shape = SubResource("RectangleShape2D_sorwn")
+
+[node name="Pixil-frame-0(14)" type="Sprite2D" parent="."]
+position = Vector2(-24, 16)
+texture = ExtResource("1_gs1dh")
+
+[node name="Pixil-frame-0(14)2" type="Sprite2D" parent="."]
+position = Vector2(32, 16)
+texture = ExtResource("1_gs1dh")

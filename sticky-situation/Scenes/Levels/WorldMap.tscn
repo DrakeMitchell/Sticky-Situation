@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=10 format=3 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="6_ruvng"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
+[ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Checkpoint.png" id="9_7nal4"]
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_wq2oc")
@@ -27,6 +28,7 @@ offset_bottom = 58.0
 text = "Caverns Challenge Mode"
 
 [node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+visible = false
 position = Vector2(483, 61)
 Level_Scene = ExtResource("2_om5pr")
 level = 1
@@ -43,6 +45,7 @@ text = "Area 1 level 2
 metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+visible = false
 position = Vector2(232, 54)
 Level_Scene = ExtResource("2_om5pr")
 player = NodePath("../Player")
@@ -109,10 +112,41 @@ text = "Obstacle Key:"
 [node name="Coin" parent="." instance=ExtResource("6_ruvng")]
 position = Vector2(-367, 18)
 
+[node name="Label" type="Label" parent="Coin"]
+offset_left = 37.0
+offset_top = -11.0
+offset_right = 77.0
+offset_bottom = 12.0
+text = "Coin; Collect these in the levels"
+
+[node name="Label2" type="Label" parent="Coin"]
+offset_left = 36.0
+offset_top = 51.0
+offset_right = 320.0
+offset_bottom = 129.0
+text = "Spring: Hit these to flip your rotation"
+
 [node name="SpringObj" parent="." instance=ExtResource("7_o24k5")]
 position = Vector2(-363, 103)
 rotation = 1.5708
 
 [node name="Wind" parent="." instance=ExtResource("8_dvjy2")]
-position = Vector2(-367, 243)
-scale = Vector2(2.72, 1)
+position = Vector2(-365, 222)
+
+[node name="Label2" type="Label" parent="Wind"]
+offset_left = 85.0
+offset_right = 125.0
+offset_bottom = 23.0
+text = "Wind: Pushes you up"
+
+[node name="Pixil-frame-0(3)" type="Sprite2D" parent="."]
+position = Vector2(-369, 402)
+texture = ExtResource("9_7nal4")
+
+[node name="Label" type="Label" parent="Pixil-frame-0(3)"]
+offset_left = 139.0
+offset_top = -26.0
+offset_right = 179.0
+offset_bottom = -3.0
+text = "Checkpoint: Hit these to save 
+your progress when you hit a wall"

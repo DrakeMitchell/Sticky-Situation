@@ -27,7 +27,7 @@ offset_top = -212.0
 offset_right = 219.0
 offset_bottom = -125.0
 theme_override_font_sizes/font_size = 50
-text = "Stick Situation"
+text = "Sticky Situation"
 uppercase = true
 
 [node name="Label2" type="Label" parent="."]
@@ -37,9 +37,9 @@ offset_right = -41.0
 offset_bottom = 120.0
 text = "Controls: Keyboard or Controller
 Movement: WASD (Left Joystick)
-Interact: Space (X/A)
-Speed Up: Space (Right Trigger)
-Speed Up Rotation: Shift (Left Trigger)
+Interact: Space (Start)
+Speed Up: Space (X/A)
+Speed Up Rotation: Shift (O/B)
 
 Interact with Level nodes to enter a level
 

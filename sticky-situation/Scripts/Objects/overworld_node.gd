@@ -7,6 +7,7 @@ var StandingOn = false #Touch Detection
 var saveData: SaveGame #Global Save Game
 @export var player: Player #Player object
 @export var totalCollectibles: int
+@export var Inverse: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,6 +22,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("StartLevel"):
 			StickSingleton.currentLevel = level
 			Interactions.TOTAL_COLLECTIBLES = totalCollectibles
+			StickSingleton.resetStick()
 			get_tree().change_scene_to_packed(Level_Scene)
 			#player.getSpawnPoint()
 	if saveData.levelData.Collectible[0]:

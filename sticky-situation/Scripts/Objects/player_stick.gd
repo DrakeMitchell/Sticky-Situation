@@ -11,6 +11,9 @@ func _ready() -> void:
 		SaveData = gameData
 
 func _physics_process(delta):
+	if get_tree().get_current_scene().name.contains("Gameplay"):
+		$Camera2D.zoom.x = 2
+		$Camera2D.zoom.y = 2
 	
 	#Change Stick rotation
 	if(StickSingleton.StickSpinning == true):
