@@ -18,8 +18,9 @@ config/icon="res://Assets/icon.svg"
 [autoload]
 
 StickSingleton="*res://Scripts/stick_singleton.gd"
-LevelStarting="*res://Scripts/LevelStarting.gd"
 Interactions="*res://Scripts/Interactions.gd"
+levelStarts="*res://Scripts/LevelStarts.gd"
+PickUp="*res://Scripts/Objects/PickUp.gd"
 
 [input]
 

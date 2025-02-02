@@ -2,7 +2,7 @@ extends Node
 
 #Stats When laoded into level
 var Starting = {
-	"Health": 3,
+	"Health": 4,
 	"SpinDirection":1,
 	"StickSpinning": true
 }
@@ -11,7 +11,7 @@ var Starting = {
 var moveSpeed = 300
 #Other Variables
 
-var Health = 3;
+var Health = 4;
 var ClosestCheckPoint: Area2D;
 var CheckPTPosition;
 var SpinDirection = 1;
@@ -32,8 +32,13 @@ func HitWall() -> void:
 	if(Health <= 0):
 		#Die()
 		pass
+	moveSpeed = 300
 	SpinDirection = Starting["SpinDirection"]
 	StickSpinning = Starting["StickSpinning"]
+	
+func Heal():
+	if Health <= 4:
+		Health += 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -48,6 +53,7 @@ func resetStick():
 	Starting["StickSpinning"] = true
 	SpinDirection = 1
 	StickSpinning = true
+	moveSpeed = 300
 	
 	#Change Spawn Point when you reach a new checkpoint
 func newCheckPoint(checkPoint) -> void:
