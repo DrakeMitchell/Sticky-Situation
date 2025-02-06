@@ -22,7 +22,8 @@ Actual Game Objects:
 	figure out the 3 levels into 1 gimmick!
 	
 
-
+BUG LIST:
+	Need to prevent speedup of movement and spinning when starting a level
 	
 
 Game Mechanics:
