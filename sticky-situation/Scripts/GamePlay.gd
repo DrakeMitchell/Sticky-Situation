@@ -4,26 +4,25 @@ extends Node2D
 var levelStarts: Array[Area2D] = []
 @export var LevelResource: Level #Unique Level per map
 @export var ChallengeMode = false
-var levelName = ""
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print_debug(get_tree().current_scene.name)
 	if(StickSingleton.currentLevel == 100):
 		ChallengeMode = true;
-	levelName = get_tree().current_scene.name
 	
-
+	
 	
 	#Change player location to correct sublevel first checkpoint
+	if(get_tree().current_scene.name.contains("1")):
+		levelStarts.append(get_node("MapObjects/CheckPoint"))
+		levelStarts.append(get_node("MapObjects2/CheckPointStart2"))
 		
-	if(levelName.contains("Caverns")):
+	if(get_tree().current_scene.name.contains("Caverns")):
 		levelStarts.append(get_node("Map1/CheckPoint"))
 		levelStarts.append(get_node("Map2/CheckPoint"))
 		levelStarts.append(get_node("Map3/CheckPoint"))
-
-
-
+		
 		
 	if ChallengeMode:
 		$Player.position = challengeMode().global_position
@@ -31,10 +30,6 @@ func _ready() -> void:
 	else:
 		$Player.position = detectSpawnPoint().global_position
 
-func detectSpawnPoint() -> Area2D:
-	var spawnPoint = levelStarts[StickSingleton.currentLevel];
-	#print_debug(spawnPoint.position)
-	return spawnPoint
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -47,7 +42,10 @@ func _process(delta: float) -> void:
 			#pass
 
 #Choose a spawn point
-
+func detectSpawnPoint() -> Area2D:
+	var spawnPoint = levelStarts[StickSingleton.currentLevel];
+	#print_debug(spawnPoint.position)
+	return spawnPoint
 
 
 func challengeMode() -> Area2D:
@@ -82,6 +80,6 @@ func ObjectHit(area: Area2D) -> void:
 		StickSingleton.resetStick()
 		#print_debug(StickSingleton.SpinDirection = 1)
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
-	if area.name.contains("PU"):
-		print_debug(area.type)
-		PickUp.stickCollision(area)
+	if area.name.contains("Coin"):
+		Interactions.updateCollected()
+		area.queue_free()

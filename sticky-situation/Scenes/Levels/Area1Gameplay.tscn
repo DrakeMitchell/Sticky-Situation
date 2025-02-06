@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="3_dpkdj"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_i2212"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="5_yhf8a"]
-[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/PickUp.tscn" id="7_jdncg"]
+[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="7_jdncg"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_i1sdg"]
 [ext_resource type="PackedScene" uid="uid://dh5chrhitr7ee" path="res://Scenes/Levels/HalfLoop.tscn" id="9_nfuy8"]
 

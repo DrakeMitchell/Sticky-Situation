@@ -5,8 +5,6 @@ const SPEED = 300
 var SaveData: SaveGame
 var InWind = false;
 
-var saveSpeedTemp;
-
 func _ready() -> void:
 	var gameData = ResourceLoader.load("user://SaveGame.tres") as SaveGame
 	if gameData:
@@ -35,10 +33,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 	if Input.is_action_just_pressed("SpeedUpMove"):
-		saveSpeedTemp = StickSingleton.moveSpeed
-		StickSingleton.moveSpeed += 200
+		StickSingleton.moveSpeed = 500
 	if Input.is_action_just_released("SpeedUpMove"):
-		StickSingleton.moveSpeed = saveSpeedTemp
+		StickSingleton.moveSpeed = 300
 		
 	if Input.is_action_just_pressed("SpeedUpSpin"):
 		print_debug("Pressed")

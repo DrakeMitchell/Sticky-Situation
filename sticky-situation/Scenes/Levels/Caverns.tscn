@@ -1,15 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=13 format=4 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_xowig"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="3_56x0q"]
-[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/PickUp.tscn" id="4_j2t68"]
+[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="4_j2t68"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="6_aejrg"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="7_ny2fg"]
 [ext_resource type="Texture2D" uid="uid://cuaqcks0idjmh" path="res://Assets/Tiles.png" id="8_6wsn3"]
 [ext_resource type="Texture2D" uid="uid://cxvcemetbbjba" path="res://Assets/New Borders.png" id="9_5l542"]
-[ext_resource type="Script" path="res://Scripts/LevelStarts.gd" id="10_a3y8u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06kv5"]
 texture = ExtResource("8_6wsn3")
@@ -332,7 +331,6 @@ sources/8 = SubResource("TileSetAtlasSource_kq5n1")
 
 [node name="CavernsGameplay" type="Area2D"]
 script = ExtResource("1_xowig")
-ChallengeMode = true
 
 [node name="Map1" type="Node2D" parent="."]
 
@@ -340,19 +338,16 @@ ChallengeMode = true
 position = Vector2(464, 376)
 scale = Vector2(1, 5.6)
 
-[node name="CoinPU" parent="Map1" instance=ExtResource("4_j2t68")]
+[node name="Coin" parent="Map1" instance=ExtResource("4_j2t68")]
 position = Vector2(200, 0)
-type = "speed"
-speed = false
 
-[node name="Coin2PU" parent="Map1" instance=ExtResource("4_j2t68")]
+[node name="Coin2" parent="Map1" instance=ExtResource("4_j2t68")]
 position = Vector2(664, 32)
-type = "speed"
 
-[node name="Coin3PU" parent="Map1" instance=ExtResource("4_j2t68")]
+[node name="Coin3" parent="Map1" instance=ExtResource("4_j2t68")]
 position = Vector2(680, 224)
 
-[node name="Coin4PU" parent="Map1" instance=ExtResource("4_j2t68")]
+[node name="Coin4" parent="Map1" instance=ExtResource("4_j2t68")]
 position = Vector2(656, 344)
 
 [node name="OuterWall" type="Area2D" parent="Map1"]
@@ -393,16 +388,16 @@ polygon = PackedVector2Array(448, 288, 256, 288, 192, 288, 128, 288, 64, 288, 32
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map2/LowerWall"]
 polygon = PackedVector2Array(448, 480, 256, 480, 256, 464, 224, 464, 224, 448, 192, 448, 192, 432, 144, 432, 144, 416, 112, 416, 112, 512, 112, 592, 128, 592, 128, 624, 144, 624, 144, 640, 160, 640, 160, 656, 176, 656, 192, 656, 192, 672, 224, 672, 224, 688, 256, 688, 256, 720, 272, 720, 272, 736, 288, 736, 288, 800, 288, 840, 288, 904, 192, 896, 192, 832, 160, 832, 160, 896, -128, 912, -128, 920, 128, 904, 152, 904, 288, 912, 296, 904, 296, 840, 296, 800, 296, 736, 264, 680, 168, 640, 136, 576, 128, 512, 120, 432, 192, 456, 256, 488, 448, 512, 448, 488)
 
-[node name="CoinPU" parent="Map2" instance=ExtResource("4_j2t68")]
+[node name="Coin" parent="Map2" instance=ExtResource("4_j2t68")]
 position = Vector2(240, 864)
 
-[node name="Coin2PU" parent="Map2" instance=ExtResource("4_j2t68")]
+[node name="Coin2" parent="Map2" instance=ExtResource("4_j2t68")]
 position = Vector2(224, 712)
 
-[node name="Coin3PU" parent="Map2" instance=ExtResource("4_j2t68")]
+[node name="Coin3" parent="Map2" instance=ExtResource("4_j2t68")]
 position = Vector2(48, 560)
 
-[node name="Coin4PU" parent="Map2" instance=ExtResource("4_j2t68")]
+[node name="Coin4" parent="Map2" instance=ExtResource("4_j2t68")]
 position = Vector2(72, 360)
 
 [node name="Map3" type="Node2D" parent="."]
@@ -456,6 +451,3 @@ offset_right = -1424.0
 offset_bottom = -320.0
 scale = Vector2(85.2339, 51.4486)
 color = Color(0.43613, 0.342258, 0.311936, 1)
-
-[node name="Node" type="Node" parent="."]
-script = ExtResource("10_a3y8u")
