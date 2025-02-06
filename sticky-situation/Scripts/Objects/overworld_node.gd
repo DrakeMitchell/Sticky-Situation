@@ -1,13 +1,13 @@
 extends Area2D
 
 #Variables
-@export var Level_Scene: PackedScene #Level Scene to load into
+@export var LevelResource: Level
 @export var level: int #Sublevel number 0-2
 var StandingOn = false #Touch Detection
-var saveData: SaveGame #Global Save Game
+#var saveData: SaveGame #Global Save Game
 @export var player: Player #Player object
 @export var totalCollectibles: int
-@export var Inverse: bool
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 			StickSingleton.currentLevel = level
 			Interactions.TOTAL_COLLECTIBLES = totalCollectibles
 			StickSingleton.resetStick()
-			get_tree().change_scene_to_packed(Level_Scene)
+			get_tree().change_scene_to_packed(LevelResource.Level_Scene)
 			#player.getSpawnPoint()
 #	if saveData.levelData.Collectible[0]:
 	#	$Label.text = "Working"
@@ -31,8 +31,8 @@ func _process(delta: float) -> void:
 	#Get Save Data
 func _LoadData():
 	var gameData = ResourceLoader.load("user://SaveGame.tres") as SaveGame
-	if gameData:
-		saveData = gameData
+	#if gameData:
+		#saveData = gameData
 	
 	#Detect if player is touching
 func Node_entered(area: Area2D) -> void:

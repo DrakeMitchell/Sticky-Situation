@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=4 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=14 format=4 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_xowig"]
+[ext_resource type="Texture2D" uid="uid://c6kis74pcdgka" path="res://Assets/Coin.png" id="3_7c8s8"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="3_56x0q"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="6_aejrg"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="7_ny2fg"]
@@ -336,7 +337,7 @@ script = ExtResource("1_xowig")
 
 [node name="SpeedPU" parent="Map1" instance=ExtResource("9_na20r")]
 position = Vector2(208, -8)
-type = "speed"
+img = ExtResource("3_7c8s8")
 
 [node name="FinishLine" parent="Map1" instance=ExtResource("3_56x0q")]
 position = Vector2(464, 376)

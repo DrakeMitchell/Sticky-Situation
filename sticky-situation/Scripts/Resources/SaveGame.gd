@@ -4,7 +4,7 @@ class_name SaveGame
 #Variables
 const SAVE_GAME_PATH = "user://SaveGame.tres"
 @export var currentLevel: PackedScene
-@export var levelData: Level = preload("res://Scripts/Resources/Level1Resource.tres")
+#@export var levelData: Level = preload("res://Scripts/Resources/Level1Resource.tres")
 
 @export var StartPos: Vector2 #For Testing
 @export var levelComplete: bool = false #For Testing
@@ -15,7 +15,7 @@ func updatePos(pos) -> void:
 
 	#Update Level Completeion in a specific sublevel - NOT WORKING ATM
 func updateLevelComp(boo, level)-> void:
-	levelData.updateCompleted(boo, level)
+	#levelData.updateCompleted(boo, level)
 	changed.emit()
 
 	#Save Game function
@@ -29,7 +29,7 @@ func loadGame():
 	if gameData:
 		StartPos = gameData.StartPos
 		levelComplete = gameData.levelComplete
-		levelData = gameData.levelData
+		#levelData = gameData.levelData
 		print_debug("Level Complete: %s" % levelComplete)
 		return gameData
 	else:

@@ -7,7 +7,7 @@ var Starting = {
 	"StickSpinning": true
 }
 
-
+var character: Character
 var moveSpeed = 300
 #Other Variables
 

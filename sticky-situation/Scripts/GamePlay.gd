@@ -80,6 +80,5 @@ func ObjectHit(area: Area2D) -> void:
 		StickSingleton.resetStick()
 		#print_debug(StickSingleton.SpinDirection = 1)
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
-	if area.name.contains("Coin"):
-		Interactions.updateCollected()
-		area.queue_free()
+	if area.name.contains("PU"):
+		PickUp.stickCollision(area)

@@ -20,6 +20,7 @@ config/icon="res://Assets/icon.svg"
 StickSingleton="*res://Scripts/stick_singleton.gd"
 LevelStarting="*res://Scripts/LevelStarting.gd"
 Interactions="*res://Scripts/Interactions.gd"
+PickUp="*res://Scenes/Object Scenes/PickUp.gd"
 
 [input]
 

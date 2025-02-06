@@ -4,8 +4,11 @@ class_name Player
 const SPEED = 300
 var SaveData: SaveGame
 var InWind = false;
+var tempSpeed
+@export var character: Character
 
 func _ready() -> void:
+	StickSingleton.character = character
 	var gameData = ResourceLoader.load("user://SaveGame.tres") as SaveGame
 	if gameData:
 		SaveData = gameData
@@ -22,20 +25,21 @@ func _physics_process(delta):
 	#Movement
 	var directionLR = Input.get_axis("Left", "Right")
 	if directionLR:
-		velocity.x = directionLR * StickSingleton.moveSpeed
+		velocity.x = directionLR * character.Speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, StickSingleton.moveSpeed)
+		velocity.x = move_toward(velocity.x, 0, character.Speed)
 	var directionUD = Input.get_axis("Up", "Down")
 	if directionUD:
-		velocity.y = directionUD * StickSingleton.moveSpeed
+		velocity.y = directionUD * character.Speed
 	else:
-		velocity.y = directionUD * StickSingleton.moveSpeed
+		velocity.y = directionUD * character.Speed
 	move_and_slide()
 
 	if Input.is_action_just_pressed("SpeedUpMove"):
-		StickSingleton.moveSpeed = 500
+		tempSpeed = character.Speed
+		character.Speed += 200
 	if Input.is_action_just_released("SpeedUpMove"):
-		StickSingleton.moveSpeed = 300
+		character.Speed = tempSpeed
 		
 	if Input.is_action_just_pressed("SpeedUpSpin"):
 		print_debug("Pressed")

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=9 format=3 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
-[ext_resource type="PackedScene" uid="uid://b615vmlogmc4c" path="res://Scenes/Levels/Area1Gameplay.tscn" id="2_om5pr"]
-[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="5_x8e8g"]
-[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="6_ruvng"]
+[ext_resource type="Resource" uid="uid://dn1k82tnh8grt" path="res://Scripts/Resources/Level1Resource.tres" id="4_fyntc"]
+[ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
 [ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Checkpoint.png" id="9_7nal4"]
@@ -15,7 +14,7 @@ script = ExtResource("1_wq2oc")
 
 [node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(307, 376)
-Level_Scene = ExtResource("5_x8e8g")
+LevelResource = ExtResource("4_fyntc")
 level = 100
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -30,7 +29,6 @@ text = "Caverns Challenge Mode"
 [node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 visible = false
 position = Vector2(483, 61)
-Level_Scene = ExtResource("2_om5pr")
 level = 1
 player = NodePath("../Player")
 totalCollectibles = 2
@@ -47,7 +45,6 @@ metadata/_edit_use_anchors_ = true
 [node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 visible = false
 position = Vector2(232, 54)
-Level_Scene = ExtResource("2_om5pr")
 player = NodePath("../Player")
 
 [node name="Label" type="Label" parent="OverworldNode"]
@@ -63,7 +60,7 @@ position = Vector2(-3, 53)
 
 [node name="OverworldNode6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(481, 233)
-Level_Scene = ExtResource("5_x8e8g")
+LevelResource = ExtResource("4_fyntc")
 level = 2
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -77,7 +74,7 @@ text = "Caverns Level 3"
 
 [node name="OverworldNode5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(306, 224)
-Level_Scene = ExtResource("5_x8e8g")
+LevelResource = ExtResource("4_fyntc")
 level = 1
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -91,7 +88,7 @@ text = "Caverns Level 2"
 
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(126, 224)
-Level_Scene = ExtResource("5_x8e8g")
+LevelResource = ExtResource("4_fyntc")
 player = NodePath("../Player")
 totalCollectibles = 8
 

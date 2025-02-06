@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b615vmlogmc4c"]
+[gd_scene load_steps=8 format=3 uid="uid://b615vmlogmc4c"]
 
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_30r2q"]
 [ext_resource type="Resource" uid="uid://dn1k82tnh8grt" path="res://Scripts/Resources/Level1Resource.tres" id="2_0ly7q"]
@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="3_dpkdj"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_i2212"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="5_yhf8a"]
-[ext_resource type="PackedScene" uid="uid://icuqmt5q7cu1" path="res://Scenes/Object Scenes/Coin.tscn" id="7_jdncg"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_i1sdg"]
-[ext_resource type="PackedScene" uid="uid://dh5chrhitr7ee" path="res://Scenes/Levels/HalfLoop.tscn" id="9_nfuy8"]
 
 [node name="GamePlayArea1" type="Node2D"]
 script = ExtResource("1_30r2q")
@@ -71,15 +69,3 @@ polygon = PackedVector2Array(7.31982, -8.48806, 247.185, -8.48806, 328.829, 2.12
 
 [node name="Player" parent="." instance=ExtResource("4_i2212")]
 position = Vector2(-506, 5)
-
-[node name="Coin" parent="." instance=ExtResource("7_jdncg")]
-visible = false
-position = Vector2(584, 41)
-
-[node name="Coin2" parent="." instance=ExtResource("7_jdncg")]
-visible = false
-position = Vector2(567, 311)
-
-[node name="Wall" parent="." instance=ExtResource("9_nfuy8")]
-visible = false
-position = Vector2(-993, -16)
