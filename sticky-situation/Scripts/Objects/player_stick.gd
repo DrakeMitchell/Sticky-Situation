@@ -2,16 +2,19 @@ extends CharacterBody2D
 class_name Player
 
 const SPEED = 300
-var SaveData: SaveGame
+var SaveData := SaveGame.new()
 var InWind = false;
 var tempSpeed
 @export var character: Character
 
 func _ready() -> void:
 	StickSingleton.character = character
-	var gameData = ResourceLoader.load("user://SaveGame.tres") as SaveGame
-	if gameData:
-		SaveData = gameData
+	var error = SaveData.loadGame()
+	if error == null:
+		SaveData = SaveGame.new()
+	else:
+		SaveData = error
+	#print(gameData)
 
 func _physics_process(delta):
 	if get_tree().get_current_scene().name.contains("Gameplay"):
@@ -50,15 +53,13 @@ func _physics_process(delta):
 	if InWind:
 		position.y -= 1
 	#TESTING Saving
-	if Input.is_action_just_pressed("Save"):
-		SaveData.updatePos(self.position)
-		SaveData.updateLevelComp(true,0)
-		SaveData.saveGame()
+	#if Input.is_action_just_pressed("Save"):
+		#SaveData.saveGame()
 		
 	#TESTING Loading
-	if Input.is_action_just_pressed("Load"):
-		SaveData.loadGame()
-		self.position = SaveData.StartPos
+	#if Input.is_action_just_pressed("Load"):
+		#SaveData.loadGame()
+
 
 	#Change Stick Rotation
 func rotateStick(dir) -> void:
@@ -77,3 +78,4 @@ func Object_Hit(area: Area2D) -> void:
 func Object_Exit(area: Area2D) -> void:
 	if area.name.contains("Wind"):
 		InWind = false # Replace with function body.
+		

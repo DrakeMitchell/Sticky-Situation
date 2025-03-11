@@ -1,14 +1,16 @@
-[gd_scene load_steps=13 format=4 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=15 format=4 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_xowig"]
+[ext_resource type="Resource" uid="uid://dn1k82tnh8grt" path="res://Scripts/Resources/Level1Resource.tres" id="2_vcbiy"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="3_56x0q"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="6_aejrg"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="7_ny2fg"]
 [ext_resource type="Texture2D" uid="uid://cuaqcks0idjmh" path="res://Assets/Tiles.png" id="8_6wsn3"]
 [ext_resource type="Texture2D" uid="uid://cxvcemetbbjba" path="res://Assets/New Borders.png" id="9_5l542"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="9_na20r"]
+[ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="10_2hi7q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06kv5"]
 texture = ExtResource("8_6wsn3")
@@ -331,12 +333,13 @@ sources/8 = SubResource("TileSetAtlasSource_kq5n1")
 
 [node name="CavernsGameplay" type="Area2D"]
 script = ExtResource("1_xowig")
+LevelResource = ExtResource("2_vcbiy")
 
 [node name="Map1" type="Node2D" parent="."]
 
 [node name="SpeedPU" parent="Map1" instance=ExtResource("9_na20r")]
 position = Vector2(208, -8)
-type = "speed"
+type = "health"
 
 [node name="FinishLine" parent="Map1" instance=ExtResource("3_56x0q")]
 position = Vector2(464, 376)
@@ -431,3 +434,5 @@ offset_right = -1424.0
 offset_bottom = -320.0
 scale = Vector2(85.2339, 51.4486)
 color = Color(0.43613, 0.342258, 0.311936, 1)
+
+[node name="LevelHud" parent="." instance=ExtResource("10_2hi7q")]

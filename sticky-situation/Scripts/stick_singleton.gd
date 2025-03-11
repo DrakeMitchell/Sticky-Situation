@@ -54,3 +54,6 @@ func newCheckPoint(checkPoint) -> void:
 	setStick()
 	#ClosestCheckPoint = checkPoint
 	##heckPTPosition = checkPoint.position
+
+func Heal() -> void:
+	Health += 1

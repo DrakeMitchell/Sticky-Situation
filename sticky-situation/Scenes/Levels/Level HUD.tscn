@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbokvkux678u0"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/level_hud.gd" id="1_hbf7e"]
+[ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="1_qxjcp"]
+
+[node name="LevelHud" type="CanvasLayer"]
+script = ExtResource("1_hbf7e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_right = -0.1521
+offset_bottom = -1.0
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = -1
+anchor_right = 0.285
+anchor_bottom = 0.122
+offset_right = -0.320038
+offset_bottom = -0.0560074
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qxjcp")
+theme_override_font_sizes/font_size = 48
+text = "Lives: "
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.187
+anchor_right = 0.303
+anchor_bottom = 0.103
+offset_left = -11.424
+offset_top = 3.0
+offset_right = -12.056
+offset_bottom = 0.255997
+theme_override_fonts/font = ExtResource("1_qxjcp")
+theme_override_font_sizes/font_size = 48
+text = " NA"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.842
+anchor_top = 0.002
+anchor_right = 1.001
+anchor_bottom = 0.137
+offset_left = 0.0159302
+offset_top = -0.296
+offset_right = -0.1521
+offset_bottom = 0.223991
+theme_override_fonts/font = ExtResource("1_qxjcp")
+theme_override_font_sizes/font_size = 48
+text = "Coins: "
+
+[node name="Label4" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.941
+anchor_right = 1.03
+anchor_bottom = 0.122
+offset_left = -0.0321045
+offset_top = 1.0
+offset_right = 0.439941
+offset_bottom = -0.0560074
+theme_override_fonts/font = ExtResource("1_qxjcp")
+theme_override_font_sizes/font_size = 48
+text = "NA"

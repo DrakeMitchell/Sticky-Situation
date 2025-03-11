@@ -7,6 +7,8 @@ class_name Level
 @export var Inverse: bool
 @export var Level_Scene: PackedScene #Level Scene to load into
 
+@export var Savingisworking = false
+
 #Change the collectible check of each sub level
 func updateCollectible(boo, level):
 	Collectible[level] = boo

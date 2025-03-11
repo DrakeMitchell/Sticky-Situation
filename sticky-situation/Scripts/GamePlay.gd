@@ -4,10 +4,17 @@ extends Node2D
 var levelStarts: Array[Area2D] = []
 @export var LevelResource: Level #Unique Level per map
 @export var ChallengeMode = false
+var SaveData := SaveGame.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print_debug(get_tree().current_scene.name)
+	var error = SaveData.loadGame()
+	if error == null:
+		SaveData = SaveGame.new()
+	else:
+		SaveData = error
+	
 	if(StickSingleton.currentLevel == 100):
 		ChallengeMode = true;
 	
@@ -74,7 +81,7 @@ func ObjectHit(area: Area2D) -> void:
 	if area.name.contains("Wind"):
 		$Player.InWind = true
 	if area.name.contains("Finish"):
-		#LevelResource.updateCompleted(true,StickSingleton.currentLevel)
+		LevelResource.Savingisworking
 		print_debug("Coins Collected: %s:" % Interactions.collectibles)
 		print_debug("All Coins Collected: %s" % Interactions.Collectible)
 		StickSingleton.resetStick()

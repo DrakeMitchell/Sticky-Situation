@@ -20,14 +20,13 @@ func stickCollision(area) -> void:
 	print_debug(area.type)
 	if area.type.contains("coin"):
 		Interactions.updateCollected()
-		area.queue_free()
 	if area.type.contains("speed"):
 		if area.speed == true:
 			StickSingleton.character.Speed = 500
 		else:
 			StickSingleton.character.Speed = 150
-		area.queue_free()
 	if(area.type.contains("health")):
 		StickSingleton.Heal()
 	if(area.type.contains("shield")):
 		pass
+	area.queue_free()
