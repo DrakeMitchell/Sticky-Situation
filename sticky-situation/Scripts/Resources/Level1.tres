@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://coe4s2ng18y5g"]
+[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://c33brmdejofr0"]
 
 [ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="1_rjarj"]
 [ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="2_t1b22"]
