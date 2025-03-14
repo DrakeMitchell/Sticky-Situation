@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cyr1j0ifwm4pd"]
 
 [ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_bpj2a"]
-[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/Levels/WorldMap.tscn" id="2_6wnpi"]
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="2_u8koq"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="3_7r1y0"]
+[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="4_ey3wi"]
 [ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="4_kf5d2"]
 [ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="5_3bbx0"]
 
@@ -12,7 +12,8 @@ script = ExtResource("4_kf5d2")
 Collectible = Array[bool]([false, false, false])
 Completed = Array[bool]([false, false, false])
 Inverse = false
-Level_Scene = ExtResource("2_6wnpi")
+Level_Scene = ExtResource("4_ey3wi")
+Savingisworking = false
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_bpj2a")

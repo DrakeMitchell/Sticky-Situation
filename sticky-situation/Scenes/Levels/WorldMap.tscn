@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
-[ext_resource type="Resource" uid="uid://dn1k82tnh8grt" path="res://Scripts/Resources/Level1Resource.tres" id="4_fyntc"]
+[ext_resource type="Resource" uid="uid://coe4s2ng18y5g" path="res://Scripts/Resources/Level1.tres" id="3_hlr1j"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
@@ -14,7 +14,7 @@ script = ExtResource("1_wq2oc")
 
 [node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(307, 376)
-LevelResource = ExtResource("4_fyntc")
+LevelResource = ExtResource("3_hlr1j")
 level = 100
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -60,7 +60,7 @@ position = Vector2(-3, 53)
 
 [node name="OverworldNode6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(481, 233)
-LevelResource = ExtResource("4_fyntc")
+LevelResource = ExtResource("3_hlr1j")
 level = 2
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -74,7 +74,7 @@ text = "Caverns Level 3"
 
 [node name="OverworldNode5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(306, 224)
-LevelResource = ExtResource("4_fyntc")
+LevelResource = ExtResource("3_hlr1j")
 level = 1
 player = NodePath("../Player")
 totalCollectibles = 8
@@ -88,7 +88,7 @@ text = "Caverns Level 2"
 
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(126, 224)
-LevelResource = ExtResource("4_fyntc")
+LevelResource = ExtResource("3_hlr1j")
 player = NodePath("../Player")
 totalCollectibles = 8
 

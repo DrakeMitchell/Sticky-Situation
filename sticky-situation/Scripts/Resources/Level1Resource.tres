@@ -1,6 +1,5 @@
-[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://dn1k82tnh8grt"]
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://3abru8y78lsh"]
 
-[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="1_aashl"]
 [ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="1_ynk8r"]
 
 [resource]
@@ -8,4 +7,4 @@ script = ExtResource("1_ynk8r")
 Collectible = Array[bool]([false, false, false])
 Completed = Array[bool]([false, false, false])
 Inverse = false
-Level_Scene = ExtResource("1_aashl")
+Savingisworking = false
