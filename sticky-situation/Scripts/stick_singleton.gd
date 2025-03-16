@@ -18,6 +18,7 @@ var SpinDirection = 1;
 var StickSpinning = true;
 
 var currentLevel = 0;
+var globalcurrentLevel = 0;
 
 # @export var vcurrentLevelScene = PackedScene
 

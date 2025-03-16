@@ -5,10 +5,10 @@ class_name Pickup
 @export var img: Texture2D
 @export var speed: bool
 @export var character: Character
+var SaveData := SaveGame.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#$Sprite2D.texture = img
-	pass # Replace with function body.s
+	SaveData = SaverLoader.load()# Replace with function body.s
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,7 +19,10 @@ func _process(delta: float) -> void:
 func stickCollision(area) -> void:
 	print_debug(area.type)
 	if area.type.contains("coin"):
-		Interactions.updateCollected()
+		
+		if StickSingleton.currentLevel != 100:
+			print("HELLLLLLO")
+			SaveData.levelData[StickSingleton.globalcurrentLevel].updateCollectibles(StickSingleton.currentLevel)
 	if area.type.contains("speed"):
 		if area.speed == true:
 			StickSingleton.character.Speed = 500

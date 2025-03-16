@@ -15,9 +15,10 @@
 [sub_resource type="Resource" id="Resource_orb8n"]
 script = ExtResource("2_pcbu5")
 Collectible = Array[bool]([false, false, false])
+currentCollectibles = Array[int]([0, 0, 0])
+totalCollectibles = Array[int]([0, 0, 0])
 Completed = Array[bool]([false, false, false])
-Inverse = false
-Savingisworking = false
+globalLevel = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06kv5"]
 texture = ExtResource("8_6wsn3")
@@ -363,6 +364,9 @@ polygon = PackedVector2Array(-104, -96, -104, 104, -96, 104, -96, -96, 192, -96,
 
 [node name="Wall" type="CollisionPolygon2D" parent="Map1/InnerWall"]
 polygon = PackedVector2Array(-96, 96, 128, 96, 128, 80, 144, 80, 144, 64, 160, 64, 192, 64, 224, 64, 256, 64, 256, 80, 272, 80, 272, 112, 288, 112, 288, 128, 304, 128, 304, 160, 320, 160, 320, 192, 384, 192, 576, 192, 640, 192, 640, 256, 448, 256, 448, 248, 632, 248, 632, 200, 576, 200, 384, 200, 320, 200, 312, 192, 280, 128, 248, 72, 224, 72, 192, 72, 178.464, 72, 168, 72, 136, 104, -96, 104)
+
+[node name="CoinPU" parent="Map1" instance=ExtResource("9_na20r")]
+position = Vector2(558, 81)
 
 [node name="Player" parent="." instance=ExtResource("1_408i4")]
 position = Vector2(0, -8)

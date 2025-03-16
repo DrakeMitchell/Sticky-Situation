@@ -11,7 +11,7 @@ func _ready() -> void:
 		SaveData = SaveGame.new()
 	else:
 		SaveData = error
-	$OverworldNode3/Label.text = str(SaveData.levelData.Completed[0]) # Replace with function body.
+	$OverworldNode3/Label.text = str(SaveData.levelData[StickSingleton.globalcurrentLevel].Completed[0]) # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

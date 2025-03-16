@@ -18,6 +18,7 @@ position = Vector2(307, 376)
 LevelResource = ExtResource("3_hlr1j")
 level = 100
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode4"]
@@ -33,6 +34,7 @@ position = Vector2(483, 61)
 LevelResource = ExtResource("3_hlr1j")
 level = 1
 player = NodePath("../Player")
+Inverse = null
 
 [node name="Label" type="Label" parent="OverworldNode2"]
 offset_left = -23.0
@@ -47,7 +49,9 @@ metadata/_edit_use_anchors_ = true
 visible = false
 position = Vector2(232, 54)
 LevelResource = ExtResource("3_hlr1j")
+level = null
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode"]
@@ -66,6 +70,7 @@ position = Vector2(481, 233)
 LevelResource = ExtResource("3_hlr1j")
 level = 2
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode6"]
@@ -80,6 +85,7 @@ position = Vector2(306, 224)
 LevelResource = ExtResource("3_hlr1j")
 level = 1
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode5"]
@@ -92,7 +98,9 @@ text = "Caverns Level 2"
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(126, 224)
 LevelResource = ExtResource("3_hlr1j")
+level = null
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode3"]

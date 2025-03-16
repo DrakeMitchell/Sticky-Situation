@@ -16,11 +16,10 @@ func _process(delta: float) -> void:
 	pass
 	
 func updateCollected():
-	print_debug(collectibles)
+	#print_debug(collectibles)
 	collectibles += 1;
 	if collectibles >= TOTAL_COLLECTIBLES:
 		Collectible = true
-	print_debug(Collectible)
 
 
 func newCheckPoint(checkPoint) -> void:

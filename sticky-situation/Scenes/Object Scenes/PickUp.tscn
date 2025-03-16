@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnc14de044g0f"]
 
-[ext_resource type="Script" path="res://Scenes/Object Scenes/PickUp.gd" id="1_msudc"]
+[ext_resource type="Script" path="res://Scripts/Objects/PickUp.gd" id="1_msudc"]
 [ext_resource type="Texture2D" uid="uid://c6kis74pcdgka" path="res://Assets/Coin.png" id="2_umido"]
 [ext_resource type="Resource" uid="uid://bigwurwh1vmov" path="res://Scripts/Resources/PlayerStick.tres" id="3_n2wn5"]
 

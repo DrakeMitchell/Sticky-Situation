@@ -19,7 +19,8 @@ config/icon="res://Assets/icon.svg"
 
 StickSingleton="*res://Scripts/stick_singleton.gd"
 Interactions="*res://Scripts/Interactions.gd"
-PickUp="*res://Scenes/Object Scenes/PickUp.gd"
+PickUp="*res://Scripts/Objects/PickUp.gd"
+SaverLoader="*res://Scripts/SaverLoader.gd"
 
 [input]
 

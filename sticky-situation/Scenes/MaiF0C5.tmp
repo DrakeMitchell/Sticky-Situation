@@ -16,7 +16,9 @@ position = Vector2(58, -83)
 [node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
 position = Vector2(217, -91)
 LevelResource = ExtResource("4_o6i6v")
+level = null
 player = NodePath("../Player")
+Inverse = null
 LevelScene = ExtResource("5_0pm36")
 
 [node name="Label" type="Label" parent="OverworldNode"]

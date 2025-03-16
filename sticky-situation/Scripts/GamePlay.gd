@@ -9,11 +9,7 @@ var SaveData := SaveGame.new()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print_debug(get_tree().current_scene.name)
-	var error = SaveData.loadGame()
-	if error == null:
-		SaveData = SaveGame.new()
-	else:
-		SaveData = error
+	SaveData = SaverLoader.load()
 	
 	if(StickSingleton.currentLevel == 100):
 		ChallengeMode = true;
@@ -81,8 +77,9 @@ func ObjectHit(area: Area2D) -> void:
 	if area.name.contains("Wind"):
 		$Player.InWind = true
 	if area.name.contains("Finish"):
-		SaveData.updateLevelComp(true,StickSingleton.currentLevel)
-		print_debug("Coins Collected: %s:" % Interactions.collectibles)
+		if StickSingleton.currentLevel != 100:
+			SaveData.updateLevelComp(true,StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
+		print_debug("Coins Collected: %s:" % Interactions.TOTAL_COLLECTIBLES)
 		#print_debug("All Coins Collected: %s" % Interactions.Collectible)
 		StickSingleton.resetStick()
 		#print_debug(StickSingleton.SpinDirection = 1)

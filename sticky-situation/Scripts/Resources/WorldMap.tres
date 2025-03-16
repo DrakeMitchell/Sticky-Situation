@@ -1,12 +1,11 @@
-[gd_resource type="Resource" script_class="Level" load_steps=3 format=3 uid="uid://bx62mbr3ithqv"]
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://bx62mbr3ithqv"]
 
-[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/Levels/WorldMap.tscn" id="1_3c1yr"]
 [ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="1_qevud"]
 
 [resource]
 script = ExtResource("1_qevud")
 Collectible = Array[bool]([false, false, false])
+currentCollectibles = Array[int]([0, 0, 0])
+totalCollectibles = Array[int]([0, 0, 0])
 Completed = Array[bool]([false, false, false])
-Inverse = false
-Level_Scene = ExtResource("1_3c1yr")
-Savingisworking = false
+globalLevel = 0

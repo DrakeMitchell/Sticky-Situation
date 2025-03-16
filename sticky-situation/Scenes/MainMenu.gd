@@ -23,4 +23,5 @@ func _on_save_pressed() -> void:
 
 func _on_clear_pressed() -> void:
 	SaveData.totalCoins = 0
+	SaveData.levelData[StickSingleton.globalcurrentLevel].Completed[0] = false
 	print("New Coin Amount:", SaveData.totalCoins) # Replace with function body.
