@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cyr1j0ifwm4pd"]
 
-[ext_resource type="Script" path="res://Scenes/MainMenu.gd" id="1_bpj2a"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_bpj2a"]
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="2_u8koq"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="3_7r1y0"]
 [ext_resource type="Resource" uid="uid://bx62mbr3ithqv" path="res://Scripts/Resources/WorldMap.tres" id="4_o6i6v"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dbokvkux678u0"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/level_hud.gd" id="1_hbf7e"]
+[ext_resource type="Script" path="res://Scripts/level_hud.gd" id="1_hbf7e"]
 [ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="1_qxjcp"]
 
 [node name="LevelHud" type="CanvasLayer"]

@@ -6,9 +6,6 @@ var Starting = {
 	"SpinDirection":1,
 	"StickSpinning": true
 }
-
-var character: Character
-var moveSpeed = 300
 #Other Variables
 
 var Health = 3;
@@ -17,15 +14,27 @@ var CheckPTPosition;
 var SpinDirection = 1;
 var StickSpinning = true;
 
+#Try to migrate later
 var currentLevel = 0;
 var globalcurrentLevel = 0;
+var totalCoins = 0;
+var SaveData
 
 # @export var vcurrentLevelScene = PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SaveData = SaverLoader.load() as SaveGame
 	resetStick() # Replace with function body.
 
+#Allows the HUD and game to keep track of coins and save the number
+func addCoin():
+	totalCoins += 1
+	SaveData.player.totalCoins +=1
+	SaveData.levelData[StickSingleton.globalcurrentLevel].updateCollectibles(StickSingleton.currentLevel)
+	SaveData.saveGame()
+	
+	
 	#Decrease Health and reset rotation to original 
 func HitWall() -> void:
 	Health -= 1

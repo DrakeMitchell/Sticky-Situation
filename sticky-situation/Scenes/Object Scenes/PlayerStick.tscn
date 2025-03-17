@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://Scripts/Objects/player_stick.gd" id="1_m8hie"]
 [ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Assets/Test_Stick.png" id="2_7bb3l"]
-[ext_resource type="Resource" uid="uid://bigwurwh1vmov" path="res://Scripts/Resources/PlayerStick.tres" id="2_rkkyr"]
+[ext_resource type="Resource" uid="uid://bmngqh3jvech0" path="res://Scripts/Resources/PlayerCharacter.tres" id="2_sy0qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
 size = Vector2(16, 128)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_m8hie")
-character = ExtResource("2_rkkyr")
+character = ExtResource("2_sy0qd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, -7.15256e-07)

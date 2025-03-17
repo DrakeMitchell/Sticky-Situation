@@ -1,15 +1,21 @@
 extends Resource
 class_name Level
 
-#Collectible and Level completion check for each of the 3 sub levels
+#Operate by way of "sublevel" in each global level
+
+#All Collectible collected
 @export var Collectible: Array[bool] = [false,false,false]
+#currently Collected Collectibles, respawn currently
 @export var currentCollectibles: Array[int] = [0,0,0]
+#total Collectibles
 @export var totalCollectibles: Array[int] = [0,0,0]
+#Sublevel Completion, cannot detect challenge level completion 
 @export var Completed:Array[bool] = [false,false,false]
+#Global level designation
 @export var globalLevel:int
 
 
-#@export var Level_Scene: PackedScene #Level Scene to load into
+#Updates the currentCollectibles for sublevel
 func updateCollectibles(level):
 	if currentCollectibles[level] != totalCollectibles[level]:
 		currentCollectibles[level] += 1
@@ -17,6 +23,7 @@ func updateCollectibles(level):
 		Collectible[level] = true
 		
 
+#Save function
 func save() -> void:
 	var data:= Level.new()
 	data.Completed = Completed
@@ -29,7 +36,8 @@ func save() -> void:
 	if error:
 		print("An error happened while saving data: ", error)
 		
-		
+
+#load Function
 func loadGame():
 	var gameData = load(self.resource_path) as Level
 	if gameData:

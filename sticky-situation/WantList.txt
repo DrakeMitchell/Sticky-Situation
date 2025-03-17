@@ -45,6 +45,12 @@ Inspirations:
 	Mario
 	
 Up Next:
-	Indicator for level completetion and Sync it to the saving *
-	Collectible Item and sync it to the saving
+	Document every File with a header explaination
+	Figure out what to do about respawning coins - okay?
+	Make the save detection compatible with the challenge levels
+	Speed boosts need a timer
+	Health increase in permanent - not a terrible idea
+	Easier Clear function in SaveData
+	Migrate var's in StickSingleton
+	
 	

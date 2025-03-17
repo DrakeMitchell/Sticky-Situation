@@ -6,27 +6,31 @@ class_name SaveGame
 const SAVE_GAME_PATH := "user://SaveGame.tres"
 @export var currentLevel: PackedScene
 @export var levelData: Array[Level] = [preload("res://Scripts/Resources/Level1.tres")]
+@export var player: Character = preload("res://Scripts/Resources/PlayerCharacter.tres")
 
-@export var StartPos: Vector2 #For Testing
-@export var levelComplete: bool = false #For Testing
-
-@export var totalCoins: int = 0
+var slevel = StickSingleton.currentLevel
+var glevel = StickSingleton.globalcurrentLevel
+@export var totalCoins: int
 	
-	#Update Stick Position - Testing
-func updatePos(pos) -> void:
-	StartPos = pos
+
 
 	#Update Level Completeion in a specific sublevel - NOT WORKING ATM
 func updateLevelComp(boolean, sublevel,golevel)-> void:
 	levelData[golevel].Completed[sublevel] = true
+	
+
+#Adds a coin to the global level resource
+func addCoin() -> void:
+	levelData[slevel].updateCollectibles(slevel)
 
 	#Save Game function
 func saveGame() -> void:
 	var data:= SaveGame.new()
-	data.StartPos = StartPos
 	data.totalCoins = totalCoins
-	#data.levelData = levelData
+
 	levelData[StickSingleton.globalcurrentLevel].save()
+	player.saveGame()
+	print("Saved coins as ", data.totalCoins)
 	
 	var error := ResourceSaver.save(data, SAVE_GAME_PATH)
 	if error:
@@ -37,14 +41,9 @@ func saveGame() -> void:
 func loadGame():
 	var gameData = load(SAVE_GAME_PATH)
 	if gameData:
-		StartPos = gameData.StartPos
-		#levelComplete = gameData.levelComplete
 		totalCoins = gameData.totalCoins
-		#levelData = gameData.levelData
-		
 		levelData[StickSingleton.globalcurrentLevel].loadGame()
-		
-		print_debug("Level Complete: %s" % levelComplete)
+		player.loadGame()
 		return gameData
 	else:
 		print_debug("Failed to load save data.")

@@ -1,19 +1,14 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 300
-var SaveData := SaveGame.new()
+var SaveData
 var InWind = false;
 var tempSpeed
 @export var character: Character
 
 func _ready() -> void:
 	StickSingleton.character = character
-	var error = SaveData.loadGame()
-	if error == null:
-		SaveData = SaveGame.new()
-	else:
-		SaveData = error
+	SaveData = SaverLoader.load()
 	#print(gameData)
 
 func _physics_process(delta):
@@ -45,7 +40,7 @@ func _physics_process(delta):
 		character.Speed = tempSpeed
 		
 	if Input.is_action_just_pressed("SpeedUpSpin"):
-		print_debug("Pressed")
+		#print_debug("Pressed")
 		StickSingleton.SpinDirection *= 2
 	if Input.is_action_just_released("SpeedUpSpin"):
 		StickSingleton.SpinDirection /= 2
