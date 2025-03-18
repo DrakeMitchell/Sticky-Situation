@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://d3jd71127w61s"]
+[gd_resource type="Resource" script_class="Level" load_steps=2 format=3 uid="uid://ccq4maovj1o8b"]
 
 [ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="2_t1b22"]
 
@@ -7,5 +7,5 @@ script = ExtResource("2_t1b22")
 Collectible = Array[bool]([true, false, false])
 currentCollectibles = Array[int]([1, 0, 0])
 totalCollectibles = Array[int]([1, 2, 2])
-Completed = Array[bool]([true, false, false])
+Completed = Array[bool]([false, false, false])
 globalLevel = 0

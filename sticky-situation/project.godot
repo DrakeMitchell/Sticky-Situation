@@ -17,10 +17,10 @@ config/icon="res://Assets/icon.svg"
 
 [autoload]
 
-StickSingleton="*res://Scripts/stick_singleton.gd"
-Interactions="*res://Scripts/Interactions.gd"
+StickSingleton="*res://Scripts/Singletons/stick_singleton.gd"
+Interactions="*res://Scripts/Singletons/Interactions.gd"
 PickUp="*res://Scripts/Objects/PickUp.gd"
-SaverLoader="*res://Scripts/SaverLoader.gd"
+SaverLoader="*res://Scripts/Singletons/SaverLoader.gd"
 
 [input]
 

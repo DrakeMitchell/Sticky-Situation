@@ -2,20 +2,22 @@
 extends Resource
 class_name SaveGame
 
-#Variables
-const SAVE_GAME_PATH := "user://SaveGame.tres"
-@export var currentLevel: PackedScene
-@export var levelData: Array[Level] = [preload("res://Scripts/Resources/Level1.tres")]
-@export var player: Character = preload("res://Scripts/Resources/PlayerCharacter.tres")
+#Holds Vital Save Data for the game, need to migrate to json to work for exporting
 
-var slevel = StickSingleton.currentLevel
-var glevel = StickSingleton.globalcurrentLevel
-@export var totalCoins: int
+
+#Variables
+const SAVE_GAME_PATH := "user://SaveGame.tres" #Saved Address of SaveGame data
+@export var levelData: Array[Level] = [preload("res://Scripts/Resources/Level1.tres")] #Array of the game level resources
+@export var player: Character = preload("res://Scripts/Resources/PlayerCharacter.tres") #The Character resource
+
+var slevel = StickSingleton.currentLevel  #current Sublevel
+var glevel = StickSingleton.globalcurrentLevel #current Global Level
+@export var totalCoins: int #Total Amount of Coins, Should be stored in Character
 	
 
 
-	#Update Level Completeion in a specific sublevel - NOT WORKING ATM
-func updateLevelComp(boolean, sublevel,golevel)-> void:
+#Update Level Completeion in a specific sublevel 
+func updateLevelComp(sublevel,golevel)-> void:
 	levelData[golevel].Completed[sublevel] = true
 	
 

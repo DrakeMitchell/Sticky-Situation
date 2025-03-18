@@ -4,11 +4,16 @@ class_name Character
 @export var Speed = 300
 @export var totalCoins = 0
 
+func addCoin():
+	totalCoins +=1
+	saveGame()
+
 
 func saveGame() -> void:
 	var data:= Character.new()
 	data.Speed = Speed
 	data.totalCoins = totalCoins
+	
 	print("Saved coins as ", data.totalCoins)
 	
 	var error := ResourceSaver.save(data, self.resource_path)

@@ -3,7 +3,6 @@ Actual Game Objects:
 	2x Speed powerup item (GD)! - Temp
 	.5x Speed - Temp
 	Makes stick smaller - Temp
-	Health - not
 	
 	Moving Wall/Spikeball thing!
 	Some kind of music~
@@ -17,13 +16,9 @@ Actual Game Objects:
 	
 	Finish Line+++
 	Collectible Coins+++
+
 	
 
-	figure out the 3 levels into 1 gimmick!
-	
-
-BUG LIST:
-	Need to prevent speedup of movement and spinning when starting a level
 	
 
 Game Mechanics:
@@ -49,8 +44,10 @@ Up Next:
 	Figure out what to do about respawning coins - okay?
 	Make the save detection compatible with the challenge levels
 	Speed boosts need a timer
-	Health increase in permanent - not a terrible idea
 	Easier Clear function in SaveData
 	Migrate var's in StickSingleton
+	
+	IMPORTANT  !!!!!
+	Saving does not work in HTML export with resources
 	
 	

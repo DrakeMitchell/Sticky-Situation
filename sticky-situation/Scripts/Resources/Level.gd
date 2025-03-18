@@ -1,6 +1,6 @@
 extends Resource
 class_name Level
-
+#Global Level Resource for each different global level
 #Operate by way of "sublevel" in each global level
 
 #All Collectible collected

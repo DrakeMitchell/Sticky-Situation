@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Objects/player_stick.gd" id="1_m8hie"]
 [ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Assets/Test_Stick.png" id="2_7bb3l"]
-[ext_resource type="Resource" uid="uid://bmngqh3jvech0" path="res://Scripts/Resources/PlayerCharacter.tres" id="2_sy0qd"]
+[ext_resource type="Resource" uid="uid://dlu1cpf4cnqk1" path="res://Scripts/Resources/PlayerCharacter.tres" id="2_sy0qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
 size = Vector2(16, 128)

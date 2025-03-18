@@ -1,10 +1,11 @@
 extends Node2D
+#Global Script for all gameplay Scenes
 
 #Variables
 var levelStarts: Array[Area2D] = []
 @export var LevelResource: Level #Unique Level per map
 @export var ChallengeMode = false
-var SaveData := SaveGame.new()
+var SaveData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _ready() -> void:
 	
 	
 	#Change player location to correct sublevel first checkpoint
+	#Gotta be a better way of doing this
 	if(get_tree().current_scene.name.contains("1")):
 		levelStarts.append(get_node("MapObjects/CheckPoint"))
 		levelStarts.append(get_node("MapObjects2/CheckPointStart2"))
@@ -35,7 +37,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
@@ -47,7 +49,6 @@ func _process(delta: float) -> void:
 #Choose a spawn point
 func detectSpawnPoint() -> Area2D:
 	var spawnPoint = levelStarts[StickSingleton.currentLevel];
-	#print_debug(spawnPoint.position)
 	return spawnPoint
 
 
@@ -58,32 +59,4 @@ func challengeMode() -> Area2D:
 	$Dividers.global_position.x = -3000
 	return spawnPoint;
 
-
-#Stick Collsion detection and computing
-#Should probably be it's on script honestly
-func ObjectHit(area: Area2D) -> void:
-	#Checkpoint Detection
-	if area.name.contains("Check"):
-		Interactions.newCheckPoint(area)
-	#Wall Detection
-	if area.name.contains("Wall"):
-		StickSingleton.HitWall()
-		$Player.position = Interactions.CheckPTPosition
-	#Spring Detection
-	if area.name.contains("Spring"):
-		#StickSingleton.StickSpinning = false;
-		StickSingleton.SpinDirection *= -1
-	#Finish line detection
-	if area.name.contains("Wind"):
-		$Player.InWind = true
-	if area.name.contains("Finish"):
-		if StickSingleton.currentLevel != 100:
-			SaveData.updateLevelComp(true,StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
-		SaveData.totalCoins = StickSingleton.totalCoins
-		#print_debug("Coins Collected: %s:" % Interactions.TOTAL_COLLECTIBLES)
-		#print_debug("All Coins Collected: %s" % Interactions.Collectible)
-		StickSingleton.resetStick()
-		#print_debug(StickSingleton.SpinDirection = 1)
-		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
-	if area.name.contains("PU"):
-		PickUp.stickCollision(area)
+		

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
-[ext_resource type="Resource" uid="uid://dm2clic1n0rkg" path="res://Scripts/Resources/Level1.tres" id="3_hlr1j"]
+[ext_resource type="Resource" uid="uid://ccq4maovj1o8b" path="res://Scripts/Resources/Level1.tres" id="3_hlr1j"]
 [ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="4_v6xbw"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
 [ext_resource type="Script" path="res://Scripts/Resources/Character.gd" id="6_w5flp"]
@@ -108,6 +108,13 @@ offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 58.0
 text = "Caverns Level 1"
+
+[node name="Label2" type="Label" parent="OverworldNode3"]
+offset_left = -63.0
+offset_top = -69.0
+offset_right = 71.0
+offset_bottom = -26.0
+text = "Level Completion"
 
 [node name="Label" type="Label" parent="."]
 offset_left = -412.0

@@ -1,20 +1,17 @@
 extends Area2D
 class_name Pickup
+#Base Class for all Powerup style objects
+#Currently Health, Coin, Speed Change
 
+#Variables
 @export var type: String
 @export var img: Texture2D
 @export var speed: bool
 
 var SaveData
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	SaveData = SaverLoader.load()# Replace with function body.s
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	#print_debug(type)
-	pass
 
 #Handles collisions with PickUp Objects
 func stickCollision(area) -> void:
