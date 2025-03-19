@@ -20,8 +20,11 @@ func _process(_delta: float) -> void:
 	
 	if StandingOn == true: #If standing on the node
 		if Input.is_action_just_pressed("StartLevel"):
-			StickSingleton.currentLevel = level #Sublevel set
-			if StickSingleton.currentLevel != 100: #If not challenge level
+			Saving.playerStats["globalLevel"] = LevelResource.globalLevel
+			Saving.playerStats["subLevel"] = level
+			StickSingleton.currentLevel = level
+			print(Saving.playerStats)
+			if level != 100: #If not challenge level
 				Interactions.TOTAL_COLLECTIBLES = LevelResource.totalCollectibles[level] #Set current total collectibles
 			else:
 				#Isn't global at all, wont work with more levels

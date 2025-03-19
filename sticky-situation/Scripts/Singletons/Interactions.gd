@@ -37,8 +37,9 @@ func ObjectHit(area: Area2D) -> void:
 	#Finish line detection
 	if area.name.contains("Finish"):
 		if StickSingleton.currentLevel != 100:
-			SaveData.updateLevelComp(StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
-		SaveData.totalCoins = StickSingleton.totalCoins
+			#SaveData.updateLevelComp(StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
+			Saving.Complete()
+		#SaveData.totalCoins = StickSingleton.totalCoins
 		#print_debug("Coins Collected: %s:" % Interactions.TOTAL_COLLECTIBLES)
 		#print_debug("All Coins Collected: %s" % Interactions.Collectible)
 		StickSingleton.resetStick()

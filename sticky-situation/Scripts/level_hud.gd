@@ -18,4 +18,4 @@ func _process(_delta: float) -> void:
 func textChange():
 	SaveData.loadGame()
 	$Label2.text = str(StickSingleton.Health)
-	$Label4.text = str(StickSingleton.totalCoins)
+	$Label4.text = str(Saving.playerStats["totalCoins"])

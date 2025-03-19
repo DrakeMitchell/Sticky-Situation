@@ -17,8 +17,8 @@ func _ready() -> void:
 func stickCollision(area) -> void:
 	if area.type.contains("coin"):
 		if StickSingleton.currentLevel != 100:  # If its a coin and not the challenge level
-			StickSingleton.addCoin()
-			SaveData.saveGame() #increase the coin amount and save
+			Saving.addCoin()
+			#SaveData.saveGame() #increase the coin amount and save
 	if area.type.contains("speed"):
 		if area.speed == true: #If it its a speed change
 			StickSingleton.character.Speed = 500 #Increase

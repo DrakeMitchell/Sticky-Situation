@@ -407,7 +407,7 @@ polygon = PackedVector2Array(448, 480, 256, 480, 256, 464, 224, 464, 224, 448, 1
 position = Vector2(-16, 1240)
 
 [node name="Wind" parent="Map3" instance=ExtResource("7_ny2fg")]
-position = Vector2(-344, 1392)
+position = Vector2(-111, 1375)
 scale = Vector2(1.29971, 1)
 
 [node name="FinishLine" parent="Map3" instance=ExtResource("3_56x0q")]
@@ -446,10 +446,10 @@ tile_set = SubResource("TileSet_mcns2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1
-offset_left = -1464.0
-offset_top = -360.0
-offset_right = -1424.0
-offset_bottom = -320.0
+offset_left = -1073.0
+offset_top = -440.0
+offset_right = -1033.0
+offset_bottom = -400.0
 scale = Vector2(85.2339, 51.4486)
 color = Color(0.43613, 0.342258, 0.311936, 1)
 

@@ -5,4 +5,4 @@
 [resource]
 script = ExtResource("1_dr6p8")
 Speed = 300
-totalCoins = 0
+totalCoins = 5
