@@ -7,10 +7,11 @@ extends Area2D
 var StandingOn = false #Touch Detection
 
 @export var player: Player #Player object
-@export var Inverse: bool #Not used
+@export var Inverse: bool #flip starting rotation of the stick
 @export var LevelScene: PackedScene #Scene to enter
 
 var SaveData 
+var available
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,7 +24,8 @@ func _process(_delta: float) -> void:
 			Saving.playerStats["globalLevel"] = LevelResource.globalLevel
 			Saving.playerStats["subLevel"] = level
 			StickSingleton.currentLevel = level
-			print(Saving.playerStats)
+			StickSingleton.inverse = Inverse
+			
 			if level != 100: #If not challenge level
 				Interactions.TOTAL_COLLECTIBLES = LevelResource.totalCollectibles[level] #Set current total collectibles
 			else:
@@ -31,12 +33,34 @@ func _process(_delta: float) -> void:
 				Interactions.TOTAL_COLLECTIBLES = 5 
 			StickSingleton.resetStick()
 			
-			get_tree().change_scene_to_packed(LevelScene)
+			
+			if available:
+				get_tree().change_scene_to_packed(LevelScene)
 	
 #Detect if player is touching
 func Node_entered(_area: Area2D) -> void:
+	detectProgress()
 	StandingOn = true # Replace with function body.
 
 #Detect if player is no longer touching
 func Node_exited(_area: Area2D) -> void:
 	StandingOn = false; # Replace with function body.
+	
+func detectProgress():
+	var global = LevelResource.globalLevel
+
+	if global == 0:
+		available = true
+	elif Saving.checkCompletion(global-1):
+		available = true
+	if level != 0:
+		if Saving.checkCompletion(global,level-1):
+			available = true
+		else:
+			available = false
+	if level == 100:
+		available = false
+
+		
+		
+	

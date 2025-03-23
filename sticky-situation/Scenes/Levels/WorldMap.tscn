@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=16 format=3 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
 [ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Checkpoint.png" id="9_7nal4"]
+[ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Scripts/Resources/TutorialLevel.tres" id="11_icqsc"]
+[ext_resource type="PackedScene" uid="uid://bj0dqn72r2ehr" path="res://Scenes/Levels/Tutorial.tscn" id="12_rmkkl"]
+[ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="13_x8mji"]
+[ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Levels/Level2.tscn" id="14_vfcko"]
 
 [sub_resource type="Resource" id="Resource_8hdby"]
 script = ExtResource("6_w5flp")
@@ -185,3 +189,24 @@ offset_right = 179.0
 offset_bottom = -3.0
 text = "Checkpoint: Hit these to save 
 your progress when you hit a wall"
+
+[node name="OverworldNode7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(122, -51)
+LevelResource = ExtResource("11_icqsc")
+player = NodePath("../Player")
+Inverse = true
+LevelScene = ExtResource("12_rmkkl")
+
+[node name="OverworldNode8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(297, -53)
+LevelResource = ExtResource("11_icqsc")
+level = 1
+player = NodePath("../Player")
+Inverse = true
+LevelScene = ExtResource("12_rmkkl")
+
+[node name="OverworldNode10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(-362, -139)
+LevelResource = ExtResource("13_x8mji")
+player = NodePath("../Player")
+LevelScene = ExtResource("14_vfcko")

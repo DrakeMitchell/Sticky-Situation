@@ -27,6 +27,13 @@ func _ready() -> void:
 		levelStarts.append(get_node("Map1/CheckPoint"))
 		levelStarts.append(get_node("Map2/CheckPoint"))
 		levelStarts.append(get_node("Map3/CheckPoint"))
+	 
+	if(get_tree().current_scene.name.contains("2")):
+		levelStarts.append(get_node("Map1/CheckPoint"))
+	
+	if(get_tree().current_scene.name.contains(("Tutorial"))):
+		levelStarts.append((get_node("Map1/CheckPoint")))
+		levelStarts.append(get_node("Map2/CheckPoint"))
 		
 		
 	if ChallengeMode:
@@ -58,5 +65,3 @@ func challengeMode() -> Area2D:
 	$Map2/FinishLine.global_position.x = -3000
 	$Dividers.global_position.x = -3000
 	return spawnPoint;
-
-		

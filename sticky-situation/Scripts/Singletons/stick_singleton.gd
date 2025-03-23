@@ -14,9 +14,10 @@ var ClosestCheckPoint: Area2D; #
 var CheckPTPosition;
 var SpinDirection = 1;
 var StickSpinning = true;
+var inverse = false;
 
 #Try to migrate later
-var currentLevel = 0;
+var currentLevel = 0
 var globalcurrentLevel = 0;
 var totalCoins = 0;
 var SaveData
@@ -38,13 +39,14 @@ func HitWall() -> void:
 	#print_debug(Health)
 	if(Health <= 0):
 		Die()
-	SpinDirection = Starting["SpinDirection"]
-	StickSpinning = Starting["StickSpinning"]
+	#SpinDirection = Starting["SpinDirection"]
+	#StickSpinning = Starting["StickSpinning"]
 
 #Set new spin directions for each checkpoint
 func setStick():
 	Starting["SpinDirection"] = SpinDirection
 	Starting["StickSpinning"] = StickSpinning 
+
 
 #Reset to default values, ie leaving the level and reentering 
 func resetStick():

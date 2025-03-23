@@ -11,6 +11,7 @@ func _on_load_pressed() -> void:
 	#SaveData.loadGame()
 	#Saving._ready()
 	Saving.load_json_file()
+	print(Saving.checkCompletion(1))
 	pass
 
 func _on_save_pressed() -> void:

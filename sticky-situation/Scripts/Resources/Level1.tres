@@ -8,4 +8,4 @@ Collectible = Array[bool]([true, false, false])
 currentCollectibles = Array[int]([1, 0, 0])
 totalCollectibles = Array[int]([1, 2, 2])
 Completed = Array[bool]([false, false, false])
-globalLevel = 0
+globalLevel = 1

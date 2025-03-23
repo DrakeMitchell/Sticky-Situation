@@ -28,6 +28,7 @@ func ObjectHit(area: Area2D) -> void:
 	#Checkpoint Detection
 	if area.name.contains("Check"):
 		Interactions.newCheckPoint(area)
+		
 	#Wall Detection
 
 	#Spring Detection

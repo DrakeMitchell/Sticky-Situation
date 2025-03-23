@@ -3,13 +3,24 @@ class_name SaveData
 
 var json_path = "user://SaveData.json"
 var playerStats = {
-	"Level":{
-		"id": null,
-		"Completion": [bool(),bool(),bool()]
+	"Levels":{
+		"000":{
+			"Completion": [bool(),bool(),true]
+		},
+		"001":{
+			"Completion": [bool(),bool(),bool()]
+		},
+		"002":{
+			"Completion": [bool(),bool(),bool()]
+		}
 	},
+	#Temp Variables, for use in levels
 	"globalLevel": int(),
 	"subLevel": int(),
+	
 	"totalCoins": int()}
+
+var globalLevels = ["000","001","002"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,7 +35,20 @@ func addCoin():
 	playerStats["totalCoins"] += 1
 #func load_level(glevel,slevel)
 func Complete():
-	playerStats["Level"]["Completion"][playerStats["subLevel"]] = true
+	playerStats["Levels"][globalLevels[playerStats["globalLevel"]]]["Completion"][playerStats["subLevel"]] = true
+
+
+func checkCompletion(globallevel, sublevel = null) -> bool:
+	if sublevel == null || sublevel == 100:
+		for i in len(playerStats["Levels"][globalLevels[globallevel]]["Completion"]):
+			if playerStats["Levels"][globalLevels[globallevel]]["Completion"][i] == false:
+				return false
+		return true
+	else:
+		if playerStats["Levels"][globalLevels[globallevel]]["Completion"][sublevel] == false:
+				return false
+		return true
+	
 
 
 func load_json_file():

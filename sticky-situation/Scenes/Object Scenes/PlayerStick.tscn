@@ -20,10 +20,14 @@ texture = ExtResource("2_7bb3l")
 position = Vector2(0, -3.25002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3.25002)
+position = Vector2(-3.8147e-06, 3.25002)
+scale = Vector2(1.21969, 1.07222)
 shape = SubResource("RectangleShape2D_li4yw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_li4yw")
 
 [connection signal="area_entered" from="Area2D" to="." method="Object_Hit"]
 [connection signal="area_exited" from="Area2D" to="." method="Object_Exit"]
