@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=14 format=3 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
@@ -6,7 +6,6 @@
 [ext_resource type="Resource" uid="uid://ccq4maovj1o8b" path="res://Scripts/Resources/Level1.tres" id="3_hlr1j"]
 [ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="4_v6xbw"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
-[ext_resource type="Script" path="res://Scripts/Resources/Character.gd" id="6_w5flp"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
 [ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Checkpoint.png" id="9_7nal4"]
@@ -14,11 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://bj0dqn72r2ehr" path="res://Scenes/Levels/Tutorial.tscn" id="12_rmkkl"]
 [ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="13_x8mji"]
 [ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Levels/Level2.tscn" id="14_vfcko"]
-
-[sub_resource type="Resource" id="Resource_8hdby"]
-script = ExtResource("6_w5flp")
-Speed = 300
-totalCoins = 0
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_wq2oc")
@@ -78,7 +72,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_f2mq4")]
 position = Vector2(-3, 53)
-character = SubResource("Resource_8hdby")
 
 [node name="OverworldNode6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(481, 233)
@@ -234,3 +227,10 @@ offset_top = 31.0
 offset_right = 35.0
 offset_bottom = 54.0
 text = "Level 3-1"
+
+[node name="OverworldNode9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
+position = Vector2(436, -51)
+LevelResource = ExtResource("11_icqsc")
+level = 2
+player = NodePath("../Player")
+LevelScene = ExtResource("12_rmkkl")

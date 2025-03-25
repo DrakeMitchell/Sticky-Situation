@@ -19,11 +19,13 @@ func stickCollision(area) -> void:
 			#SaveData.saveGame() #increase the coin amount and save
 	if area.type.contains("speed"):
 		if area.speed == true: #If it its a speed change
-			StickSingleton.character.Speed = 500 #Increase
+			StickSingleton.speed = 500 #Increase
 		else:
-			StickSingleton.character.Speed = 150 #Decrease
+			StickSingleton.speed = 150 #Decrease
 	if(area.type.contains("health")):
 		StickSingleton.Heal() #If it is a heal
 	if(area.type.contains("shield")):
-		pass
+		StickSingleton.Armor = true
+		#var timer = get_node("/root/Armor")
+		#timer.start()
 	area.queue_free()

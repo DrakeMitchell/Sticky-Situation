@@ -6,11 +6,11 @@ class_name Player
 var SaveData
 var InWind = false;
 var tempSpeed #For changing speed via speed boost
-@export var character: Character
 var Dead = false
 var inverse = false
 var windDir = -1
 var tempRotate
+var Armor
 
 func _ready() -> void:
 	#SaveData = SaverLoader.load()
@@ -32,22 +32,22 @@ func _physics_process(_delta):
 	#Movement
 		var directionLR = Input.get_axis("Left", "Right")
 		if directionLR:
-			velocity.x = directionLR * character.Speed
+			velocity.x = directionLR * StickSingleton.speed
 		else:
-			velocity.x = move_toward(velocity.x, 0, character.Speed)
+			velocity.x = move_toward(velocity.x, 0, StickSingleton.speed)
 		var directionUD = Input.get_axis("Up", "Down")
 		if directionUD:
-			velocity.y = directionUD * character.Speed
+			velocity.y = directionUD * StickSingleton.speed
 		else:
-			velocity.y = directionUD * character.Speed
+			velocity.y = directionUD * StickSingleton.speed
 		move_and_slide()
 
 		#Speed Up button pressed and released
 		if Input.is_action_just_pressed("SpeedUpMove"):
-			tempSpeed = character.Speed
-			character.Speed += 200
+			tempSpeed = StickSingleton.speed
+			StickSingleton.speed += 200
 		if Input.is_action_just_released("SpeedUpMove"):
-			character.Speed = tempSpeed
+			StickSingleton.speed = tempSpeed
 			
 		#Spin Speed Up Button Pressed and Released
 		if Input.is_action_just_pressed("SpeedUpSpin"):
@@ -77,10 +77,11 @@ func Object_Hit(area: Area2D) -> void:
 	elif get_tree().get_current_scene().name.contains("Menu"):
 		pass
 	elif area.name.contains("Wall"):
-		tempRotate = self.rotation
-		Dead = true
-		#Some sort of timer
-		$"../DeathTimer".start()
+		if not StickSingleton.Armor:
+			tempRotate = self.rotation
+			Dead = true
+			#Some sort of timer
+			$"../DeathTimer".start()
 		
 		# after timer 
 		# 
@@ -93,6 +94,10 @@ func Object_Hit(area: Area2D) -> void:
 		else:
 			windDir = 1
 			
+	elif area.name.contains("armor"):
+		print("WORKING")
+		StickSingleton.Armor = true
+		$"../Armor".start()
 	else:
 		Interactions.ObjectHit(area) #Send Collision management to Interactions Singleton
 		
@@ -107,3 +112,7 @@ func _on_death_timer_timeout() -> void:
 	#position = Interactions.CheckPTPosition
 	StickSingleton.HitWall()
 	Dead=false
+
+
+func _on_armor_timeout() -> void:
+	StickSingleton.Armor = false # Replace with function body.

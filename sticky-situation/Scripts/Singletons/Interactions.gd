@@ -30,6 +30,7 @@ func ObjectHit(area: Area2D) -> void:
 	if area.name.contains("Check"):
 		Interactions.newCheckPoint(area)
 		StickSingleton.Health = StickSingleton.Starting["Health"]
+		StickSingleton.speed = 300
 		
 	#Wall Detection
 
@@ -50,3 +51,4 @@ func ObjectHit(area: Area2D) -> void:
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
 	if area.name.contains("PU"):
 		PickUp.stickCollision(area)
+		

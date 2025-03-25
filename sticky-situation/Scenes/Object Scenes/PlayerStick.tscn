@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs5wf6nomhapd"]
+[gd_scene load_steps=4 format=3 uid="uid://cs5wf6nomhapd"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/player_stick.gd" id="1_m8hie"]
 [ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Assets/Test_Stick.png" id="2_7bb3l"]
-[ext_resource type="Resource" uid="uid://dlu1cpf4cnqk1" path="res://Scripts/Resources/PlayerCharacter.tres" id="2_sy0qd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
 size = Vector2(16, 128)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_m8hie")
-character = ExtResource("2_sy0qd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1.19209e-07, -7.15256e-07)

@@ -15,7 +15,8 @@ var CheckPTPosition;
 var SpinDirection = 1;
 var StickSpinning = true;
 var inverse = false;
-
+var speed = 300
+var Armor = false
 #Try to migrate later
 var currentLevel = 0
 var globalcurrentLevel = 0;
@@ -48,7 +49,7 @@ func setStick():
 	Starting["SpinDirection"] = SpinDirection
 	Starting["StickSpinning"] = StickSpinning 
 
-
+	
 #Reset to default values, ie leaving the level and reentering 
 func resetStick():
 	Starting["SpinDirection"] = 1;

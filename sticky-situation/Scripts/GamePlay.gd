@@ -34,7 +34,7 @@ func _ready() -> void:
 	if(get_tree().current_scene.name.contains(("Tutorial"))):
 		levelStarts.append((get_node("Map1/CheckPoint")))
 		levelStarts.append(get_node("Map2/CheckPoint"))
-		
+		levelStarts.append(get_node("Map3/CheckPoint"))
 		
 	if ChallengeMode:
 		$Player.position = challengeMode().global_position
@@ -65,3 +65,4 @@ func challengeMode() -> Area2D:
 	$Map2/FinishLine.global_position.x = -3000
 	$Dividers.global_position.x = -3000
 	return spawnPoint;
+ # Replace with function body.
