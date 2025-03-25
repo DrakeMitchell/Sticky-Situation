@@ -10,7 +10,7 @@
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="8_2hphu"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="9_e2t2o"]
 
-[node name="Level2" type="Area2D"]
+[node name="Level2Gameplay" type="Area2D"]
 script = ExtResource("1_m4o86")
 LevelResource = ExtResource("2_h7jbr")
 

@@ -10,9 +10,9 @@ var SaveData
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#print_debug(get_tree().current_scene.name)
-	SaveData = SaverLoader.load()
+	#SaveData = SaverLoader.load()
 	
-	if(StickSingleton.currentLevel == 100):
+	if(StickSingleton.currentLevel == 101):
 		ChallengeMode = true;
 	
 	

@@ -13,7 +13,7 @@ var windDir = -1
 var tempRotate
 
 func _ready() -> void:
-	SaveData = SaverLoader.load()
+	#SaveData = SaverLoader.load()
 	inverse = StickSingleton.inverse
 	if inverse:
 			StickSingleton.SpinDirection = -1

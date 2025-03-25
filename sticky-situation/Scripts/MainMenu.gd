@@ -20,7 +20,7 @@ func _on_save_pressed() -> void:
 	pass
 
 func _on_clear_pressed() -> void:
-	Saving.clearData()
+	Saving.clear_data()
 	#Should make a clear function in SaveData
 	#
 	#SaveData.player.totalCoins = 0

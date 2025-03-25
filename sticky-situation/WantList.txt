@@ -9,12 +9,11 @@ Actual Game Objects:
 	Need basic sprites for things~
 	Portal (Stop rotation and rotate the map)*
 		It works but it's a bit mean, also need to change the checkpoints to make it work better
-	Manual rotation toggle
-	Hud for health and total collected coins on map 
-	Pause screen overlay
+	Manual rotation toggle ~
+	Hud for health and total collected coins on map !
+	Pause screen overlay~
 	Minotaur?
 	
-	Finish Line+++
 	Collectible Coins+++
 
 	
@@ -40,14 +39,13 @@ Inspirations:
 	Mario
 	
 Up Next:
-	Document every File with a header explaination
+	Create a "proper" Demo mode with correct level order and a free play with no level orders
 	Figure out what to do about respawning coins - okay?
 	Make the save detection compatible with the challenge levels
 	Speed boosts need a timer
 	Easier Clear function in SaveData
-	Migrate var's in StickSingleton
+
 	
-	IMPORTANT  !!!!!
-	Saving does not work in HTML export with resources
+
 	
 	

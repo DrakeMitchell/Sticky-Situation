@@ -20,6 +20,7 @@ var inverse = false;
 var currentLevel = 0
 var globalcurrentLevel = 0;
 var totalCoins = 0;
+var freePlay = false
 var SaveData
 
 func _ready() -> void:

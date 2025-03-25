@@ -33,7 +33,7 @@ text = "Level Completion"
 [node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(307, 376)
 LevelResource = ExtResource("3_hlr1j")
-level = 100
+level = 101
 player = NodePath("../Player")
 LevelScene = ExtResource("4_v6xbw")
 
@@ -42,7 +42,8 @@ offset_left = -57.0
 offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 58.0
-text = "Caverns Challenge Mode"
+text = "Level 2
+Challenge Mode"
 
 [node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 visible = false
@@ -91,7 +92,8 @@ offset_left = -57.0
 offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 58.0
-text = "Caverns Level 3"
+text = "Level 2-3
+"
 
 [node name="Label2" type="Label" parent="OverworldNode6"]
 offset_left = -60.0
@@ -112,7 +114,7 @@ offset_left = -57.0
 offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 58.0
-text = "Caverns Level 2"
+text = "Level 2-2"
 
 [node name="Label2" type="Label" parent="OverworldNode5"]
 offset_left = -59.0
@@ -132,7 +134,8 @@ offset_left = -57.0
 offset_top = 35.0
 offset_right = 63.0
 offset_bottom = 58.0
-text = "Caverns Level 1"
+text = "Level 2-1
+"
 
 [node name="Label2" type="Label" parent="OverworldNode3"]
 offset_left = -63.0
@@ -197,6 +200,13 @@ player = NodePath("../Player")
 Inverse = true
 LevelScene = ExtResource("12_rmkkl")
 
+[node name="Label" type="Label" parent="OverworldNode7"]
+offset_left = -33.0
+offset_top = 29.0
+offset_right = 35.0
+offset_bottom = 52.0
+text = "Level 1-1"
+
 [node name="OverworldNode8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(297, -53)
 LevelResource = ExtResource("11_icqsc")
@@ -205,8 +215,22 @@ player = NodePath("../Player")
 Inverse = true
 LevelScene = ExtResource("12_rmkkl")
 
+[node name="Label" type="Label" parent="OverworldNode8"]
+offset_left = -33.0
+offset_top = 31.0
+offset_right = 35.0
+offset_bottom = 54.0
+text = "Level 1-2"
+
 [node name="OverworldNode10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-position = Vector2(-362, -139)
+position = Vector2(614, 54)
 LevelResource = ExtResource("13_x8mji")
 player = NodePath("../Player")
 LevelScene = ExtResource("14_vfcko")
+
+[node name="Label" type="Label" parent="OverworldNode10"]
+offset_left = -33.0
+offset_top = 31.0
+offset_right = 35.0
+offset_bottom = 54.0
+text = "Level 3-1"

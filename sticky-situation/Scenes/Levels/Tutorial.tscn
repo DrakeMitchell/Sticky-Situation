@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_r8lis"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="9_bcqbt"]
 
-[node name="Tutorial" type="Node2D"]
+[node name="TutorialGameplay" type="Node2D"]
 script = ExtResource("1_s2igq")
 LevelResource = ExtResource("2_vb8un")
 

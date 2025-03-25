@@ -17,6 +17,7 @@ var playerStats = {
 	#Temp Variables, for use in levels
 	"globalLevel": int(),
 	"subLevel": int(),
+	"freePlay": bool(),
 	
 	"totalCoins": int()}
 
@@ -83,14 +84,24 @@ func write_to_json_file():
 	else:
 		print("Failed to Open or Create")
 		
-func clearData():
+func clear_data():
 	var data = {
-	"Level":{
-		"id": null,
-		"Completion": [bool(),bool(),bool()]
+	"Levels":{
+		"000":{
+			"Completion": [bool(),bool(),true]
+		},
+		"001":{
+			"Completion": [bool(),bool(),bool()]
+		},
+		"002":{
+			"Completion": [bool(),bool(),bool()]
+		}
 	},
+	#Temp Variables, for use in levels
 	"globalLevel": int(),
 	"subLevel": int(),
+	"freePlay": bool(),
+	
 	"totalCoins": int()}
 	
 	if FileAccess.file_exists(json_path):
@@ -109,6 +120,7 @@ func clearData():
 		
 	else:
 		print("Failed to Open or Create")
-
+		
+		
 	
 	

@@ -15,7 +15,7 @@ var available
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SaveData = SaverLoader.load()
+	pass
 
 func _process(_delta: float) -> void:
 	
@@ -25,8 +25,10 @@ func _process(_delta: float) -> void:
 			Saving.playerStats["subLevel"] = level
 			StickSingleton.currentLevel = level
 			StickSingleton.inverse = Inverse
+			if self.name.contains("FreePlay"):
+				StickSingleton.freePlay = true
 			
-			if level != 100: #If not challenge level
+			if level != 101: #If not challenge level
 				Interactions.TOTAL_COLLECTIBLES = LevelResource.totalCollectibles[level] #Set current total collectibles
 			else:
 				#Isn't global at all, wont work with more levels
@@ -38,8 +40,13 @@ func _process(_delta: float) -> void:
 				get_tree().change_scene_to_packed(LevelScene)
 	
 #Detect if player is touching
-func Node_entered(_area: Area2D) -> void:
-	detectProgress()
+func Node_entered(area: Area2D) -> void:
+	if StickSingleton.freePlay != true:
+		detectProgress()
+		print("Working")
+	else:
+		available = true
+	print(StickSingleton.freePlay)
 	StandingOn = true # Replace with function body.
 
 #Detect if player is no longer touching

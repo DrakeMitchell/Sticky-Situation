@@ -30,7 +30,7 @@ Free Play
 metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
-position = Vector2(215, -221)
+position = Vector2(217, -177)
 LevelResource = ExtResource("4_o6i6v")
 player = NodePath("../Player")
 LevelScene = ExtResource("5_0pm36")
@@ -94,16 +94,6 @@ offset_top = -71.0
 offset_right = 523.0
 offset_bottom = -50.0
 text = "Clear"
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 416.0
-offset_top = -344.0
-offset_right = 640.0
-offset_bottom = -243.0
-text = "No AutoSaving
-
-Delete Save Data by pressing
-Clear and then Load"
 
 [connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Save" to="." method="_on_save_pressed"]

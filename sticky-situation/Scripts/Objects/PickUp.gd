@@ -10,8 +10,6 @@ class_name Pickup
 
 var SaveData
 
-func _ready() -> void:
-	SaveData = SaverLoader.load()# Replace with function body.s
 
 #Handles collisions with PickUp Objects
 func stickCollision(area) -> void:

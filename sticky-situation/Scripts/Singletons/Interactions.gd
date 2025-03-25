@@ -10,7 +10,8 @@ var CheckPTPosition;
 var SaveData
 
 func _ready() -> void:
-	SaveData = SaverLoader.load()
+	#SaveData = SaverLoader.load()
+	pass
 	
 #func updateCollected():
 	##print_debug(collectibles)
@@ -28,6 +29,7 @@ func ObjectHit(area: Area2D) -> void:
 	#Checkpoint Detection
 	if area.name.contains("Check"):
 		Interactions.newCheckPoint(area)
+		StickSingleton.Health = StickSingleton.Starting["Health"]
 		
 	#Wall Detection
 
@@ -37,7 +39,7 @@ func ObjectHit(area: Area2D) -> void:
 		StickSingleton.SpinDirection *= -1
 	#Finish line detection
 	if area.name.contains("Finish"):
-		if StickSingleton.currentLevel != 100:
+		if StickSingleton.currentLevel != 101:
 			#SaveData.updateLevelComp(StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
 			Saving.Complete()
 		#SaveData.totalCoins = StickSingleton.totalCoins
