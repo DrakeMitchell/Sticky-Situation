@@ -22,6 +22,7 @@ offset_left = 233.0
 offset_top = 75.0
 offset_right = 367.0
 offset_bottom = 132.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
 text = "Level Completion"
 
 [node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
@@ -38,37 +39,6 @@ offset_right = 63.0
 offset_bottom = 58.0
 text = "Level 2
 Challenge Mode"
-
-[node name="OverworldNode2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-visible = false
-position = Vector2(483, 61)
-LevelResource = ExtResource("3_hlr1j")
-level = 1
-player = NodePath("../Player")
-
-[node name="Label" type="Label" parent="OverworldNode2"]
-offset_left = -23.0
-offset_top = 29.0
-offset_right = 17.0
-offset_bottom = 52.0
-text = "Area 1 level 2
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="OverworldNode" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-visible = false
-position = Vector2(232, 54)
-LevelResource = ExtResource("3_hlr1j")
-player = NodePath("../Player")
-LevelScene = ExtResource("4_v6xbw")
-
-[node name="Label" type="Label" parent="OverworldNode"]
-offset_left = -23.0
-offset_top = 29.0
-offset_right = 17.0
-offset_bottom = 52.0
-text = "Area 1 Level 1"
-metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_f2mq4")]
 position = Vector2(-3, 53)
@@ -93,6 +63,7 @@ offset_left = -60.0
 offset_top = -80.0
 offset_right = 74.0
 offset_bottom = -23.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
 text = "Level Completion"
 
 [node name="OverworldNode5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
@@ -114,6 +85,7 @@ offset_left = -59.0
 offset_top = -70.0
 offset_right = 75.0
 offset_bottom = -13.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
 text = "Level Completion"
 
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
@@ -135,6 +107,7 @@ offset_left = -63.0
 offset_top = -69.0
 offset_right = 71.0
 offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
 text = "Level Completion"
 
 [node name="Label" type="Label" parent="."]
@@ -172,7 +145,7 @@ position = Vector2(-365, 222)
 offset_left = 85.0
 offset_right = 125.0
 offset_bottom = 23.0
-text = "Wind: Pushes you up"
+text = "Wind: Pushes you "
 
 [node name="Pixil-frame-0(3)" type="Sprite2D" parent="."]
 position = Vector2(-369, 402)
@@ -184,7 +157,8 @@ offset_top = -26.0
 offset_right = 179.0
 offset_bottom = -3.0
 text = "Checkpoint: Hit these to save 
-your progress when you hit a wall"
+your progress when you hit a wall
+And Get Completely Healed"
 
 [node name="OverworldNode7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(122, -51)
@@ -200,8 +174,16 @@ offset_right = 35.0
 offset_bottom = 52.0
 text = "Level 1-1"
 
+[node name="Label2" type="Label" parent="OverworldNode7"]
+offset_left = -63.0
+offset_top = -69.0
+offset_right = 71.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
+text = "Level Completion"
+
 [node name="OverworldNode8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-position = Vector2(297, -53)
+position = Vector2(287, -53)
 LevelResource = ExtResource("11_icqsc")
 level = 1
 player = NodePath("../Player")
@@ -214,6 +196,14 @@ offset_top = 31.0
 offset_right = 35.0
 offset_bottom = 54.0
 text = "Level 1-2"
+
+[node name="Label2" type="Label" parent="OverworldNode8"]
+offset_left = -74.0
+offset_top = -67.0
+offset_right = 60.0
+offset_bottom = -24.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
+text = "Level Completion"
 
 [node name="OverworldNode10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(614, 54)
@@ -228,9 +218,33 @@ offset_right = 35.0
 offset_bottom = 54.0
 text = "Level 3-1"
 
+[node name="Label2" type="Label" parent="OverworldNode10"]
+offset_left = -63.0
+offset_top = -69.0
+offset_right = 71.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
+text = "Level Completion"
+
 [node name="OverworldNode9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(436, -51)
 LevelResource = ExtResource("11_icqsc")
 level = 2
 player = NodePath("../Player")
 LevelScene = ExtResource("12_rmkkl")
+
+[node name="Label" type="Label" parent="OverworldNode9"]
+offset_left = -30.0
+offset_top = 29.0
+offset_right = 38.0
+offset_bottom = 52.0
+text = "Level 1-3
+"
+
+[node name="Label2" type="Label" parent="OverworldNode9"]
+offset_left = -63.0
+offset_top = -69.0
+offset_right = 71.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0.843137, 0.831373, 1)
+text = "Level Completion"

@@ -39,11 +39,10 @@ Inspirations:
 	Mario
 	
 Up Next:
-	Create a "proper" Demo mode with correct level order and a free play with no level orders
 	Figure out what to do about respawning coins - okay?
-	Make the save detection compatible with the challenge levels
 	Speed boosts need a timer
-	Easier Clear function in SaveData
+	NEED MUSIC AND BACKGROUND IT WONT FEEL COMPLETE OTHERWISE
+	Need a Cover photo
 
 	
 

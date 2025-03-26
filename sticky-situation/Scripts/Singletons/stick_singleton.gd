@@ -1,7 +1,7 @@
 extends Node
 #Singleton Code for everything that has to do with the player
 #Working on migrating some variables to better positions
-
+signal Death
 #Stats When laoded into level
 var Starting = {
 	"Health": 3,
@@ -40,7 +40,7 @@ func HitWall() -> void:
 	Health -= 1
 	#print_debug(Health)
 	if(Health <= 0):
-		Die()
+		Death.emit()
 	#SpinDirection = Starting["SpinDirection"]
 	#StickSpinning = Starting["StickSpinning"]
 

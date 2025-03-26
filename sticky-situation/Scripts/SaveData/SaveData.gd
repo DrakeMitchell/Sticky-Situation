@@ -5,7 +5,7 @@ var json_path = "user://SaveData.json"
 var playerStats = {
 	"Levels":{
 		"000":{
-			"Completion": [bool(),bool(),true]
+			"Completion": [bool(),bool(),bool()]
 		},
 		"001":{
 			"Completion": [bool(),bool(),bool()]
@@ -88,7 +88,7 @@ func clear_data():
 	var data = {
 	"Levels":{
 		"000":{
-			"Completion": [bool(),bool(),true]
+			"Completion": [bool(),bool(),bool()]
 		},
 		"001":{
 			"Completion": [bool(),bool(),bool()]

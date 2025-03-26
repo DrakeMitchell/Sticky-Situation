@@ -24,7 +24,10 @@ func _physics_process(_delta):
 		$Camera2D.zoom.y = 2
 	
 	#Change Stick rotation
-	
+	if StickSingleton.Health == 0:
+		if not StickSingleton.freePlay:
+			StickSingleton.resetStick()
+			get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
 	
 	if not Dead:
 		if(StickSingleton.StickSpinning == true): 
