@@ -25,6 +25,9 @@ func _process(_delta: float) -> void:
 			Saving.playerStats["subLevel"] = level
 			StickSingleton.currentLevel = level
 			StickSingleton.inverse = Inverse
+			if get_tree().current_scene.name.contains("Map"):
+				Saving.playerStats["savedPos"][0] = player.position.x
+				Saving.playerStats["savedPos"][1] = player.position.y
 			if self.name.contains("FreePlay"):
 				StickSingleton.freePlay = true
 			

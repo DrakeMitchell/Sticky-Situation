@@ -17,6 +17,7 @@ var StickSpinning = true;
 var inverse = false;
 var speed = 300
 var Armor = false
+var savedPos = Vector2(-1105,-147)
 #Try to migrate later
 var currentLevel = 0
 var globalcurrentLevel = 0;

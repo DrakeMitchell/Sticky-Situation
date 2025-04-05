@@ -60,7 +60,7 @@ func _physics_process(_delta):
 	
 	#In the wind object
 		if InWind:
-			position.y += windDir
+			position += windDir
 			
 		
 	else:
@@ -92,10 +92,7 @@ func Object_Hit(area: Area2D) -> void:
 		#Dead = false
 	elif area.name.contains("Wind"):
 		InWind = true
-		if area.rotation == 180:
-			windDir = -1
-		else:
-			windDir = 1
+		windDir = area.direction
 			
 	elif area.name.contains("armor"):
 		print("WORKING")

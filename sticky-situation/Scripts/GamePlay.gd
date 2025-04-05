@@ -19,22 +19,11 @@ func _ready() -> void:
 	
 	#Change player location to correct sublevel first checkpoint
 	#Gotta be a better way of doing this
-	if(get_tree().current_scene.name.contains("1")):
-		levelStarts.append(get_node("MapObjects/CheckPoint"))
-		levelStarts.append(get_node("MapObjects2/CheckPointStart2"))
-		
-	if(get_tree().current_scene.name.contains("Caverns")):
-		levelStarts.append(get_node("Map1/CheckPoint"))
-		levelStarts.append(get_node("Map2/CheckPoint"))
-		levelStarts.append(get_node("Map3/CheckPoint"))
-	 
-	if(get_tree().current_scene.name.contains("2")):
-		levelStarts.append(get_node("Map1/CheckPoint"))
 	
-	if(get_tree().current_scene.name.contains(("Tutorial"))):
-		levelStarts.append((get_node("Map1/CheckPoint")))
-		levelStarts.append(get_node("Map2/CheckPoint"))
-		levelStarts.append(get_node("Map3/CheckPoint"))
+
+	levelStarts.append(get_node("Map1/CheckPoint"))
+	levelStarts.append(get_node("Map2/CheckPoint"))
+	levelStarts.append(get_node("Map3/CheckPoint"))
 		
 	if ChallengeMode:
 		$Player.position = challengeMode().global_position

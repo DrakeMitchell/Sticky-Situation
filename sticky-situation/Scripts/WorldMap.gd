@@ -3,11 +3,11 @@ extends Node2D
 #Escape changes back to Main Menu
 #Labels for compeletion of Levels are appropriately set
 
-var SaveData
 
 func _ready() -> void:
-	SaveData = SaverLoader.load()
-	
+	print(Saving.playerStats["savedPos"][0])
+	$Player.position.x = int(Saving.playerStats["savedPos"][0])
+	$Player.position.y = int(Saving.playerStats["savedPos"][1])
 	# Create Labels to identify finished levels and load the text here
 	$OverworldNode3/Label2.text = str(Saving.playerStats["Levels"]["001"]["Completion"][0])
 	$OverworldNode5/Label2.text = str(Saving.playerStats["Levels"]["001"]["Completion"][1])

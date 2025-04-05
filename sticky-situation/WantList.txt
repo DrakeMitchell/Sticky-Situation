@@ -10,20 +10,16 @@ Actual Game Objects:
 	Portal (Stop rotation and rotate the map)*
 		It works but it's a bit mean, also need to change the checkpoints to make it work better
 	Manual rotation toggle ~
-	Hud for health and total collected coins on map !
 	Pause screen overlay~
 	Minotaur?
 	
-	Collectible Coins+++
 
 	
 
 	
 
 Game Mechanics:
-	Keeping track on Game progress!=
 	speedrun scoreboard for each level~=
-	3 Tutorial Levels that can be connected together into one!
 	
 	
 NEED TO DO: !
@@ -39,6 +35,10 @@ Inspirations:
 	Mario
 	
 Up Next:
+	Need Sprite for Health
+	Need to add a center indicator to the stick
+	levels need themes
+	need coin counting blockers on the overworld
 	Figure out what to do about respawning coins - okay?
 	Speed boosts need a timer
 	NEED MUSIC AND BACKGROUND IT WONT FEEL COMPLETE OTHERWISE

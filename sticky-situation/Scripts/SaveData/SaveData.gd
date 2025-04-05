@@ -18,6 +18,7 @@ var playerStats = {
 	"globalLevel": int(),
 	"subLevel": int(),
 	"freePlay": bool(),
+	"savedPos": [int(-1105),int(-147)],
 	
 	"totalCoins": int()}
 
@@ -101,6 +102,7 @@ func clear_data():
 	"globalLevel": int(),
 	"subLevel": int(),
 	"freePlay": bool(),
+	"savedPos": [int(-1105),int(-147)],
 	
 	"totalCoins": int()}
 	
