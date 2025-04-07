@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="10_2hi7q"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="10_6y3hw"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="10_vhh8s"]
-[ext_resource type="Texture2D" uid="uid://bnkumxbgekp8y" path="res://Scenes/Levels/gradient.png" id="11_fywmd"]
+[ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_tqeqi"]
 
 [sub_resource type="Resource" id="Resource_orb8n"]
 script = ExtResource("2_pcbu5")
@@ -130,7 +130,8 @@ tile_map_data = PackedByteArray("AAD5//n/AAACAAAAAAD6//n/AAABAAAAAAD7//n/AAABAAA
 tile_set = ExtResource("10_6y3hw")
 
 [node name="Background" parent="." instance=ExtResource("10_vhh8s")]
-back = ExtResource("11_fywmd")
+layer = -1
+back = ExtResource("11_tqeqi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

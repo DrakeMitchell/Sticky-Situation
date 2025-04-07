@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=17 format=4 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
 [ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
@@ -14,6 +14,8 @@
 [ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="13_x8mji"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="14_j1ru6"]
 [ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Levels/Level2.tscn" id="14_vfcko"]
+[ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="15_oshon"]
+[ext_resource type="Texture2D" uid="uid://7mowsirhe12o" path="res://Assets/Gradients/gradient (3).png" id="16_qrj5c"]
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_wq2oc")
@@ -282,7 +284,6 @@ offset_right = -992.935
 offset_bottom = -35.6456
 text = "Levels ---->"
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-z_index = -1
-color = Color(0, 0, 0, 0.494118)
-polygon = PackedVector2Array(-1900, -447, -855, -441, -857, 165, -1908, 174)
+[node name="Background" parent="." instance=ExtResource("15_oshon")]
+layer = -1
+back = ExtResource("16_qrj5c")

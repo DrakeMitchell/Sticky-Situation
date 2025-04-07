@@ -8,7 +8,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$ParallaxBackground/Front/Sprite2D.texture = front
 	$ParallaxBackground/Middle/Sprite2D.texture = middle
-	$ParallaxBackground/Back/Sprite2D.texture = back # Replace with function body.
+	$ParallaxBackground/Back/Sprite2D2.texture = back # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

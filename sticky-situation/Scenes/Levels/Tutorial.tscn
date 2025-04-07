@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bj0dqn72r2ehr"]
+[gd_scene load_steps=11 format=4 uid="uid://bj0dqn72r2ehr"]
 
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="1_0kseh"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_s2igq"]
@@ -9,9 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="7_m23dk"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_r8lis"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="9_xyd87"]
-[ext_resource type="Texture2D" uid="uid://dm2mxn0wjtrko" path="res://Assets/Backgrounds/3.Trees_front.png" id="10_inc6d"]
-[ext_resource type="Texture2D" uid="uid://bey8664fa1cgb" path="res://Assets/Backgrounds/2.Trees_back.png" id="11_km2kt"]
-[ext_resource type="Texture2D" uid="uid://bljw174g0r1pi" path="res://Assets/Backgrounds/1.Backround.png" id="12_tw3v7"]
+[ext_resource type="Texture2D" uid="uid://bnkumxbgekp8y" path="res://Assets/Gradients/gradient.png" id="10_froqn"]
 
 [node name="TutorialGameplay" type="Node2D"]
 script = ExtResource("1_s2igq")
@@ -70,15 +68,13 @@ scale = Vector2(-1.35348, 3.98591)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map2/WallTop"]
 build_mode = 1
-polygon = PackedVector2Array(1712, 88, 1712, 96, 1712, 80, 1728, 80, 1728, 64, 1744, 64, 1744, 48, 1760, 48, 1760, 32, 1776, 32, 1776, 16, 1792, 16, 1792, 0, 1808, 0, 1808, -64, 1792, -64, 1824, -64, 1824, -80, 1840, -80, 1840, -96, 1856, -96, 1856, -112, 1872, -112, 1872, -128, 1888, -128, 1888, -144, 1936, -144, 1520, -160, 1520, -352, 1736, -352, 1744, -352, 1744, -336, 1752, -336, 1760, -336, 1760, -320, 1776, -320, 1776, -304, 1792, -304, 1792, -288, 1808, -288, 1808, -272, 1824, -272, 1824, -256, 1840, -256, 1840, -240, 1856, -240, 1856, -224, 1872, -224, 1872, -208, 1888, -208, 1888, -192, 1904, -192, 1904, -176, 1920, -176, 1920, -160, 1936, -160, 1936, -144, 2544, -144, 2800, -160, 2952, -32, 2896, -32, 2896, -48, 2880, -48, 2880, -64, 2864, -64, 2864, -80, 2848, -80, 2848, -96, 2832, -96, 2832, -112, 2816, -112, 2816, -128, 2800, -128, 2800, -144, 2704, -144, 2704, -48, 2544, -48, 2544, -152, 1768, -392, 1440, -392, 1496, -144)
-disabled = true
+polygon = PackedVector2Array(1712, 88, 1712, 96, 1712, 80, 1728, 80, 1728, 64, 1744, 64, 1744, 48, 1760, 48, 1760, 32, 1776, 32, 1776, 16, 1792, 16, 1792, 0, 1808, 0, 1808, -64, 1792, -64, 1824, -64, 1824, -80, 1840, -80, 1840, -96, 1856, -96, 1856, -112, 1872, -112, 1872, -128, 1888, -128, 1888, -144, 1936, -144, 1520, -160, 1520, -352, 1736, -352, 1744, -352, 1744, -336, 1752, -336, 1760, -336, 1760, -320, 1776, -320, 1776, -304, 1792, -304, 1792, -288, 1808, -288, 1808, -272, 1824, -272, 1824, -256, 1840, -256, 1840, -240, 1856, -240, 1856, -224, 1872, -224, 1872, -208, 1888, -208, 1888, -192, 1904, -192, 1904, -176, 1920, -176, 1920, -160, 1936, -160, 1936, -144, 2544, -144, 2800, -160, 2952, -32, 2896, -32, 2896, -48, 2880, -48, 2880, -64, 2864, -64, 2864, -80, 2848, -80, 2848, -96, 2832, -96, 2832, -112, 2816, -112, 2816, -128, 2800, -128, 2800, -144, 2704, -144, 2704, -48, 2544, -48, 2544, -144, 1768, -392, 1440, -392, 1496, -144)
 
 [node name="WallBottom" type="Area2D" parent="Map2"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map2/WallBottom"]
 build_mode = 1
 polygon = PackedVector2Array(1704, 288, 1728, 288, 1728, 272, 1744, 272, 1744, 256, 1760, 256, 1760, 240, 1776, 240, 1776, 224, 1792, 224, 1792, 208, 1808, 208, 1808, 192, 1824, 192, 1824, 176, 1840, 176, 1840, 160, 1856, 160, 1856, 144, 1872, 144, 1872, 128, 1888, 128, 1888, 112, 1904, 112, 1904, 96, 1920, 96, 1920, 80, 1936, 80, 1936, 64, 1952, 64, 1952, 48, 2080, 48, 2080, 32, 2096, 32, 2096, 16, 2112, 16, 2112, 0, 2288, 0, 2288, 16, 2304, 16, 2304, 32, 2320, 32, 2320, 48, 2768, 48, 2768, 64, 2784, 64, 2784, 80, 2784, 80, 2800, 80, 2800, 96, 2816, 96, 2816, 112, 2832, 112, 2832, 128, 2848, 128, 2848, 144, 2864, 144, 2864, 160, 2952, 160, 1752, 304, 1504, 312)
-disabled = true
 
 [node name="Armor" type="Timer" parent="."]
 process_callback = 0
@@ -87,9 +83,7 @@ one_shot = true
 
 [node name="Background" parent="." instance=ExtResource("9_xyd87")]
 layer = -1
-front = ExtResource("10_inc6d")
-middle = ExtResource("11_km2kt")
-back = ExtResource("12_tw3v7")
+back = ExtResource("10_froqn")
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_callback = 0
