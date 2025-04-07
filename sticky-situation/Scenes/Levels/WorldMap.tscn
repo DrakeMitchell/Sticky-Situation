@@ -281,3 +281,8 @@ offset_top = -58.6456
 offset_right = -992.935
 offset_bottom = -35.6456
 text = "Levels ---->"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+z_index = -1
+color = Color(0, 0, 0, 0.494118)
+polygon = PackedVector2Array(-1900, -447, -855, -441, -857, 165, -1908, 174)

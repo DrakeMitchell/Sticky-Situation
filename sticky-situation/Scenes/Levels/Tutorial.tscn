@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bj0dqn72r2ehr"]
+[gd_scene load_steps=13 format=4 uid="uid://bj0dqn72r2ehr"]
 
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="1_0kseh"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_s2igq"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_fodu0"]
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="7_m23dk"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_r8lis"]
+[ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="9_xyd87"]
+[ext_resource type="Texture2D" uid="uid://dm2mxn0wjtrko" path="res://Assets/Backgrounds/3.Trees_front.png" id="10_inc6d"]
+[ext_resource type="Texture2D" uid="uid://bey8664fa1cgb" path="res://Assets/Backgrounds/2.Trees_back.png" id="11_km2kt"]
+[ext_resource type="Texture2D" uid="uid://bljw174g0r1pi" path="res://Assets/Backgrounds/1.Backround.png" id="12_tw3v7"]
 
 [node name="TutorialGameplay" type="Node2D"]
 script = ExtResource("1_s2igq")
@@ -80,6 +84,12 @@ disabled = true
 process_callback = 0
 wait_time = 2.0
 one_shot = true
+
+[node name="Background" parent="." instance=ExtResource("9_xyd87")]
+layer = -1
+front = ExtResource("10_inc6d")
+middle = ExtResource("11_km2kt")
+back = ExtResource("12_tw3v7")
 
 [node name="DeathTimer" type="Timer" parent="."]
 process_callback = 0

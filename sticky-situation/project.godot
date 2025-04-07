@@ -23,6 +23,16 @@ PickUp="*res://Scripts/Objects/PickUp.gd"
 SaverLoader="*res://Scripts/Singletons/SaverLoader.gd"
 Saving="*res://Scripts/SaveData/SaveData.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/Backgrounds/": "red"
+}
+
 [input]
 
 StartLevel={
