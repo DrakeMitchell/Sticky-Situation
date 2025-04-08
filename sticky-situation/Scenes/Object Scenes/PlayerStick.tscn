@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jo8pc5xgej1d" path="res://Assets/Test_Stick.png" id="2_7bb3l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
-size = Vector2(16, 128)
+size = Vector2(19.4051, 126.924)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_m8hie")
@@ -18,13 +18,15 @@ texture = ExtResource("2_7bb3l")
 position = Vector2(0, -3.25002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-3.8147e-06, 3.25002)
-scale = Vector2(1.21969, 1.07222)
+position = Vector2(0.281686, 2.75002)
+scale = Vector2(1.05969, 1.029)
 shape = SubResource("RectangleShape2D_li4yw")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-0.0316381, -0.000617623)
+scale = Vector2(1, 1.04)
 shape = SubResource("RectangleShape2D_li4yw")
 
 [connection signal="area_entered" from="Area2D" to="." method="Object_Hit"]

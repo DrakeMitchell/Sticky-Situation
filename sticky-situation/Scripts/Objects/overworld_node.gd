@@ -30,6 +30,8 @@ func _process(_delta: float) -> void:
 				Saving.playerStats["savedPos"][1] = player.position.y
 			if self.name.contains("FreePlay"):
 				StickSingleton.freePlay = true
+			if self.name.contains("Demo"):
+				StickSingleton.freePlay = false
 			
 			if level != 101: #If not challenge level
 				Interactions.TOTAL_COLLECTIBLES = LevelResource.totalCollectibles[level] #Set current total collectibles

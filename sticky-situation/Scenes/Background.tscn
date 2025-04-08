@@ -20,7 +20,7 @@ repeat_times = 4
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Back"]
 position = Vector2(1004, 804)
-scale = Vector2(0.725, 0.58)
+scale = Vector2(0.725, 0.860002)
 texture = ExtResource("5_dsw8s")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Back"]
