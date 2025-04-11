@@ -36,8 +36,7 @@ Inspirations:
 	
 Up Next:
 	Need Sprite for Health
-	Need to add a center indicator to the stick
-	3 state broken versions of the stick to indicate health
+
 	need some kind of grace period timer after getting hit
 	need coin counting blockers on the overworld
 	Figure out what to do about respawning coins - okay?

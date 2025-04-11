@@ -11,6 +11,9 @@ var inverse = false
 var windDir = -1
 var tempRotate
 var Armor
+var tempSpinning
+@export var sticks: Array[Texture2D] = []
+
 
 func _ready() -> void:
 	#SaveData = SaverLoader.load()
@@ -22,6 +25,9 @@ func _physics_process(_delta):
 	if get_tree().get_current_scene().name.contains("Gameplay"): #Zoom in Camera for gameplay
 		$Camera2D.zoom.x = 2
 		$Camera2D.zoom.y = 2
+	
+	
+	StickImage()
 	
 	#Change Stick rotation
 	
@@ -51,13 +57,16 @@ func _physics_process(_delta):
 			tempSpeed = StickSingleton.speed
 			StickSingleton.speed += 200
 		if Input.is_action_just_released("SpeedUpMove"):
-			StickSingleton.speed = tempSpeed
+			if tempSpeed:
+				StickSingleton.speed = tempSpeed
 			
 		#Spin Speed Up Button Pressed and Released
 		if Input.is_action_just_pressed("SpeedUpSpin"):
+			tempSpinning = true
 			StickSingleton.SpinDirection *= 2
 		if Input.is_action_just_released("SpeedUpSpin"):
-			StickSingleton.SpinDirection /= 2
+			if tempSpinning:
+				StickSingleton.SpinDirection /= 2
 	
 	#In the wind object
 		if InWind:
@@ -106,7 +115,13 @@ func Object_Exit(area: Area2D) -> void:
 	if area.name.contains("Wind"):
 		InWind = false # Replace with function body.
 		
-
+func StickImage():
+	var Health = StickSingleton.Health
+	if Health > 0:
+		$Sprite2D.texture = sticks[Health-3]
+	else:
+		$Sprite2D.texture = sticks[1]
+		
 
 func _on_death_timer_timeout() -> void:
 	 # Change Sprite back
