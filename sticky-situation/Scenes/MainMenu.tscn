@@ -18,10 +18,8 @@ position = Vector2(58, -83)
 [node name="FreePlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
 position = Vector2(217, -51)
 LevelResource = ExtResource("4_o6i6v")
-level = null
-Inverse = null
-LevelScene = ExtResource("5_0pm36")
 player = NodePath("../Player")
+LevelScene = ExtResource("5_0pm36")
 
 [node name="Label" type="Label" parent="FreePlay"]
 offset_left = -35.0
@@ -36,10 +34,8 @@ Free Play
 [node name="Demo" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
 position = Vector2(215, -221)
 LevelResource = ExtResource("4_o6i6v")
-level = null
-Inverse = null
-LevelScene = ExtResource("5_0pm36")
 player = NodePath("../Player")
+LevelScene = ExtResource("5_0pm36")
 
 [node name="Label" type="Label" parent="Demo"]
 offset_left = -35.0
@@ -85,8 +81,8 @@ Credits:
 Director: Drake Mitchell
 Story By: Drake Mitchell
 Lead Programmer: Drake Mitchell
-Demolition Expert: Drake Mitchell
-Intimacy Coodinator: D.F. Mitchell"
+Demolition Expert: D.F. Mitchell
+"
 
 [node name="Load" type="Button" parent="."]
 z_index = 5

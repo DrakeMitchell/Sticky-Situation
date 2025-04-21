@@ -40,6 +40,19 @@ func _process(_delta: float) -> void:
 	#Change Stick Rotation
 	if StickSingleton.StickSpinning == false:
 		$MapObjects.rotation +=0.01 *StickSingleton.SpinDirection
+		
+	if StickSingleton.Health == 0:
+		if not StickSingleton.freePlay:
+			if StickSingleton.inverse:
+				StickSingleton.Starting["SpinDirection"] = -1
+				StickSingleton.SpinDirection = -1
+				print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
+			else:
+				StickSingleton.Starting["SpinDirection"] = 1
+				StickSingleton.SpinDirection = 1
+				StickSingleton.resetStick()
+			
+			$Player.position =Interactions.CheckPTPosition
 			#pass
 
 #Choose a spawn point

@@ -23,6 +23,7 @@ var currentLevel = 0
 var globalcurrentLevel = 0;
 var totalCoins = 0;
 var freePlay = false
+var challenge = false
 var SaveData
 
 func _ready() -> void:
@@ -51,12 +52,17 @@ func setStick():
 	Starting["StickSpinning"] = StickSpinning 
 
 	
+func invert():
+	if inverse:
+		SpinDirection = -1
+		Starting["SpinDirection"] = -1
+		print(inverse, " INVERTING ________________")
 #Reset to default values, ie leaving the level and reentering 
 func resetStick():
-	Starting["SpinDirection"] = 1;
-	Starting["StickSpinning"] = true
-	SpinDirection = 1
-	StickSpinning = true
+	#Starting["SpinDirection"] = 1;
+	#Starting["StickSpinning"] = true
+	SpinDirection = Starting["SpinDirection"]
+	#StickSpinning = true
 	Health = Starting["Health"]
 
 #Heal the player

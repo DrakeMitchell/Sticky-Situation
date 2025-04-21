@@ -34,7 +34,6 @@ position = Vector2(-1064, -649)
 LevelResource = ExtResource("3_hlr1j")
 level = 101
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode4"]
@@ -54,7 +53,6 @@ position = Vector2(-180, -630)
 LevelResource = ExtResource("3_hlr1j")
 level = 2
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode6"]
@@ -80,7 +78,6 @@ position = Vector2(-480, -630)
 LevelResource = ExtResource("3_hlr1j")
 level = 1
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode5"]
@@ -103,9 +100,7 @@ metadata/_edit_use_anchors_ = true
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-780, -630)
 LevelResource = ExtResource("3_hlr1j")
-level = null
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode3"]
@@ -184,7 +179,6 @@ metadata/_edit_use_anchors_ = true
 [node name="OverworldNode7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-780, -155)
 LevelResource = ExtResource("11_icqsc")
-level = null
 player = NodePath("../Player")
 Inverse = true
 LevelScene = ExtResource("12_rmkkl")
@@ -234,9 +228,7 @@ metadata/_edit_use_anchors_ = true
 [node name="OverworldNode10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(413, -405)
 LevelResource = ExtResource("13_x8mji")
-level = null
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("14_vfcko")
 
 [node name="Label" type="Label" parent="OverworldNode10"]
@@ -261,7 +253,6 @@ position = Vector2(-180, -155)
 LevelResource = ExtResource("11_icqsc")
 level = 2
 player = NodePath("../Player")
-Inverse = null
 LevelScene = ExtResource("12_rmkkl")
 
 [node name="Label" type="Label" parent="OverworldNode9"]

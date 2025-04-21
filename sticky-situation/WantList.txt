@@ -34,6 +34,12 @@ Inspirations:
 	Geometry Dash
 	Mario
 	
+	
+FINISHING TOUCHES:
+	Stick on death needs to be reset and go back to first checkpoint!
+	Proper Logo?
+	Pause/Win Screen? Basic af
+	
 Up Next:
 	Need Sprite for Health
 

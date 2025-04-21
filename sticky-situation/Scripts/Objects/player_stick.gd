@@ -17,9 +17,10 @@ var tempSpinning
 
 func _ready() -> void:
 	#SaveData = SaverLoader.load()
-	inverse = StickSingleton.inverse
-	if inverse:
-			StickSingleton.SpinDirection = -1
+	if StickSingleton.inverse:
+		StickSingleton.Starting["SpinDirection"] = -1
+		StickSingleton.SpinDirection = -1
+		StickSingleton.setStick()
 
 func _physics_process(_delta):
 	if get_tree().get_current_scene().name.contains("Gameplay"): #Zoom in Camera for gameplay
@@ -32,10 +33,13 @@ func _physics_process(_delta):
 	#Change Stick rotation
 	
 	if StickSingleton.Health == 0:
-		if not StickSingleton.freePlay:
-			StickSingleton.resetStick()
-			get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
-	
+		#if not StickSingleton.freePlay:
+		if StickSingleton.inverse:
+			StickSingleton.Starting["SpinDirection"] = -1
+			StickSingleton.SpinDirection = -1
+			print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
+			#StickSingleton.resetStick()
+			
 	if not Dead:
 		if(StickSingleton.StickSpinning == true): 
 			rotateStick(StickSingleton.SpinDirection);

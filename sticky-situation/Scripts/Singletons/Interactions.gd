@@ -21,7 +21,8 @@ func _ready() -> void:
 
 
 func newCheckPoint(checkPoint) -> void:
-	StickSingleton.setStick()
+	if StickSingleton.challenge:
+		StickSingleton.setStick()
 	ClosestCheckPoint = checkPoint
 	CheckPTPosition = checkPoint.position
 	
