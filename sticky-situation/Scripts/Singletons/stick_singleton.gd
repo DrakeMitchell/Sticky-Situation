@@ -24,6 +24,8 @@ var globalcurrentLevel = 0;
 var totalCoins = 0;
 var freePlay = false
 var challenge = false
+var finished
+var attempts = 1
 var SaveData
 
 func _ready() -> void:
@@ -42,7 +44,7 @@ func HitWall() -> void:
 	Health -= 1
 	#print_debug(Health)
 	if(Health <= 0):
-		Death.emit()
+		Die()
 	#SpinDirection = Starting["SpinDirection"]
 	#StickSpinning = Starting["StickSpinning"]
 
@@ -71,4 +73,4 @@ func Heal() -> void:
 		Health += 1
 		
 func Die():
-	pass
+	attempts += 1

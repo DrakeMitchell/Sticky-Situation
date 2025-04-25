@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqfhp76ctg2lv"]
+
+[ext_resource type="Script" path="res://Scripts/win_menu.gd" id="1_aa3wx"]
+[ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="1_wn6os"]
+[ext_resource type="Texture2D" uid="uid://pru3o30bbkmn" path="res://Assets/Sticks/New Stick 1 Damage.png" id="2_twfit"]
+[ext_resource type="Texture2D" uid="uid://pt1qpgw3dtjb" path="res://Assets/Sticks/New Stick 2 Damage.png" id="3_6tvwg"]
+[ext_resource type="Texture2D" uid="uid://dfbe8b3k3xte6" path="res://Assets/Sticks/New Stick No Damage.png" id="3_e5ndo"]
+
+[node name="WinMenu" type="CanvasLayer"]
+script = ExtResource("1_aa3wx")
+sticks = Array[Texture2D]([ExtResource("3_e5ndo"), ExtResource("2_twfit"), ExtResource("3_6tvwg")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_left = 0.302
+anchor_top = 0.146
+anchor_right = 0.584
+anchor_bottom = 0.866
+offset_left = 0.335693
+offset_top = -0.247658
+offset_right = -0.52832
+offset_bottom = 0.192322
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.03
+anchor_right = 1.185
+anchor_bottom = 1.0
+offset_top = -0.132151
+offset_right = 0.0599365
+offset_bottom = 0.857849
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 375.082
+offset_right = 364.0
+offset_bottom = 435.082
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Button"]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 342.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 48
+text = "World Map"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.411
+anchor_top = 0.122
+anchor_right = 0.52
+anchor_bottom = 0.157
+offset_left = -86.972
+offset_top = 2.44399
+offset_right = 86.46
+offset_bottom = 29.764
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 48
+text = "Level Complete!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = 379.26
+offset_top = 174.945
+offset_right = 642.26
+offset_bottom = 216.945
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "Total Attempts: "
+
+[node name="Label" type="Label" parent="CanvasLayer/Label3"]
+layout_mode = 0
+offset_left = 263.634
+offset_right = 303.634
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "NA"
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = 384.872
+offset_top = 269.232
+offset_right = 642.872
+offset_bottom = 311.232
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "Coins Collected: "
+
+[node name="Label" type="Label" parent="CanvasLayer/Label4"]
+layout_mode = 0
+offset_left = 263.634
+offset_right = 303.634
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "NA"
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+offset_left = 383.75
+offset_top = 324.233
+offset_right = 634.75
+offset_bottom = 366.233
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "Current Health: "
+
+[node name="Label" type="Label" parent="CanvasLayer/Label5"]
+layout_mode = 0
+offset_left = 263.634
+offset_right = 303.634
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 40
+text = "NA"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Label5"]
+position = Vector2(154.186, 90.0294)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("3_e5ndo")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]

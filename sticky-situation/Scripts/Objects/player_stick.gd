@@ -37,10 +37,10 @@ func _physics_process(_delta):
 		if StickSingleton.inverse:
 			StickSingleton.Starting["SpinDirection"] = -1
 			StickSingleton.SpinDirection = -1
-			print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
+			#print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
 			#StickSingleton.resetStick()
 			
-	if not Dead:
+	if not Dead and not StickSingleton.finished:
 		if(StickSingleton.StickSpinning == true): 
 			rotateStick(StickSingleton.SpinDirection);
 	#Movement
@@ -76,6 +76,9 @@ func _physics_process(_delta):
 		if InWind:
 			position += windDir
 			
+		if StickSingleton.finished:
+			remove_child($Area2D)
+			remove_child($Sprite2D)
 		
 	else:
 		self.rotation = rotation

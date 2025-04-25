@@ -9,8 +9,6 @@ var SaveData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#print_debug(get_tree().current_scene.name)
-	#SaveData = SaverLoader.load()
 	
 	if(StickSingleton.currentLevel == 101):
 		ChallengeMode = true;
@@ -37,6 +35,9 @@ func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
+		StickSingleton.finished = false
+		StickSingleton.attempts = 1
+		StickSingleton.Health = 3
 	#Change Stick Rotation
 	if StickSingleton.StickSpinning == false:
 		$MapObjects.rotation +=0.01 *StickSingleton.SpinDirection
@@ -46,7 +47,7 @@ func _process(_delta: float) -> void:
 			if StickSingleton.inverse:
 				StickSingleton.Starting["SpinDirection"] = -1
 				StickSingleton.SpinDirection = -1
-				print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
+				#print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
 			else:
 				StickSingleton.Starting["SpinDirection"] = 1
 				StickSingleton.SpinDirection = 1
@@ -54,6 +55,12 @@ func _process(_delta: float) -> void:
 			
 			$Player.position =Interactions.CheckPTPosition
 			#pass
+	if StickSingleton.finished:
+		#$WinMenu.enable()
+		$WinMenu.get_child(0).show()
+		#HUD name .show and .enable
+		#Buttons connect to worldmap and reset .finished
+
 
 #Choose a spawn point
 func detectSpawnPoint() -> Area2D:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bj0dqn72r2ehr"]
+[gd_scene load_steps=12 format=4 uid="uid://bj0dqn72r2ehr"]
 
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="1_0kseh"]
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_s2igq"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_r8lis"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="9_xyd87"]
 [ext_resource type="Texture2D" uid="uid://bnkumxbgekp8y" path="res://Assets/Gradients/gradient.png" id="10_froqn"]
+[ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Scenes/WinMenu.tscn" id="11_dtics"]
 
 [node name="TutorialGameplay" type="Node2D"]
 script = ExtResource("1_s2igq")
@@ -115,5 +116,8 @@ scale = Vector2(-0.771913, 3.4648)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map3/Wall"]
 build_mode = 1
 polygon = PackedVector2Array(3192, 160, 3360, 160, 3360, 96, 3392, 64, 3488, 64, 3520, 96, 3520, 160, 3712, 160, 3728, 176, 3744, 192, 3760, 208, 3776, 224, 3792, 240, 3808, 256, 3792, 272, 4240, 272, 4248, 280, 4256, 288, 4256, 336, 4248, 344, 4240, 352, 4192, 352, 4176, 336, 4128, 288, 3792, 288, 3776, 288, 3760, 304, 3760, 320, 3760, 432, 3696, 496, 3696, 576, 3712, 592, 3728, 608, 3824, 608, 3856, 576, 3968, 576, 4000, 608, 4000, 1168, 4048, 1216, 4048, 1248, 3984, 1312, 3992, 1320, 4000, 1312, 4064, 1376, 4056, 1384, 4064, 1392, 4080, 1376, 4160, 1296, 4272, 1296, 4320, 1344, 4592, 1344, 4608, 1328, 4624, 1312, 4640, 1296, 4704, 1296, 4720, 1312, 4728, 1320, 4736, 1328, 4832, 1328, 4856, 1328, 4856, 1152, 4736, 1152, 4720, 1168, 4704, 1184, 4624, 1184, 4608, 1168, 4592, 1152, 4320, 1152, 4304, 1168, 4296, 1176, 4288, 1184, 4208, 1184, 4176, 1152, 4176, 1024, 4192, 1008, 4192, 480, 3952, 480, 3952, 464, 4304, 464, 4320, 448, 4328, 440, 4336, 432, 4352, 416, 4352, 192, 4336, 176, 4328, 168, 4320, 160, 4304, 144, 4064, 144, 4032, 112, 4032, 80, 3856, 80, 3744, -32, 3184, -32, 3184, -80, 4416, -80, 4408, 1080, 4928, 1088, 4920, 1392, 3896, 1408, 3904, 704, 3200, 696)
+
+[node name="WinMenu" parent="." instance=ExtResource("11_dtics")]
+visible = false
 
 [connection signal="timeout" from="DeathTimer" to="Player" method="_on_death_timer_timeout"]

@@ -41,15 +41,16 @@ func ObjectHit(area: Area2D) -> void:
 		StickSingleton.SpinDirection *= -1
 	#Finish line detection
 	if area.name.contains("Finish"):
-		if StickSingleton.currentLevel != 101:
+		#if StickSingleton.currentLevel != 101:
 			#SaveData.updateLevelComp(StickSingleton.currentLevel,StickSingleton.globalcurrentLevel)
-			Saving.Complete()
+			#Saving.Complete()
 		#SaveData.totalCoins = StickSingleton.totalCoins
 		#print_debug("Coins Collected: %s:" % Interactions.TOTAL_COLLECTIBLES)
 		#print_debug("All Coins Collected: %s" % Interactions.Collectible)
-		StickSingleton.resetStick()
+		StickSingleton.finished = true
 		#print_debug(StickSingleton.SpinDirection = 1)
-		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
+		
+		#get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
 	if area.name.contains("PU"):
 		PickUp.stickCollision(area)
 		
