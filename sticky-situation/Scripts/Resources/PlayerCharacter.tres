@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Character" load_steps=2 format=3 uid="uid://dlu1cpf4cnqk1"]
-
-[ext_resource type="Script" path="res://Scripts/Resources/Character.gd" id="1_dr6p8"]
-
-[resource]
-script = ExtResource("1_dr6p8")
-Speed = 300
-totalCoins = 5

@@ -26,7 +26,6 @@ offset_left = -35.0
 offset_top = 33.0
 offset_right = 87.0
 offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Start Game:
 Free Play
 "
@@ -42,7 +41,6 @@ offset_left = -35.0
 offset_top = 33.0
 offset_right = 87.0
 offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Start Game:
 Demo Mode
 "
@@ -52,7 +50,6 @@ offset_left = -144.0
 offset_top = -408.0
 offset_right = 267.0
 offset_bottom = -321.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_3bbx0")
 theme_override_font_sizes/font_size = 50
 text = "Sticky Situation"
@@ -63,7 +60,6 @@ offset_left = -427.0
 offset_top = -297.0
 offset_right = -41.0
 offset_bottom = 64.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Controls: Keyboard or Controller
 Movement: WASD (Left Joystick)
 Interact: Space (Start)
@@ -113,7 +109,6 @@ offset_left = 416.0
 offset_top = -324.0
 offset_right = 640.0
 offset_bottom = 37.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Warning: No AutoSaving
 
 

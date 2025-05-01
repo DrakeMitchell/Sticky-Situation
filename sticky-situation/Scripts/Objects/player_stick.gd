@@ -37,7 +37,7 @@ func _physics_process(_delta):
 		if StickSingleton.inverse:
 			StickSingleton.Starting["SpinDirection"] = -1
 			StickSingleton.SpinDirection = -1
-			#print("WELLL WHAT THE FUCK IS IT THEN", StickSingleton.Starting["SpinDirection"])
+			
 			#StickSingleton.resetStick()
 			
 	if not Dead and not StickSingleton.finished:
@@ -91,7 +91,7 @@ func rotateStick(dir) -> void:
 
 #Detect collisions with overworld nodes
 func Object_Hit(area: Area2D) -> void:
-	print(area)
+	#print(area)
 	if get_tree().get_current_scene().name.contains("WorldMap"):
 		pass
 	elif get_tree().get_current_scene().name.contains("Menu"):
@@ -112,7 +112,7 @@ func Object_Hit(area: Area2D) -> void:
 		windDir = area.direction
 			
 	elif area.name.contains("armor"):
-		print("WORKING")
+		#print("WORKING")
 		StickSingleton.Armor = true
 		$"../Armor".start()
 	else:

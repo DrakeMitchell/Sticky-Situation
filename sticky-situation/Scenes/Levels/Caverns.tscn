@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=15 format=4 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
@@ -12,6 +12,7 @@
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="10_6y3hw"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="10_vhh8s"]
 [ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_tqeqi"]
+[ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Scenes/WinMenu.tscn" id="13_fpx51"]
 
 [sub_resource type="Resource" id="Resource_orb8n"]
 script = ExtResource("2_pcbu5")
@@ -146,5 +147,7 @@ color = Color(0.43613, 0.342258, 0.311936, 1)
 
 [node name="DeathTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="WinMenu" parent="." instance=ExtResource("13_fpx51")]
 
 [connection signal="timeout" from="DeathTimer" to="Player" method="_on_death_timer_timeout"]

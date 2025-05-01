@@ -13,14 +13,13 @@ config_version=5
 config/name="Sticky Situation"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Assets/Screenshot 2025-04-07 204706.png"
+config/icon="res://Assets/New Thumbnail.png"
 
 [autoload]
 
 StickSingleton="*res://Scripts/Singletons/stick_singleton.gd"
 Interactions="*res://Scripts/Singletons/Interactions.gd"
 PickUp="*res://Scripts/Objects/PickUp.gd"
-SaverLoader="*res://Scripts/Singletons/SaverLoader.gd"
 Saving="*res://Scripts/SaveData/SaveData.gd"
 
 [display]
@@ -30,7 +29,9 @@ window/stretch/mode="canvas_items"
 [file_customization]
 
 folder_colors={
-"res://Assets/Backgrounds/": "red"
+"res://Assets/Backgrounds/": "red",
+"res://Assets/Defunct/": "pink",
+"res://Assets/Objects/": "purple"
 }
 
 [input]

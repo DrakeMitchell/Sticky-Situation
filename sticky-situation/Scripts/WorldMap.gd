@@ -5,7 +5,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	print(Saving.playerStats["savedPos"][0])
+	#print(Saving.playerStats["savedPos"][0])
 	$Player.position.x = int(Saving.playerStats["savedPos"][0])
 	$Player.position.y = int(Saving.playerStats["savedPos"][1])
 	# Create Labels to identify finished levels and load the text here

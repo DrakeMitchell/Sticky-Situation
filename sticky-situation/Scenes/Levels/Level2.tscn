@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dhj110l31nkqq"]
+[gd_scene load_steps=13 format=4 uid="uid://dhj110l31nkqq"]
 
 [ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_m4o86"]
 [ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="2_h7jbr"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="9_e2t2o"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="10_tbqoe"]
 [ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_kqpbg"]
+[ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Scenes/WinMenu.tscn" id="12_urwtq"]
 
 [node name="Level2Gameplay" type="Area2D"]
 script = ExtResource("1_m4o86")
@@ -83,6 +84,8 @@ one_shot = true
 scale = Vector2(0.1, 0.1)
 transform = Transform2D(0.1, 0, 0, 0.1, 0, 0)
 back = ExtResource("11_kqpbg")
+
+[node name="WinMenu" parent="." instance=ExtResource("12_urwtq")]
 
 [connection signal="timeout" from="DeathTimer" to="Player" method="_on_death_timer_timeout"]
 [connection signal="timeout" from="Armor" to="Player" method="_on_armor_timeout"]

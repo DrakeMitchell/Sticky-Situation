@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://mmlpu201iyxi"]
 
-[ext_resource type="Texture2D" uid="uid://d2j5orq060jsg" path="res://Assets/Spring.png" id="1_1aa0t"]
+[ext_resource type="Texture2D" uid="uid://d2j5orq060jsg" path="res://Assets/Objects/Spring.png" id="1_1aa0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uura6"]
 size = Vector2(18, 7.49999)

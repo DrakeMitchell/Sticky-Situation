@@ -3,15 +3,13 @@ var SaveData
 #Code for Main Menu Scene
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	SaveData = SaverLoader.load()
 
 
 func _on_load_pressed() -> void:
 	#SaveData.loadGame()
 	#Saving._ready()
 	Saving.load_json_file()
-	print(Saving.checkCompletion(1))
+	#print(Saving.checkCompletion(1))
 	pass
 
 func _on_save_pressed() -> void:

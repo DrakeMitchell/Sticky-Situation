@@ -42,13 +42,11 @@ FINISHING TOUCHES:
 	
 Up Next:
 	Need Sprite for Health
-
 	need some kind of grace period timer after getting hit
 	need coin counting blockers on the overworld
 	Figure out what to do about respawning coins - okay?
 	Speed boosts need a timer
-	NEED MUSIC AND BACKGROUND IT WONT FEEL COMPLETE OTHERWISE
-	Need a Cover photo
+	Music
 
 	
 

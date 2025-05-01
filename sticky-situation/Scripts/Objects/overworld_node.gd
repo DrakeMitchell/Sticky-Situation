@@ -10,12 +10,9 @@ var StandingOn = false #Touch Detection
 @export var Inverse: bool #flip starting rotation of the stick
 @export var LevelScene: PackedScene #Scene to enter
 
-var SaveData 
 var available
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass
+
 
 func _process(_delta: float) -> void:
 	
@@ -50,10 +47,10 @@ func _process(_delta: float) -> void:
 func Node_entered(area: Area2D) -> void:
 	if StickSingleton.freePlay != true:
 		detectProgress()
-		print("Working")
+		#print("Working")
 	else:
 		available = true
-	print(StickSingleton.freePlay)
+	#print(StickSingleton.freePlay)
 	StandingOn = true # Replace with function body.
 
 #Detect if player is no longer touching

@@ -27,9 +27,9 @@ var globalLevels = ["000","001","002"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	load_json_file()
-	print(playerStats)
+	#print(playerStats)
 	#playerStats["globalLevel"] = 1
-	print(playerStats)
+	#print(playerStats)
 	write_to_json_file()
 	pass
 	

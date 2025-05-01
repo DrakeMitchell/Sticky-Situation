@@ -5,7 +5,6 @@ extends Node2D
 var levelStarts: Array[Area2D] = []
 @export var LevelResource: Level #Unique Level per map
 @export var ChallengeMode = false
-var SaveData
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,7 +17,6 @@ func _ready() -> void:
 	#Change player location to correct sublevel first checkpoint
 	#Gotta be a better way of doing this
 	
-
 	levelStarts.append(get_node("Map1/CheckPoint"))
 	levelStarts.append(get_node("Map2/CheckPoint"))
 	levelStarts.append(get_node("Map3/CheckPoint"))

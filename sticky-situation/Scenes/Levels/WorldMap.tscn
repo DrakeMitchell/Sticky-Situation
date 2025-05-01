@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
-[ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Checkpoint.png" id="9_7nal4"]
+[ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Objects/Checkpoint.png" id="9_7nal4"]
 [ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Scripts/Resources/TutorialLevel.tres" id="11_icqsc"]
 [ext_resource type="PackedScene" uid="uid://bj0dqn72r2ehr" path="res://Scenes/Levels/Tutorial.tscn" id="12_rmkkl"]
 [ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="13_x8mji"]

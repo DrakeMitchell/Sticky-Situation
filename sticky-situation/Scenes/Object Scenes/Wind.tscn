@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgh0aeyfmv805"]
 
-[ext_resource type="Texture2D" uid="uid://bkllwfmbt8su7" path="res://Assets/Wind.png" id="1_gs1dh"]
-[ext_resource type="Script" path="res://Scenes/Object Scenes/wind.gd" id="1_oaxhv"]
+[ext_resource type="Texture2D" uid="uid://bkllwfmbt8su7" path="res://Assets/Objects/Wind.png" id="1_gs1dh"]
+[ext_resource type="Script" path="res://Scripts/wind.gd" id="1_oaxhv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sorwn"]
 

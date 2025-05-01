@@ -8,7 +8,6 @@ class_name Pickup
 @export var img: Texture2D
 @export var speed: bool
 
-var SaveData
 
 
 #Handles collisions with PickUp Objects

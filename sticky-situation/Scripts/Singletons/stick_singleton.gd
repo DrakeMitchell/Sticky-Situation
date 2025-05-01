@@ -26,18 +26,14 @@ var freePlay = false
 var challenge = false
 var finished
 var attempts = 1
-var SaveData
 
 func _ready() -> void:
-	SaveData = SaverLoader.load() as SaveGame
 	resetStick() 
 
 #Allows the HUD and game to keep track of coins and save the number
 func addCoin():
 	totalCoins += 1
-	SaveData.player.totalCoins +=1
-	SaveData.levelData[StickSingleton.globalcurrentLevel].updateCollectibles(StickSingleton.currentLevel)
-	SaveData.saveGame()
+	
 	
 #Decrease Health and reset rotation to original 
 func HitWall() -> void:
@@ -58,7 +54,10 @@ func invert():
 	if inverse:
 		SpinDirection = -1
 		Starting["SpinDirection"] = -1
-		print(inverse, " INVERTING ________________")
+		#print(inverse, " INVERTING ________________")
+	else:
+		SpinDirection = 1
+		Starting["SpinDirection"] = 1
 #Reset to default values, ie leaving the level and reentering 
 func resetStick():
 	#Starting["SpinDirection"] = 1;

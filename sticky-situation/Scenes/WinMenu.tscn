@@ -1,53 +1,82 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqfhp76ctg2lv"]
+[gd_scene load_steps=7 format=3 uid="uid://bqfhp76ctg2lv"]
 
 [ext_resource type="Script" path="res://Scripts/win_menu.gd" id="1_aa3wx"]
 [ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="1_wn6os"]
+[ext_resource type="Texture2D" uid="uid://d367vtoy6pqnh" path="res://Assets/Sticks/Potential New Stick.png" id="2_ed4ax"]
 [ext_resource type="Texture2D" uid="uid://pru3o30bbkmn" path="res://Assets/Sticks/New Stick 1 Damage.png" id="2_twfit"]
 [ext_resource type="Texture2D" uid="uid://pt1qpgw3dtjb" path="res://Assets/Sticks/New Stick 2 Damage.png" id="3_6tvwg"]
-[ext_resource type="Texture2D" uid="uid://dfbe8b3k3xte6" path="res://Assets/Sticks/New Stick No Damage.png" id="3_e5ndo"]
+[ext_resource type="Texture2D" uid="uid://bh2bdui2dt4x0" path="res://Assets/Menu.png" id="6_itna1"]
 
 [node name="WinMenu" type="CanvasLayer"]
 script = ExtResource("1_aa3wx")
-sticks = Array[Texture2D]([ExtResource("3_e5ndo"), ExtResource("2_twfit"), ExtResource("3_6tvwg")])
+sticks = Array[Texture2D]([ExtResource("2_ed4ax"), ExtResource("2_twfit"), ExtResource("3_6tvwg")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+clip_contents = true
 layout_mode = 3
 anchor_left = 0.302
 anchor_top = 0.146
 anchor_right = 0.584
 anchor_bottom = 0.866
 offset_left = 0.335693
-offset_top = -0.247658
-offset_right = -0.52832
-offset_bottom = 0.192322
+offset_top = -25.7035
+offset_right = 75.4717
+offset_bottom = 7.73651
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+visible = false
+clip_contents = true
 layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.03
 anchor_right = 1.185
 anchor_bottom = 1.0
 offset_top = -0.132151
-offset_right = 0.0599365
-offset_bottom = 0.857849
+offset_right = 16.0599
+offset_bottom = 18.8578
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+visible = false
+layout_mode = 0
+offset_left = 23.0299
+offset_top = 341.457
+offset_right = 367.029
+offset_bottom = 401.457
+text = "
+"
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Button2"]
+layout_mode = 0
+offset_left = 3.53436
+offset_top = 4.48981
+offset_right = 346.534
+offset_bottom = 62.4898
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wn6os")
+theme_override_font_sizes/font_size = 48
+text = "Try Again
+"
+horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CanvasLayer/Control"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 375.082
-offset_right = 364.0
-offset_bottom = 435.082
+offset_left = 22.8284
+offset_top = 386.396
+offset_right = 366.828
+offset_bottom = 446.396
 
 [node name="Label" type="Label" parent="CanvasLayer/Control/Button"]
 layout_mode = 0
-offset_left = -1.0
-offset_right = 342.0
-offset_bottom = 58.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 3.53436
+offset_top = 4.48981
+offset_right = 346.534
+offset_bottom = 62.4898
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 48
 text = "World Map"
@@ -65,18 +94,15 @@ offset_right = 86.46
 offset_bottom = 29.764
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 48
 text = "Level Complete!"
-metadata/_edit_use_anchors_ = true
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
 offset_left = 379.26
 offset_top = 174.945
 offset_right = 642.26
 offset_bottom = 216.945
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Total Attempts: "
@@ -86,17 +112,16 @@ layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
 offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
 [node name="Label4" type="Label" parent="CanvasLayer"]
-offset_left = 384.872
-offset_top = 269.232
-offset_right = 642.872
-offset_bottom = 311.232
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+visible = false
+offset_left = 383.458
+offset_top = 223.977
+offset_right = 641.458
+offset_bottom = 265.977
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Coins Collected: "
@@ -106,17 +131,15 @@ layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
 offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
 [node name="Label5" type="Label" parent="CanvasLayer"]
-offset_left = 383.75
-offset_top = 324.233
-offset_right = 634.75
-offset_bottom = 366.233
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_left = 382.336
+offset_top = 249.612
+offset_right = 633.336
+offset_bottom = 291.612
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Current Health: "
@@ -126,15 +149,20 @@ layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
 offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Label5"]
-position = Vector2(154.186, 90.0294)
+position = Vector2(155.6, 115.485)
 rotation = 1.5708
 scale = Vector2(2, 2)
-texture = ExtResource("3_e5ndo")
+texture = ExtResource("2_ed4ax")
 
+[node name="Pixil-frame-0(15)" type="Sprite2D" parent="CanvasLayer"]
+z_index = -1
+position = Vector2(545.549, 314.088)
+texture = ExtResource("6_itna1")
+
+[connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
