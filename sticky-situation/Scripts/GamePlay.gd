@@ -51,7 +51,7 @@ func _process(_delta: float) -> void:
 				StickSingleton.SpinDirection = 1
 				StickSingleton.resetStick()
 			
-			$Player.position =Interactions.CheckPTPosition
+			$Player.position = detectSpawnPoint().global_position
 			#pass
 	if StickSingleton.finished:
 		#$WinMenu.enable()

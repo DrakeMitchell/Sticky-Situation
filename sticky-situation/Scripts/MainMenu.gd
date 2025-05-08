@@ -19,6 +19,7 @@ func _on_save_pressed() -> void:
 
 func _on_clear_pressed() -> void:
 	Saving.clear_data()
+	Saving.load_json_file()
 	#Should make a clear function in SaveData
 	#
 	#SaveData.player.totalCoins = 0

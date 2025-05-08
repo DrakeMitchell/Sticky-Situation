@@ -18,7 +18,7 @@ func newCheckPoint(checkPoint) -> void:
 func ObjectHit(area: Area2D) -> void:
 	#Checkpoint Detection
 	if area.name.contains("Check"):
-		Interactions.newCheckPoint(area)
+		#Interactions.newCheckPoint(area)
 		StickSingleton.Health = StickSingleton.Starting["Health"]
 		StickSingleton.speed = 300
 		

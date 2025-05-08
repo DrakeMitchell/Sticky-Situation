@@ -38,6 +38,7 @@ func addCoin():
 #func load_level(glevel,slevel)
 func Complete():
 	playerStats["Levels"][globalLevels[playerStats["globalLevel"]]]["Completion"][playerStats["subLevel"]] = true
+	write_to_json_file()
 
 
 func checkCompletion(globallevel, sublevel = null) -> bool:

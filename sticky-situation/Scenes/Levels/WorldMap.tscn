@@ -171,9 +171,8 @@ offset_left = 139.0
 offset_top = -26.0
 offset_right = 179.0
 offset_bottom = -3.0
-text = "Checkpoint: Hit these to save 
-your progress when you hit a wall
-And Get Completely Healed"
+text = "Checkpoint: Hit these to 
+get completely healed"
 metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
