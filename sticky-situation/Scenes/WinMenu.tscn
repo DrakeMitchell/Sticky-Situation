@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqfhp76ctg2lv"]
 
-[ext_resource type="Script" path="res://Scripts/win_menu.gd" id="1_aa3wx"]
+[ext_resource type="Script" uid="uid://f6b7roo8wga5" path="res://Scripts/win_menu.gd" id="1_aa3wx"]
 [ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="1_wn6os"]
 [ext_resource type="Texture2D" uid="uid://d367vtoy6pqnh" path="res://Assets/Sticks/Potential New Stick.png" id="2_ed4ax"]
 [ext_resource type="Texture2D" uid="uid://pru3o30bbkmn" path="res://Assets/Sticks/New Stick 1 Damage.png" id="2_twfit"]

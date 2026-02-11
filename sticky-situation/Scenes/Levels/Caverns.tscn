@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
-[ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_xowig"]
-[ext_resource type="Script" path="res://Scripts/Resources/Level.gd" id="2_pcbu5"]
+[ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Scripts/GamePlay.gd" id="1_xowig"]
+[ext_resource type="Script" uid="uid://drbo7n6g23ptg" path="res://Scripts/Resources/Level/Level.gd" id="2_pcbu5"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="3_56x0q"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="6_aejrg"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="7_ny2fg"]

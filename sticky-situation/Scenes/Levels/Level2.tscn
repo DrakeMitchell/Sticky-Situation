@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=4 uid="uid://dhj110l31nkqq"]
 
-[ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_m4o86"]
-[ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="2_h7jbr"]
+[ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Scripts/GamePlay.gd" id="1_m4o86"]
+[ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level/Level2.tres" id="2_h7jbr"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="3_3iuy6"]
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="4_2spuf"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="5_8opyv"]

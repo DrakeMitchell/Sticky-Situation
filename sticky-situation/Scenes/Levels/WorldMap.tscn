@@ -1,21 +1,23 @@
-[gd_scene load_steps=17 format=4 uid="uid://25hyj5hjifo0"]
+[gd_scene load_steps=19 format=4 uid="uid://25hyj5hjifo0"]
 
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="1_ljhf2"]
-[ext_resource type="Script" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
+[ext_resource type="Script" uid="uid://vmkhnujxyba3" path="res://Scripts/WorldMap.gd" id="1_wq2oc"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="2_f2mq4"]
-[ext_resource type="Resource" uid="uid://ccq4maovj1o8b" path="res://Scripts/Resources/Level1.tres" id="3_hlr1j"]
-[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="4_v6xbw"]
+[ext_resource type="Resource" uid="uid://eoxyswb1mf3o" path="res://Scripts/Resources/LevelInformation/Level_1/Level_1-Challenge_Information.tres" id="3_e0j4f"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="6_ruvng"]
+[ext_resource type="Resource" uid="uid://82sgdv10n6kn" path="res://Scripts/Resources/LevelInformation/Level_1/Level_1-3_Information.tres" id="7_7inrh"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="7_o24k5"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="8_dvjy2"]
+[ext_resource type="Resource" uid="uid://dk1cp4wx7oo4c" path="res://Scripts/Resources/LevelInformation/Level_1/Level_1-2_Information.tres" id="8_iacp6"]
 [ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Objects/Checkpoint.png" id="9_7nal4"]
-[ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Scripts/Resources/TutorialLevel.tres" id="11_icqsc"]
-[ext_resource type="PackedScene" uid="uid://bj0dqn72r2ehr" path="res://Scenes/Levels/Tutorial.tscn" id="12_rmkkl"]
-[ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level2.tres" id="13_x8mji"]
+[ext_resource type="Resource" uid="uid://bm3j5t12pur13" path="res://Scripts/Resources/LevelInformation/Level_1/Level_1-1_Information.tres" id="9_rgfb7"]
+[ext_resource type="Resource" uid="uid://bqsdxq68toc5h" path="res://Scripts/Resources/LevelInformation/Level_0/Level0-1Information.tres" id="10_0hd4q"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="14_j1ru6"]
-[ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Levels/Level2.tscn" id="14_vfcko"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="15_oshon"]
 [ext_resource type="Texture2D" uid="uid://7mowsirhe12o" path="res://Assets/Gradients/gradient (3).png" id="16_qrj5c"]
+[ext_resource type="Resource" uid="uid://4a4c2jkpy7kp" path="res://Scripts/Resources/LevelInformation/Level_0/Level_0-2_Information.tres" id="17_1f15v"]
+[ext_resource type="Resource" uid="uid://bvk2yjlxlc5t2" path="res://Scripts/Resources/LevelInformation/Level_2/Level_2-1_Information.tres" id="18_jdbf1"]
+[ext_resource type="Resource" uid="uid://bpdqnwhi62p6b" path="res://Scripts/Resources/LevelInformation/Level_0/Level_0-3_Information.tres" id="21_cxpgs"]
 
 [node name="WorldMap" type="Node2D"]
 script = ExtResource("1_wq2oc")
@@ -31,10 +33,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-1064, -649)
-LevelResource = ExtResource("3_hlr1j")
-level = 101
+LevelInfo = ExtResource("3_e0j4f")
 player = NodePath("../Player")
-LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode4"]
 offset_left = -57.0
@@ -50,10 +50,8 @@ position = Vector2(-1105, -147)
 
 [node name="OverworldNode6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-180, -630)
-LevelResource = ExtResource("3_hlr1j")
-level = 2
+LevelInfo = ExtResource("7_7inrh")
 player = NodePath("../Player")
-LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode6"]
 offset_left = -57.0
@@ -75,10 +73,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-480, -630)
-LevelResource = ExtResource("3_hlr1j")
-level = 1
+LevelInfo = ExtResource("8_iacp6")
 player = NodePath("../Player")
-LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode5"]
 offset_left = -57.0
@@ -99,9 +95,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-780, -630)
-LevelResource = ExtResource("3_hlr1j")
+LevelInfo = ExtResource("9_rgfb7")
 player = NodePath("../Player")
-LevelScene = ExtResource("4_v6xbw")
 
 [node name="Label" type="Label" parent="OverworldNode3"]
 offset_left = -57.0
@@ -177,10 +172,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode7" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-780, -155)
-LevelResource = ExtResource("11_icqsc")
+LevelInfo = ExtResource("10_0hd4q")
 player = NodePath("../Player")
-Inverse = true
-LevelScene = ExtResource("12_rmkkl")
 
 [node name="Label" type="Label" parent="OverworldNode7"]
 offset_left = -33.0
@@ -201,11 +194,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode8" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-480, -155)
-LevelResource = ExtResource("11_icqsc")
-level = 1
+LevelInfo = ExtResource("17_1f15v")
 player = NodePath("../Player")
-Inverse = true
-LevelScene = ExtResource("12_rmkkl")
 
 [node name="Label" type="Label" parent="OverworldNode8"]
 offset_left = -33.0
@@ -226,9 +216,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode10" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(413, -405)
-LevelResource = ExtResource("13_x8mji")
+LevelInfo = ExtResource("18_jdbf1")
 player = NodePath("../Player")
-LevelScene = ExtResource("14_vfcko")
 
 [node name="Label" type="Label" parent="OverworldNode10"]
 offset_left = -33.0
@@ -249,10 +238,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="OverworldNode9" parent="." node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
 position = Vector2(-180, -155)
-LevelResource = ExtResource("11_icqsc")
-level = 2
+LevelInfo = ExtResource("21_cxpgs")
 player = NodePath("../Player")
-LevelScene = ExtResource("12_rmkkl")
 
 [node name="Label" type="Label" parent="OverworldNode9"]
 offset_left = -30.0

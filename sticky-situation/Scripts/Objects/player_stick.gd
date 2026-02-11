@@ -2,8 +2,6 @@ extends CharacterBody2D
 class_name Player
 #Actual Player Character Script handling movement and object collisions
 
-
-var SaveData
 var InWind = false;
 var tempSpeed #For changing speed via speed boost
 var Dead = false
@@ -17,9 +15,9 @@ var tempSpinning
 
 func _ready() -> void:
 	#SaveData = SaverLoader.load()
-	if StickSingleton.inverse:
+	if StickSingleton.Current["Level"]["Inverse"]:
 		StickSingleton.Starting["SpinDirection"] = -1
-		StickSingleton.SpinDirection = -1
+		StickSingleton.Current["SpinDirection"] = -1
 		StickSingleton.setStick()
 
 func _physics_process(_delta):
@@ -27,50 +25,48 @@ func _physics_process(_delta):
 		$Camera2D.zoom.x = 2
 		$Camera2D.zoom.y = 2
 	
-	
 	StickImage()
 	
 	#Change Stick rotation
-	
-	if StickSingleton.Health == 0:
+	if StickSingleton.Current["Health"] == 0 and not StickSingleton.finished:
 		#if not StickSingleton.freePlay:
-		if StickSingleton.inverse:
+		if StickSingleton.Current["Level"]["Inverse"]:
 			StickSingleton.Starting["SpinDirection"] = -1
-			StickSingleton.SpinDirection = -1
+			StickSingleton.Current["SpinDirection"] = -1
 			
 			#StickSingleton.resetStick()
 			
-	if not Dead and not StickSingleton.finished:
-		if(StickSingleton.StickSpinning == true): 
-			rotateStick(StickSingleton.SpinDirection);
+	if not Dead:
+		if(StickSingleton.Current["StickSpinning"] == true): 
+			rotateStick(StickSingleton.Current["SpinDirection"]);
 	#Movement
 		var directionLR = Input.get_axis("Left", "Right")
 		if directionLR:
-			velocity.x = directionLR * StickSingleton.speed
+			velocity.x = directionLR * StickSingleton.Current["Speed"]
 		else:
-			velocity.x = move_toward(velocity.x, 0, StickSingleton.speed)
+			velocity.x = move_toward(velocity.x, 0, StickSingleton.Current["Speed"])
 		var directionUD = Input.get_axis("Up", "Down")
 		if directionUD:
-			velocity.y = directionUD * StickSingleton.speed
+			velocity.y = directionUD * StickSingleton.Current["Speed"]
 		else:
-			velocity.y = directionUD * StickSingleton.speed
+			velocity.y = directionUD * StickSingleton.Current["Speed"]
 		move_and_slide()
 
 		#Speed Up button pressed and released
 		if Input.is_action_just_pressed("SpeedUpMove"):
-			tempSpeed = StickSingleton.speed
-			StickSingleton.speed += 200
+			tempSpeed = StickSingleton.Current["Speed"]
+			StickSingleton.Current["Speed"] += 200
 		if Input.is_action_just_released("SpeedUpMove"):
 			if tempSpeed:
-				StickSingleton.speed = tempSpeed
+				StickSingleton.Current["Speed"] = tempSpeed
 			
 		#Spin Speed Up Button Pressed and Released
 		if Input.is_action_just_pressed("SpeedUpSpin"):
 			tempSpinning = true
-			StickSingleton.SpinDirection *= 2
+			StickSingleton.Current["SpinDirection"] *= 2
 		if Input.is_action_just_released("SpeedUpSpin"):
 			if tempSpinning:
-				StickSingleton.SpinDirection /= 2
+				StickSingleton.Current["SpinDirection"] /= 2
 	
 	#In the wind object
 		if InWind:
@@ -97,7 +93,7 @@ func Object_Hit(area: Area2D) -> void:
 	elif get_tree().get_current_scene().name.contains("Menu"):
 		pass
 	elif area.name.contains("Wall"):
-		if not StickSingleton.Armor:
+		if not StickSingleton.Current["Armor"]:
 			tempRotate = self.rotation
 			Dead = true
 			#Some sort of timer
@@ -105,7 +101,7 @@ func Object_Hit(area: Area2D) -> void:
 		
 		# after timer 
 		# 
-		#Change sprite to broken still
+		#Change sprite to broken stick
 		#Dead = false
 	elif area.name.contains("Wind"):
 		InWind = true
@@ -113,7 +109,7 @@ func Object_Hit(area: Area2D) -> void:
 			
 	elif area.name.contains("armor"):
 		#print("WORKING")
-		StickSingleton.Armor = true
+		StickSingleton.Current["Armor"] = true
 		$"../Armor".start()
 	else:
 		Interactions.ObjectHit(area) #Send Collision management to Interactions Singleton
@@ -123,7 +119,7 @@ func Object_Exit(area: Area2D) -> void:
 		InWind = false # Replace with function body.
 		
 func StickImage():
-	var Health = StickSingleton.Health
+	var Health = StickSingleton.Current["Health"]
 	if Health > 0:
 		$Sprite2D.texture = sticks[Health-3]
 	else:
@@ -132,10 +128,10 @@ func StickImage():
 
 func _on_death_timer_timeout() -> void:
 	 # Change Sprite back
-	#position = Interactions.CheckPTPosition
 	StickSingleton.HitWall()
 	Dead=false
 
 
 func _on_armor_timeout() -> void:
-	StickSingleton.Armor = false # Replace with function body.
+	StickSingleton.Current["Armor"] = false # Replace with function body.
+	

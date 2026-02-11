@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://cyr1j0ifwm4pd"]
+[gd_scene load_steps=8 format=4 uid="uid://cyr1j0ifwm4pd"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_bpj2a"]
+[ext_resource type="Script" uid="uid://d2q6vyi8nnj2u" path="res://Scripts/MainMenu.gd" id="1_bpj2a"]
 [ext_resource type="PackedScene" uid="uid://bisijd0hhaxds" path="res://Scenes/OverworldNode.tscn" id="2_u8koq"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="3_7r1y0"]
-[ext_resource type="Resource" uid="uid://bx62mbr3ithqv" path="res://Scripts/Resources/WorldMap.tres" id="4_o6i6v"]
-[ext_resource type="PackedScene" uid="uid://25hyj5hjifo0" path="res://Scenes/Levels/WorldMap.tscn" id="5_0pm36"]
+[ext_resource type="Resource" uid="uid://b6qmpbojtv876" path="res://Scripts/Resources/LevelInformation/MainMenu_FreePlay.tres" id="4_cmrfp"]
 [ext_resource type="FontFile" uid="uid://be6qi8fkrt8u5" path="res://Assets/Geo-Regular.ttf" id="5_3bbx0"]
 [ext_resource type="Texture2D" uid="uid://bt73qvneyugep" path="res://Assets/Gradients/colorkit.png" id="7_dlfu5"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="8_rgq3n"]
@@ -17,9 +16,8 @@ position = Vector2(58, -83)
 
 [node name="FreePlay" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
 position = Vector2(217, -51)
-LevelResource = ExtResource("4_o6i6v")
+LevelInfo = ExtResource("4_cmrfp")
 player = NodePath("../Player")
-LevelScene = ExtResource("5_0pm36")
 
 [node name="Label" type="Label" parent="FreePlay"]
 offset_left = -35.0
@@ -32,9 +30,8 @@ Free Play
 
 [node name="Demo" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_u8koq")]
 position = Vector2(215, -221)
-LevelResource = ExtResource("4_o6i6v")
+LevelInfo = ExtResource("4_cmrfp")
 player = NodePath("../Player")
-LevelScene = ExtResource("5_0pm36")
 
 [node name="Label" type="Label" parent="Demo"]
 offset_left = -35.0

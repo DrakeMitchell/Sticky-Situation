@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInformation" load_steps=4 format=3 uid="uid://eoxyswb1mf3o"]
+
+[ext_resource type="Resource" uid="uid://ccq4maovj1o8b" path="res://Scripts/Resources/Level/Level1.tres" id="1_v6e8e"]
+[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="2_or4uq"]
+[ext_resource type="Script" uid="uid://cq03ljo260ubw" path="res://Scripts/Resources/LevelInformation/LevelInformation.gd" id="3_76l64"]
+
+[resource]
+script = ExtResource("3_76l64")
+LevelResource = ExtResource("1_v6e8e")
+LevelValue = 101
+Challenge = true
+LevelScene = ExtResource("2_or4uq")
+metadata/_custom_type_script = "uid://cq03ljo260ubw"

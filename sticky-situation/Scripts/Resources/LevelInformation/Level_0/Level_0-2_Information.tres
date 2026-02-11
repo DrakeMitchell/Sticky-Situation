@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="LevelInformation" load_steps=4 format=3 uid="uid://4a4c2jkpy7kp"]
+
+[ext_resource type="PackedScene" uid="uid://bj0dqn72r2ehr" path="res://Scenes/Levels/Tutorial.tscn" id="1_jwpnv"]
+[ext_resource type="Script" uid="uid://cq03ljo260ubw" path="res://Scripts/Resources/LevelInformation/LevelInformation.gd" id="1_miqm4"]
+[ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Scripts/Resources/Level/TutorialLevel.tres" id="1_pcmnq"]
+
+[resource]
+script = ExtResource("1_miqm4")
+LevelResource = ExtResource("1_pcmnq")
+LevelValue = 1
+Inverse = true
+LevelScene = ExtResource("1_jwpnv")
+metadata/_custom_type_script = "uid://cq03ljo260ubw"
