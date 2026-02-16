@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Interactable" load_steps=2 format=3 uid="uid://d07ndam3gysv1"]
+
+[ext_resource type="Script" uid="uid://bpf81x8eyu2od" path="res://Scripts/Resources/Interactions/Interactables.gd" id="1_fr223"]
+
+[resource]
+script = ExtResource("1_fr223")
+GameplayType = 2
+GameplayEffect = 2
+metadata/_custom_type_script = "uid://bpf81x8eyu2od"

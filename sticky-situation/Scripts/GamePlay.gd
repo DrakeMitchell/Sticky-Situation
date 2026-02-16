@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
 		StickSingleton.finished = false
-		StickSingleton.attempts = 1
+		StickSingleton.Current["Level"]["Attempts"] = 1
 		StickSingleton.Current["Health"] = 3
 	#Change Stick Rotation
 	if StickSingleton.Current["StickSpinning"] == false:

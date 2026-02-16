@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bj0dqn72r2ehr"]
+[gd_scene load_steps=13 format=4 uid="uid://bj0dqn72r2ehr"]
 
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="1_0kseh"]
 [ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Scripts/GamePlay.gd" id="1_s2igq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Scripts/Resources/Level/TutorialLevel.tres" id="2_vb8un"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="3_d2dtn"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="4_fodu0"]
+[ext_resource type="Resource" uid="uid://v8l787exkfyu" path="res://Scripts/Resources/Interactions/PickUps/Coin.tres" id="6_1odfw"]
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="7_m23dk"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="8_r8lis"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="9_xyd87"]
@@ -24,16 +25,18 @@ tile_set = ExtResource("1_0kseh")
 
 [node name="Map1" type="Node2D" parent="."]
 
-[node name="HealPU" parent="Map1" instance=ExtResource("3_d2dtn")]
+[node name="CoinPU2" parent="Map1" instance=ExtResource("3_d2dtn")]
 visible = false
 position = Vector2(784, 136)
-type = "health"
+Interaction = ExtResource("6_1odfw")
 
 [node name="CheckPoint" parent="Map1" instance=ExtResource("2_jtnbl")]
 position = Vector2(-8, -16)
 
 [node name="CoinPU" parent="Map1" instance=ExtResource("3_d2dtn")]
 position = Vector2(608, -208)
+Interaction = ExtResource("6_1odfw")
+type = ""
 
 [node name="LowerWall" type="Area2D" parent="Map1"]
 
@@ -54,9 +57,11 @@ scale = Vector2(1.64532, -4.01438)
 
 [node name="CoinPU2" parent="Map2" instance=ExtResource("3_d2dtn")]
 position = Vector2(2616, 0)
+Interaction = ExtResource("6_1odfw")
 
 [node name="CoinPU" parent="Map2" instance=ExtResource("3_d2dtn")]
 position = Vector2(2192, -64)
+Interaction = ExtResource("6_1odfw")
 
 [node name="CheckPoint" parent="Map2" instance=ExtResource("2_jtnbl")]
 position = Vector2(1600, 192)
@@ -100,12 +105,15 @@ position = Vector2(4096, 864)
 
 [node name="CoinPU" parent="Map3" instance=ExtResource("3_d2dtn")]
 position = Vector2(3432, 24)
+Interaction = ExtResource("6_1odfw")
 
 [node name="CoinPU2" parent="Map3" instance=ExtResource("3_d2dtn")]
 position = Vector2(3744, 536)
+Interaction = ExtResource("6_1odfw")
 
 [node name="CoinPU3" parent="Map3" instance=ExtResource("3_d2dtn")]
 position = Vector2(4072, 1304)
+Interaction = ExtResource("6_1odfw")
 
 [node name="FinishLine" parent="Map3" instance=ExtResource("8_r8lis")]
 position = Vector2(4824, 1232)

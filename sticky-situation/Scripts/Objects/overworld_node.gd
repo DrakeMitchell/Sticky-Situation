@@ -31,7 +31,7 @@ func _process(_delta: float) -> void:
 			if !LevelInfo.Challenge: #If not challenge level
 				Interactions.TOTAL_COLLECTIBLES = LevelInfo.LevelResource.totalCollectibles[LevelInfo.LevelValue] #Set current total collectibles
 			else:
-				StickSingleton.challenge 
+				StickSingleton.Current["Level"]["Challenge"]
 				Interactions.TOTAL_COLLECTIBLES = 5 
 			StickSingleton.resetStick()
 			

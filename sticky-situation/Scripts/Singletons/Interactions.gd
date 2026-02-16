@@ -9,8 +9,9 @@ var ClosestCheckPoint: Area2D;
 var CheckPTPosition;
 
 
+#
 func newCheckPoint(checkPoint) -> void:
-	if StickSingleton.challenge:
+	if StickSingleton.Current["Level"]["Challenge"]:
 		StickSingleton.setStick()
 	ClosestCheckPoint = checkPoint
 	CheckPTPosition = checkPoint.position
@@ -20,6 +21,7 @@ func ObjectHit(area: Area2D) -> void:
 	if area.name.contains("Check"):
 		StickSingleton.Current["Health"] = StickSingleton.Starting["Health"]
 		StickSingleton.Current["Speed"] = 300
+		#newCheckPoint(area)
 		
 	#Wall Detection
 

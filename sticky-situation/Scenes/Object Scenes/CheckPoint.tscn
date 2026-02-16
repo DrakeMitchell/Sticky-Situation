@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3fdfb28vw1iv"]
+[gd_scene load_steps=5 format=3 uid="uid://c3fdfb28vw1iv"]
 
+[ext_resource type="Script" uid="uid://cj27cg2i71m8w" path="res://Scripts/Objects/Interaction.gd" id="1_7i3j2"]
 [ext_resource type="Texture2D" uid="uid://452pgts0bpw" path="res://Assets/Objects/Checkpoint.png" id="1_jbm0r"]
+[ext_resource type="Resource" uid="uid://b1o2xdpscoxx4" path="res://Scripts/Resources/Interactions/Global/Checkpoint.tres" id="2_ttplf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65xx8"]
 size = Vector2(38.4, 38.4)
 
 [node name="CheckPoint" type="Area2D"]
+script = ExtResource("1_7i3j2")
+Interaction = ExtResource("2_ttplf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.90735e-06, 0)

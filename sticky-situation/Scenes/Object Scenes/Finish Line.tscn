@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://gmbwxwxvitc6"]
+[gd_scene load_steps=5 format=3 uid="uid://gmbwxwxvitc6"]
 
+[ext_resource type="Script" uid="uid://cj27cg2i71m8w" path="res://Scripts/Objects/Interaction.gd" id="1_3fftb"]
 [ext_resource type="Texture2D" uid="uid://cf0wkae7f7gu5" path="res://Assets/Objects/Finish Line.png" id="1_7vios"]
+[ext_resource type="Resource" uid="uid://b5jkx3jn1l2kc" path="res://Scripts/Resources/Interactions/Global/FinishLine.tres" id="2_5tmwb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xstj5"]
 size = Vector2(16, 56)
 
 [node name="FinishLine" type="Area2D"]
+script = ExtResource("1_3fftb")
+Interaction = ExtResource("2_5tmwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)

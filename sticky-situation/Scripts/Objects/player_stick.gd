@@ -72,9 +72,9 @@ func _physics_process(_delta):
 		if InWind:
 			position += windDir
 			
-		if StickSingleton.finished:
-			remove_child($Area2D)
-			remove_child($Sprite2D)
+		#if StickSingleton.finished:
+			#remove_child($Area2D)
+			#remove_child($Sprite2D)
 		
 	else:
 		self.rotation = rotation
@@ -87,6 +87,7 @@ func rotateStick(dir) -> void:
 
 #Detect collisions with overworld nodes
 func Object_Hit(area: Area2D) -> void:
+	
 	#print(area)
 	if get_tree().get_current_scene().name.contains("WorldMap"):
 		pass
@@ -99,10 +100,6 @@ func Object_Hit(area: Area2D) -> void:
 			#Some sort of timer
 			$"../DeathTimer".start()
 		
-		# after timer 
-		# 
-		#Change sprite to broken stick
-		#Dead = false
 	elif area.name.contains("Wind"):
 		InWind = true
 		windDir = area.direction
@@ -119,15 +116,15 @@ func Object_Exit(area: Area2D) -> void:
 		InWind = false # Replace with function body.
 		
 func StickImage():
-	var Health = StickSingleton.Current["Health"]
-	if Health > 0:
-		$Sprite2D.texture = sticks[Health-3]
+	if StickSingleton.Current["Health"] > 0:
+		$Sprite2D.texture = sticks[StickSingleton.Current["Health"]-3]
 	else:
 		$Sprite2D.texture = sticks[1]
 		
 
 func _on_death_timer_timeout() -> void:
 	 # Change Sprite back
+	
 	StickSingleton.HitWall()
 	Dead=false
 

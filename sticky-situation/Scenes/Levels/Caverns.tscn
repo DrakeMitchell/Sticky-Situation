@@ -1,26 +1,24 @@
-[gd_scene load_steps=15 format=4 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=18 format=4 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_urcua"]
 [ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Scripts/GamePlay.gd" id="1_xowig"]
 [ext_resource type="Script" uid="uid://drbo7n6g23ptg" path="res://Scripts/Resources/Level/Level.gd" id="2_pcbu5"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="3_56x0q"]
+[ext_resource type="Resource" uid="uid://v8l787exkfyu" path="res://Scripts/Resources/Interactions/PickUps/Coin.tres" id="4_xmdib"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="6_aejrg"]
+[ext_resource type="Resource" uid="uid://d1qq1342obcrj" path="res://Scripts/Resources/Interactions/PickUps/SpeedUp.tres" id="7_4q232"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="7_ny2fg"]
 [ext_resource type="PackedScene" uid="uid://dnc14de044g0f" path="res://Scenes/Object Scenes/PickUp.tscn" id="9_na20r"]
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="10_2hi7q"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="10_6y3hw"]
 [ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Scenes/Background.tscn" id="10_vhh8s"]
+[ext_resource type="Resource" uid="uid://delbyp6dy00c3" path="res://Scripts/Resources/Interactions/GameplayEffects/Wind.tres" id="11_4q232"]
 [ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_tqeqi"]
 [ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Scenes/WinMenu.tscn" id="13_fpx51"]
 
 [sub_resource type="Resource" id="Resource_orb8n"]
 script = ExtResource("2_pcbu5")
-Collectible = Array[bool]([false, false, false])
-currentCollectibles = Array[int]([0, 0, 0])
-totalCollectibles = Array[int]([0, 0, 0])
-Completed = Array[bool]([false, false, false])
-globalLevel = 0
 
 [node name="CavernsGameplay" type="Area2D"]
 script = ExtResource("1_xowig")
@@ -30,6 +28,7 @@ LevelResource = SubResource("Resource_orb8n")
 
 [node name="Coin1PU" parent="Map1" instance=ExtResource("9_na20r")]
 position = Vector2(216, 0)
+Interaction = ExtResource("4_xmdib")
 
 [node name="FinishLine" parent="Map1" instance=ExtResource("3_56x0q")]
 position = Vector2(464, 376)
@@ -48,8 +47,10 @@ polygon = PackedVector2Array(-144, -96, -144, -64, -112, -112, 112, -104, 160, -
 [node name="Wall" type="CollisionPolygon2D" parent="Map1/InnerWall"]
 polygon = PackedVector2Array(128, 96, 128, 96, 136, 88, 144, 80, 144, 64, 160, 64, 192, 64, 224, 64, 240, 64, 256, 80, 264, 88, 288, 112, 304, 128, 320, 144, 320, 160, 320, 176, 336, 192, 384, 192, 576, 192, 632, 192, 640, 200, 640, 248, 632, 256, 448, 256, 448, 248, 632, 248, 632, 200, 576, 200, 384, 200, 320, 200, 312, 192, 280, 128, 248, 72, 224, 72, 192, 72, 178.464, 72, 168, 72, 136, 104, -96, 112)
 
-[node name="Coin2PU" parent="Map1" instance=ExtResource("9_na20r")]
+[node name="SpeedUpPU" parent="Map1" instance=ExtResource("9_na20r")]
 position = Vector2(558, 81)
+Interaction = ExtResource("7_4q232")
+type = ""
 
 [node name="Player" parent="." instance=ExtResource("1_408i4")]
 position = Vector2(0, 32)
@@ -81,9 +82,11 @@ polygon = PackedVector2Array(256, 488, 256, 480, 224, 448, 208, 432, 192, 432, 1
 
 [node name="CoinPU" parent="Map2" instance=ExtResource("9_na20r")]
 position = Vector2(72, 657)
+Interaction = ExtResource("4_xmdib")
 
 [node name="Coin2PU" parent="Map2" instance=ExtResource("9_na20r")]
 position = Vector2(246, 859)
+Interaction = ExtResource("4_xmdib")
 
 [node name="Map3" type="Node2D" parent="."]
 
@@ -93,6 +96,7 @@ position = Vector2(-16, 1240)
 [node name="Wind" parent="Map3" instance=ExtResource("7_ny2fg")]
 position = Vector2(-341, 1392)
 scale = Vector2(1.29971, 1)
+Interaction = ExtResource("11_4q232")
 
 [node name="FinishLine" parent="Map3" instance=ExtResource("3_56x0q")]
 position = Vector2(-264, 1400)

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cpsietrvg2mpo"]
+
+[ext_resource type="Script" uid="uid://bpf81x8eyu2od" path="res://Scripts/Resources/Interactions/Interactables.gd" id="1_104aa"]
+
+[resource]
+script = ExtResource("1_104aa")
