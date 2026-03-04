@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=4 uid="uid://bpd0vbiqieyky"]
 
-[ext_resource type="Script" path="res://Scripts/GamePlay.gd" id="1_fbywc"]
+[ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Scripts/GamePlay.gd" id="1_fbywc"]
 [ext_resource type="PackedScene" uid="uid://c3fdfb28vw1iv" path="res://Scenes/Object Scenes/CheckPoint.tscn" id="1_j465s"]
 [ext_resource type="PackedScene" uid="uid://mmlpu201iyxi" path="res://Scenes/Object Scenes/SpringOBJ.tscn" id="2_h0dk2"]
 [ext_resource type="PackedScene" uid="uid://cgh0aeyfmv805" path="res://Scenes/Object Scenes/Wind.tscn" id="3_l2o7n"]
 [ext_resource type="PackedScene" uid="uid://gmbwxwxvitc6" path="res://Scenes/Object Scenes/Finish Line.tscn" id="4_dh18t"]
 [ext_resource type="TileSet" uid="uid://cspa2r5i2jj1w" path="res://Assets/MapTiles.tres" id="5_esf6s"]
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Scenes/Object Scenes/PlayerStick.tscn" id="7_imedv"]
-[ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Levels/Level HUD.tscn" id="8_tq6ud"]
+[ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Scenes/Maps/Level HUD.tscn" id="8_tq6ud"]
 
 [node name="TestWorld" type="Node2D"]
 script = ExtResource("1_fbywc")

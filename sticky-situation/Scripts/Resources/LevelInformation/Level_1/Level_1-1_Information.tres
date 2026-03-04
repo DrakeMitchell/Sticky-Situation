@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cq03ljo260ubw" path="res://Scripts/Resources/LevelInformation/LevelInformation.gd" id="1_fy7v8"]
 [ext_resource type="Resource" uid="uid://ccq4maovj1o8b" path="res://Scripts/Resources/Level/Level1.tres" id="1_hijwx"]
-[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Levels/Caverns.tscn" id="1_o1avc"]
+[ext_resource type="PackedScene" uid="uid://bh1hpo3k3iwlj" path="res://Scenes/Maps/Caverns.tscn" id="1_o1avc"]
 
 [resource]
 script = ExtResource("1_fy7v8")

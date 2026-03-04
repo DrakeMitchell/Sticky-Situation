@@ -25,6 +25,6 @@ func _process(_delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	StickSingleton.finished = false
-	get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Maps/WorldMap.tscn")
 	StickSingleton.Current["Level"]["Attempts"] = 1
 	StickSingleton.Current["Health"] = 3 # Replace with function body.

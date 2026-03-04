@@ -10,10 +10,12 @@ func _ready() -> void:
 	
 	#Change player location to correct sublevel first checkpoint
 	#Gotta be a better way of doing this
-	
-	levelStarts.append(get_node("Map1/CheckPoint"))
-	levelStarts.append(get_node("Map2/CheckPoint"))
-	levelStarts.append(get_node("Map3/CheckPoint"))
+	if $Level01 != null:
+		levelStarts.append($Level01/CheckPoints/CheckPoint)
+	if $Level02 != null:
+		levelStarts.append($Level02/CheckPoints/CheckPoint)
+	if $Level03 != null:
+		levelStarts.append($Level03/CheckPoints/CheckPoint)
 		
 	if StickSingleton.Current["Level"]["Challenge"]:
 		$Player.position = challengeMode().global_position
@@ -26,7 +28,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Escape"):
-		get_tree().change_scene_to_file("res://Scenes/Levels/WorldMap.tscn")
+		get_tree().change_scene_to_file("res://Scenes/Maps/WorldMap.tscn")
 		StickSingleton.finished = false
 		StickSingleton.Current["Level"]["Attempts"] = 1
 		StickSingleton.Current["Health"] = 3

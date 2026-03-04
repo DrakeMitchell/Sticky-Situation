@@ -2,7 +2,7 @@
 
 [ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Scripts/Resources/Level/Level2.tres" id="1_ankvx"]
 [ext_resource type="Script" uid="uid://cq03ljo260ubw" path="res://Scripts/Resources/LevelInformation/LevelInformation.gd" id="1_oy6sc"]
-[ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Levels/Level2.tscn" id="2_lfn1x"]
+[ext_resource type="PackedScene" uid="uid://dhj110l31nkqq" path="res://Scenes/Maps/Level2.tscn" id="2_lfn1x"]
 
 [resource]
 script = ExtResource("1_oy6sc")
