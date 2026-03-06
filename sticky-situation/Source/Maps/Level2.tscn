@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhj110l31nkqq"]
+
+[ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Source/Player/GamePlay.gd" id="1_m4o86"]
+[ext_resource type="Resource" uid="uid://b6s0if5qulsam" path="res://Source/Resources/Level/Level2.tres" id="2_h7jbr"]
+[ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Source/Player/PlayerStick.tscn" id="3_3iuy6"]
+[ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Source/HUD/Level HUD.tscn" id="4_2spuf"]
+[ext_resource type="PackedScene" uid="uid://cswimftb6j2g2" path="res://Source/Levels/02/Level-2-1.tscn" id="8_vt3u1"]
+[ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Source/HUD/Background.tscn" id="10_tbqoe"]
+[ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_kqpbg"]
+[ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Source/Menus/WinMenu.tscn" id="12_urwtq"]
+
+[node name="Level2Gameplay" type="Area2D"]
+script = ExtResource("1_m4o86")
+LevelResource = ExtResource("2_h7jbr")
+
+[node name="Player" parent="." instance=ExtResource("3_3iuy6")]
+position = Vector2(368, -336)
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level01" parent="Levels" instance=ExtResource("8_vt3u1")]
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+process_callback = 0
+one_shot = true
+
+[node name="Armor" type="Timer" parent="Timers"]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="HUD" type="Node" parent="."]
+
+[node name="LevelHud" parent="HUD" instance=ExtResource("4_2spuf")]
+
+[node name="Background" parent="HUD" instance=ExtResource("10_tbqoe")]
+scale = Vector2(0.1, 0.1)
+transform = Transform2D(0.1, 0, 0, 0.1, 0, 0)
+back = ExtResource("11_kqpbg")
+
+[node name="WinMenu" parent="HUD" instance=ExtResource("12_urwtq")]
+
+[connection signal="timeout" from="Timers/DeathTimer" to="Player" method="_on_death_timer_timeout"]
+[connection signal="timeout" from="Timers/Armor" to="Player" method="_on_armor_timeout"]

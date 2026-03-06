@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://bj0dqn72r2ehr"]
+
+[ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Source/Player/GamePlay.gd" id="1_s2igq"]
+[ext_resource type="Resource" uid="uid://cgopq2gibu3av" path="res://Source/Resources/Level/TutorialLevel.tres" id="2_vb8un"]
+[ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Source/Player/PlayerStick.tscn" id="4_fodu0"]
+[ext_resource type="PackedScene" uid="uid://e6lnet8hnt8n" path="res://Source/Levels/00/Level-0-1.tscn" id="5_v6tyg"]
+[ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Source/HUD/Level HUD.tscn" id="7_m23dk"]
+[ext_resource type="PackedScene" uid="uid://cedkx1meh3mht" path="res://Source/HUD/Background.tscn" id="9_xyd87"]
+[ext_resource type="Texture2D" uid="uid://bnkumxbgekp8y" path="res://Assets/Gradients/gradient.png" id="10_froqn"]
+[ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Source/Menus/WinMenu.tscn" id="11_dtics"]
+[ext_resource type="PackedScene" uid="uid://chu67hyhkoc0j" path="res://Source/Levels/00/Level-0-2.tscn" id="14_k4faa"]
+[ext_resource type="PackedScene" uid="uid://d12ia4ne1kfgq" path="res://Source/Levels/00/Level-0-3.tscn" id="15_wxg50"]
+
+[node name="TutorialGameplay" type="Node2D"]
+script = ExtResource("1_s2igq")
+LevelResource = ExtResource("2_vb8un")
+
+[node name="Player" parent="." instance=ExtResource("4_fodu0")]
+
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level01" parent="Levels" instance=ExtResource("5_v6tyg")]
+position = Vector2(-3, 2)
+
+[node name="Level02" parent="Levels" instance=ExtResource("14_k4faa")]
+position = Vector2(-5, 1)
+
+[node name="Level03" parent="Levels" instance=ExtResource("15_wxg50")]
+
+[node name="HUD" type="Node" parent="."]
+
+[node name="LevelHud" parent="HUD" instance=ExtResource("7_m23dk")]
+
+[node name="Background" parent="HUD" instance=ExtResource("9_xyd87")]
+layer = -1
+back = ExtResource("10_froqn")
+
+[node name="WinMenu" parent="HUD" node_paths=PackedStringArray("player") instance=ExtResource("11_dtics")]
+visible = false
+player = NodePath("../../Player")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="Armor" type="Timer" parent="Timers"]
+process_callback = 0
+wait_time = 2.0
+one_shot = true
+
+[node name="DeathTimer" type="Timer" parent="Timers"]
+process_callback = 0
+one_shot = true
+
+[connection signal="timeout" from="Timers/DeathTimer" to="Player" method="_on_death_timer_timeout"]

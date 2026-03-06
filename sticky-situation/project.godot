@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="Sticky Situation"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Source/Menus/MainMenu.tscn"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/New Thumbnail.png"
 
 [autoload]
 
-StickSingleton="*res://Scripts/Singletons/stick_singleton.gd"
-Interactions="*res://Scripts/Singletons/Interactions.gd"
-PickUp="*res://Scripts/Objects/PickUp.gd"
-Saving="*res://Scripts/SaveData/SaveData.gd"
+StickSingleton="*res://Autoloads/stick_singleton.gd"
+Interactions="*res://Autoloads/Interactions.gd"
+PickUp="*res://Autoloads/PickUp.gd"
+Saving="*res://Source/SaveData/SaveData.gd"
 
 [display]
 
@@ -31,7 +31,18 @@ window/stretch/mode="canvas_items"
 folder_colors={
 "res://Assets/Backgrounds/": "red",
 "res://Assets/Defunct/": "pink",
-"res://Assets/Objects/": "purple"
+"res://Assets/Objects/": "purple",
+"res://Autoloads/": "yellow",
+"res://Builds/": "gray",
+"res://Source/": "blue",
+"res://Source/HUD/": "orange",
+"res://Source/Levels/": "purple",
+"res://Source/Maps/": "purple",
+"res://Source/Menus/": "orange",
+"res://Source/Objects/": "red",
+"res://Source/Player/": "green",
+"res://Source/Resources/": "yellow",
+"res://Source/SaveData/": "yellow"
 }
 
 [input]

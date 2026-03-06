@@ -1,0 +1,89 @@
+01: Naming Conventions
+	Classes Nodes Enums Singletons Scenes Scripts Dictionaries - PascalCase
+	Variables Signals - snake_case
+	Functions - camelCase
+	Descriptive variable names - projectile_velocity not proj_vel
+	Boolean names are a yes/no question
+
+02: Script Structure
+	class_name ClassName
+	extends Extension
+	
+	#---Signals----------
+	#---Enums------------
+	#---Constants--------
+	#---Exported Var-----
+	#---Public Var-------
+	#---Private Var------
+	#---@onready Nodes---
+	#---Built-In Functions
+	#---Public Methods---
+	#---Private Methods--
+	#---Signal Callbacks-
+	
+03: Scene Graph Organization
+	Node Names are PascalCase
+	Never Leave Default Names
+	Group by function - UI node holds HUD etc.
+	Sub-scenes over nested nodes
+	
+04: Variables & Types
+	Use explicit typing for class members
+	Always explicitly type @export variables
+	Use Constants over random numbers - const VAR: float = 480.0 over just = 480.0
+	
+05: Functions & Signals
+	Functions do one thing
+	Return types are always declared
+	Use Early returns to reduce nesting 
+	Bad: 									Good:
+	func interact(body: Node) -> void:			func interact(body: Node) -> void:
+		if body is Player:							if !(body is Player): return
+		if _is_active:								if !_is_active: return
+			if !_is_used:							if _is_used: return
+				_trigger()							_trigger()
+	Connect signals in code
+		in _ready() using signal_name.connect(_on_handler)
+	Signal callbacks follow _on_NodeName_signal_name
+
+06: File & Folder Layout
+	Organize by feature not asset type
+	Scene and script share a folder and base name
+	Save data goes to user:// never res:// - ex. user://saves/
+	Example structure:
+		autoloads->
+		src->
+			player->
+			weapons->
+				pistol->
+		assets->
+		data/resources->
+		tests->
+	Use a dedicated SaveManager autoload. All reads and writes go through one class
+	Prefer JSON for save data .tres Resources for static config
+	
+07: Comments and Documentation
+	Comment why and not what
+	Seperate Sections through #---Section Name----- Comments (see 02)
+	## doc comments on all public functions and exported variables
+	Tagged Comments
+		#TODO: for planned work
+		#FIXME: for known bugs
+		#HACK: for temporary workarounds
+	
+	Example:
+	#---Public Functions-------
+	## Applies damage to this enemy and emits [signal health_changed].
+	## If health reaches zero, [method _die] is called automatically.
+	## [param amount] must be a positive value.
+	func apply_damage(amount: float) -> void:
+		# TODO(alice 2025-06-01): add armor reduction calculation here
+		_health -= amount
+
+08: Code Style
+	Tabs for Indentation
+	One blank line between methods
+	Two blank lines between Sections
+	Max line length: 100 Characters
+	Floats always have decimal point
+	 
