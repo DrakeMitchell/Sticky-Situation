@@ -11,10 +11,10 @@
 script = ExtResource("1_aa3wx")
 sticks = Array[Texture2D]([ExtResource("2_ed4ax"), ExtResource("2_twfit"), ExtResource("3_6tvwg")])
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="WinMenuLayer" type="CanvasLayer" parent="."]
 visible = false
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="WinMenuLayer"]
 clip_contents = true
 layout_mode = 3
 anchor_left = 0.302
@@ -28,7 +28,7 @@ offset_bottom = 7.73651
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+[node name="Base Color" type="ColorRect" parent="WinMenuLayer/Control"]
 visible = false
 clip_contents = true
 layout_mode = 1
@@ -40,7 +40,7 @@ offset_top = -0.132151
 offset_right = 16.0599
 offset_bottom = 18.8578
 
-[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+[node name="Try Again Button" type="Button" parent="WinMenuLayer/Control"]
 visible = false
 layout_mode = 0
 offset_left = 23.0299
@@ -50,7 +50,7 @@ offset_bottom = 401.457
 text = "
 "
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Button2"]
+[node name="Try Again Label" type="Label" parent="WinMenuLayer/Control/Try Again Button"]
 layout_mode = 0
 offset_left = 3.53436
 offset_top = 4.48981
@@ -63,14 +63,14 @@ text = "Try Again
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/Control"]
+[node name="World Map Button" type="Button" parent="WinMenuLayer/Control"]
 layout_mode = 0
 offset_left = 22.8284
 offset_top = 386.396
 offset_right = 366.828
 offset_bottom = 446.396
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Button"]
+[node name="World Map Label" type="Label" parent="WinMenuLayer/Control/World Map Button"]
 layout_mode = 0
 offset_left = 3.53436
 offset_top = 4.48981
@@ -82,23 +82,29 @@ theme_override_font_sizes/font_size = 48
 text = "World Map"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer"]
+[node name="Labels" type="Control" parent="WinMenuLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Level Complete" type="Label" parent="WinMenuLayer/Labels"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.411
 anchor_top = 0.122
 anchor_right = 0.52
 anchor_bottom = 0.157
-offset_left = -86.972
-offset_top = 2.44399
-offset_right = 86.46
-offset_bottom = 29.764
+offset_left = 392.0
+offset_top = 94.0
+offset_right = 691.0
+offset_bottom = 144.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 48
 text = "Level Complete!"
 
-[node name="Label3" type="Label" parent="CanvasLayer"]
+[node name="Total Attempts" type="Label" parent="WinMenuLayer/Labels"]
+layout_mode = 0
 offset_left = 379.26
 offset_top = 174.945
 offset_right = 642.26
@@ -107,7 +113,7 @@ theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Total Attempts: "
 
-[node name="Label" type="Label" parent="CanvasLayer/Label3"]
+[node name="Total Attempts Num" type="Label" parent="WinMenuLayer/Labels/Total Attempts"]
 layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
@@ -116,17 +122,18 @@ theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
-[node name="Label4" type="Label" parent="CanvasLayer"]
+[node name="Coins Collected" type="Label" parent="WinMenuLayer/Labels"]
 visible = false
+layout_mode = 0
 offset_left = 383.458
 offset_top = 223.977
-offset_right = 641.458
+offset_right = 642.458
 offset_bottom = 265.977
 theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Coins Collected: "
 
-[node name="Label" type="Label" parent="CanvasLayer/Label4"]
+[node name="Coins Collected Num" type="Label" parent="WinMenuLayer/Labels/Coins Collected"]
 layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
@@ -135,7 +142,8 @@ theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
-[node name="Label5" type="Label" parent="CanvasLayer"]
+[node name="Current Health" type="Label" parent="WinMenuLayer/Labels"]
+layout_mode = 0
 offset_left = 382.336
 offset_top = 249.612
 offset_right = 633.336
@@ -144,7 +152,7 @@ theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "Current Health: "
 
-[node name="Label" type="Label" parent="CanvasLayer/Label5"]
+[node name="Current Health Num" type="Label" parent="WinMenuLayer/Labels/Current Health"]
 layout_mode = 0
 offset_left = 263.634
 offset_right = 303.634
@@ -153,16 +161,16 @@ theme_override_fonts/font = ExtResource("1_wn6os")
 theme_override_font_sizes/font_size = 40
 text = "NA"
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Label5"]
+[node name="Stick Damage" type="Sprite2D" parent="WinMenuLayer/Labels/Current Health"]
 position = Vector2(155.6, 115.485)
 rotation = 1.5708
 scale = Vector2(2, 2)
 texture = ExtResource("2_ed4ax")
 
-[node name="Pixil-frame-0(15)" type="Sprite2D" parent="CanvasLayer"]
+[node name="Gradiant Background" type="Sprite2D" parent="WinMenuLayer"]
 z_index = -1
 position = Vector2(545.549, 314.088)
 texture = ExtResource("6_itna1")
 
-[connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="WinMenuLayer/Control/Try Again Button" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="WinMenuLayer/Control/World Map Button" to="." method="_on_button_pressed"]

@@ -2,16 +2,17 @@ extends Area2D
 class_name Pickup
 #Base Class for all Powerup style objects
 #Currently Health, Coin, Speed Change
+#"Checkpoint:0","Coin:1", "Health:2", "SpeedIncrease:3", "SpeedDecrease:4"
 
-#Variables
+#--Exported Variables--
 @export var Interaction: Interactable;
 @export var type: String
 @export var img: Texture2D
 @export var speed: bool
 
-#"Checkpoint:0","Coin:1", "Health:2", "SpeedIncrease:3", "SpeedDecrease:4"
 
 
+#--Public Functions--
 #Handles collisions with PickUp Objects
 func stickCollision(area: Pickup) -> void:
 	if area.type.contains("coin") or area.Interaction.PickupType == 1:

@@ -1,30 +1,21 @@
 extends Node2D
-#Global Script for all gameplay Scenes
+##Global Script for all gameplay Scenes
 
-#Variables
-var levelStarts: Array[Area2D] = []
+
+#--Exported Variables--
 @export var LevelResource: Level #Unique Level per map
 
-# Called when the node enters the scene tree for the first time.
+#--Onready Variables--
+@onready var LevelsNode: Node = $Levels 
+
+#--Public Variables--
+var levelStarts: Array[Area2D] = []
+
+
+#--Private Functions--
 func _ready() -> void:
-	
-	#Change player location to correct sublevel first checkpoint
-	#Gotta be a better way of doing this
-	if $Levels/Level01 != null:
-		levelStarts.append($Levels/Level01/CheckPoints/CheckPoint)
-	if $Levels/Level02 != null:
-		levelStarts.append($Levels/Level02/CheckPoints/CheckPoint)
-	if $Levels/Level03 != null:
-		levelStarts.append($Levels/Level03/CheckPoints/CheckPoint)
-		
-	if StickSingleton.Current["Level"]["Challenge"]:
-		$Player.position = challengeMode().global_position
-		
-	else:
-		$Player.position = detectSpawnPoint().global_position
+	getLevelStarts()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Escape"):
@@ -47,26 +38,32 @@ func _process(_delta: float) -> void:
 				StickSingleton.resetStick()
 			
 			$Player.position = detectSpawnPoint().global_position
-			#pass
 	if StickSingleton.finished:
-		#$WinMenu.enable()
 		$HUD/WinMenu.get_child(0).show()
-		#HUD name .show and .enable
-		#Buttons connect to worldmap and reset .finished
+
+#--Public Functions
+##Get all first checkpoints from any amount of levels and append them to levelStarts
+func getLevelStarts() -> void:
+	var LevelsNum = LevelsNode.get_child_count()
+	
+	if LevelsNum == 0: return
+	
+	for i in range(LevelsNum):
+		var level:Area2D = LevelsNode.get_child(i).getCheckpoint()
+		levelStarts.append(level)
+	
+	$Player.position = detectSpawnPoint().global_position
 
 
-#Choose a spawn point
+##Chooses the correct spawn point based on the sublevel
+##Moves Finish Lines if it is Challenge Mode
+##[return] The Correct Spawn Point according to sublevel
 func detectSpawnPoint() -> Area2D:
 	var spawnPoint = levelStarts[0];
 	if !StickSingleton.Current["Level"]["Challenge"]:
 		spawnPoint = levelStarts[StickSingleton.Current["Level"]["CurrentSubLevel"]];
+	else:
+		$Levels/Level01/Interactions/FinishLine.global_position.x = -3000
+		$Levels/Level02/Interactions/FinishLine.global_position.x = -3000
+	
 	return spawnPoint
-
-
-func challengeMode() -> Area2D:
-	var spawnPoint = levelStarts[0];
-	$Levels/Level01/Interactions/FinishLine.global_position.x = -3000
-	$Levels/Level02/Interactions/FinishLine.global_position.x = -3000
-	#$Dividers.global_position.x = -3000
-	return spawnPoint;
- # Replace with function body.

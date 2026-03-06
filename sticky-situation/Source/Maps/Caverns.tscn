@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh1hpo3k3iwlj"]
+[gd_scene load_steps=10 format=3 uid="uid://bh1hpo3k3iwlj"]
 
 [ext_resource type="PackedScene" uid="uid://cs5wf6nomhapd" path="res://Source/Player/PlayerStick.tscn" id="1_408i4"]
 [ext_resource type="Script" uid="uid://bp4mawblmmafy" path="res://Source/Player/GamePlay.gd" id="1_xowig"]
-[ext_resource type="Script" uid="uid://drbo7n6g23ptg" path="res://Source/Resources/Level/Level.gd" id="2_pcbu5"]
 [ext_resource type="PackedScene" uid="uid://dl254uvijm7rq" path="res://Source/Levels/01/Level-1-1.tscn" id="8_l4k2b"]
 [ext_resource type="PackedScene" uid="uid://dkrnonlns5s01" path="res://Source/Levels/01/Level-1-2.tscn" id="9_p8va1"]
 [ext_resource type="PackedScene" uid="uid://dbokvkux678u0" path="res://Source/HUD/Level HUD.tscn" id="10_2hi7q"]
@@ -11,12 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://heigkbbguv58" path="res://Assets/Gradients/gradient (2).png" id="11_tqeqi"]
 [ext_resource type="PackedScene" uid="uid://bqfhp76ctg2lv" path="res://Source/Menus/WinMenu.tscn" id="13_fpx51"]
 
-[sub_resource type="Resource" id="Resource_orb8n"]
-script = ExtResource("2_pcbu5")
-
 [node name="CavernsGameplay" type="Area2D"]
 script = ExtResource("1_xowig")
-LevelResource = SubResource("Resource_orb8n")
 
 [node name="Player" parent="." instance=ExtResource("1_408i4")]
 position = Vector2(0, 32)

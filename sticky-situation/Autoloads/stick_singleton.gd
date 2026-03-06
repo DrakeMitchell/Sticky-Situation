@@ -1,14 +1,16 @@
 extends Node
-#Singleton Code for everything that has to do with the player
+##Singleton Code for everything that has to do with the player
 #Working on migrating some variables to better positions
-#Stats When laoded into level
+
+#--Public Variables--
+##Default starting stats When loaded into level
 var Starting = {
 	"Health": 3,
 	"SpinDirection":1,
 	"StickSpinning": true
 }
 
-#Other Variables
+##Current updated stats
 var Current ={
 	"Health" : 3,#Current Health
 	"SpinDirection" : 1,
@@ -23,43 +25,37 @@ var Current ={
 		"TotalCoins" : 0,
 		"Attempts": 1
 	}
-	
-	#"SavedPos" : Vector2(-1105,-147)
 }
-#Try to migrate later
+#TODO: Try to migrate later
 var totalCoins = 0;
 var freePlay = false
 var finished;
 
-func _ready() -> void:
-	resetStick() 
-
-
-func parseLevelInfo():
-	if Current["Level"]["LevelInformation"] != null:
+#--Public Functions--
+func parseLevelInfo(info:LevelInformation) -> void:
+	if info != null:
+		Current["Level"]["LevelInformation"] = info
 		Current["Level"]["Inverse"] = Current["Level"]["LevelInformation"].Inverse
 		Current["Level"]["CurrentSubLevel"] = Current["Level"]["LevelInformation"].LevelValue
 		Current["Level"]["Challenge"] = Current["Level"]["LevelInformation"].Challenge
-		
-		
-	
+		invert()
 
-#Allows the HUD and game to keep track of coins and save the number
-func addCoin():
+##Increases the amount of coins by 1
+func addCoin() -> void:
 	totalCoins += 1
-	
-	
-#Decrease Health and reset rotation to original 
+
+##Decrease Health by 1, if 0 then Die() 
 func HitWall() -> void:
 	Current["Health"] -= 1
 	if(Current["Health"] <= 0):
 		Die()
 
-#Set new spin directions for each checkpoint
+##Save current spin directions for each checkpoint
 func setStick():
 	Starting["SpinDirection"] = Current["SpinDirection"]
 	Starting["StickSpinning"] = Current["StickSpinning"] 
 
+##Invert the stick spinning direction
 func invert():
 	if Current["Level"]["Inverse"]:
 		Current["SpinDirection"] = -1
@@ -67,16 +63,21 @@ func invert():
 	else:
 		Current["SpinDirection"] = 1
 		Starting["SpinDirection"] = 1
-		
-#Reset to default values, ie leaving the level and reentering 
+
+##Reset to default values, ie leaving the level and reentering 
 func resetStick():
 	Current["SpinDirection"] = Starting["SpinDirection"]
 	Current["Health"] = Starting["Health"]
 
-#Heal the player
+##Heal the player to full health
 func Heal() -> void:
 	if Current["Health"] < Starting["Health"]:
 		Current["Health"] += 1
-		
+
+##Increase the amount of Current attempts by 1
 func Die():
 	Current["Level"]["Attempts"] += 1
+
+#--Private Functions--
+func _ready() -> void:
+	resetStick() 

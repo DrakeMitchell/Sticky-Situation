@@ -1,21 +1,18 @@
 extends Node
-#Almost all interactions run through this singleton
 
+# Singleton that houses a gateway for all of the interactions
 
-var Collectible = false;
+#--Export Variables--
 @export var collectibles = 0;
+
+
+#--Public Variables--
+var Collectible = false;
 var TOTAL_COLLECTIBLES = 2;
 var ClosestCheckPoint: Area2D;
 var CheckPTPosition;
 
-
-#
-func newCheckPoint(checkPoint) -> void:
-	if StickSingleton.Current["Level"]["Challenge"]:
-		StickSingleton.setStick()
-	ClosestCheckPoint = checkPoint
-	CheckPTPosition = checkPoint.position
-	
+#--Built In Functions--
 func ObjectHit(area: Area2D) -> void:
 	#Checkpoint Detection
 	if area.name.contains("Check"):
@@ -37,4 +34,11 @@ func ObjectHit(area: Area2D) -> void:
 
 	if area.name.contains("PU"):
 		PickUp.stickCollision(area)
-		
+
+
+#--Public Functions--
+func newCheckPoint(checkPoint) -> void:
+	if StickSingleton.Current["Level"]["Challenge"]:
+		StickSingleton.setStick()
+	ClosestCheckPoint = checkPoint
+	CheckPTPosition = checkPoint.position

@@ -1,13 +1,10 @@
 To Do:
-	
-Better Comments on Absolutely Everything, JavaDoc-esque and section headers
-	//------------
-	// Header Example
-	//------------
 
-Adapt Epic Naming Conventions to Godot and start implementing
-Clean up redundent/deprecated files
-Continue refactoring and refixing
+Adapt Epic Naming Conventions to Godot - DONE
+	and start implementing - At Objects
+Clean up redundent/deprecated files - At Objects
+Continue refactoring and refixing - At Objects
+Better Organized SceneGraphs (Convention) - At Objects
+
 Get Checkpoints full working again
-Better Organized SceneGraphs (Convention)
 Blog Post about experience?
