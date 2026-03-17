@@ -10,16 +10,19 @@ extends Node2D
 
 #--Private Functions--
 func _ready() -> void:
-	#print(Saving.playerStats["savedPos"][0])
-	$Player.position.x = int(Saving.playerStats["savedPos"][0])
-	$Player.position.y = int(Saving.playerStats["savedPos"][1])
-
+	setToSavedPos()
 	setCompletionLabels()
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Escape"):
 		StickSingleton.resetStick()
 		get_tree().change_scene_to_file("res://Source/Maps/MainMenu.tscn")
+		
+#--Public Functions--
+##Runs on ready, sets player to previously saved position
+func setToSavedPos()->void:
+	$Player.position.x = int(Saving.playerStats["savedPos"][0])
+	$Player.position.y = int(Saving.playerStats["savedPos"][1])
 
 ##Loop through the level completion labels and update to the saved data
 func setCompletionLabels()-> void:

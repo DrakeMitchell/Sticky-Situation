@@ -17,16 +17,19 @@ func _ready() -> void:
 	getLevelStarts()
 
 func _process(_delta: float) -> void:
-	
+	handleEscape()
+	handleDeath()
+
+
+#--Public Functions
+func handleEscape()->void:
 	if Input.is_action_just_pressed("Escape"):
 		get_tree().change_scene_to_file("res://Source/Maps/WorldMap.tscn")
 		StickSingleton.finished = false
 		StickSingleton.Current["Level"]["Attempts"] = 1
 		StickSingleton.Current["Health"] = 3
-	#Change Stick Rotation
-	#if StickSingleton.Current["StickSpinning"] == false:
-		#$MapObjects.rotation +=0.01 *StickSingleton.Current["SpinDirection"]
 		
+func handleDeath()->void:
 	if StickSingleton.Current["Health"] == 0:
 		if not StickSingleton.freePlay:
 			if StickSingleton.Current["Level"]["Inverse"]:
@@ -38,10 +41,11 @@ func _process(_delta: float) -> void:
 				StickSingleton.resetStick()
 			
 			$Player.position = detectSpawnPoint().global_position
+			
+func levelFinished()->void:
 	if StickSingleton.finished:
 		$HUD/WinMenu.get_child(0).show()
 
-#--Public Functions
 ##Get all first checkpoints from any amount of levels and append them to levelStarts
 func getLevelStarts() -> void:
 	var LevelsNum = LevelsNode.get_child_count()
