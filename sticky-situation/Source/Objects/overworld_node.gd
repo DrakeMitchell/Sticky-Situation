@@ -30,7 +30,7 @@ func enterArea(StandingOn: bool) -> void:
 					StickSingleton.freePlay = true
 				if self.name.contains("Demo"):
 					StickSingleton.freePlay = false
-					
+				
 				StickSingleton.resetStick()
 
 				if canEnterArea:

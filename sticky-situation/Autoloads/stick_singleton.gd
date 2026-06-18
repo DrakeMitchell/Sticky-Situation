@@ -7,7 +7,8 @@ extends Node
 var Starting = {
 	"Health": 3,
 	"SpinDirection":1,
-	"StickSpinning": true
+	"StickSpinning": true,
+	"Difficulty": 0
 }
 
 ##Current updated stats

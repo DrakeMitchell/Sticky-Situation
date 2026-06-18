@@ -31,3 +31,6 @@ func setWinMenuLabels()->void:
 		$"WinMenuLayer/Labels/Current Health/Stick Damage".texture = sticks[1]
 	elif StickSingleton.Current["Health"] == 1:
 		$"WinMenuLayer/Labels/Current Health/Stick Damage".texture = sticks[2]
+		
+func setPlayer(p:Player):
+	player = p

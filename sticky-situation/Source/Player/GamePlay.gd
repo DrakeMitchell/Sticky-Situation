@@ -15,10 +15,12 @@ var levelStarts: Array[Area2D] = []
 #--Private Functions--
 func _ready() -> void:
 	getLevelStarts()
+	setDifficulty()
 
 func _process(_delta: float) -> void:
 	handleEscape()
 	handleDeath()
+	levelFinished()
 
 
 #--Public Functions
@@ -44,6 +46,7 @@ func handleDeath()->void:
 			
 func levelFinished()->void:
 	if StickSingleton.finished:
+		$HUD/WinMenu.setPlayer($Player)
 		$HUD/WinMenu.get_child(0).show()
 
 ##Get all first checkpoints from any amount of levels and append them to levelStarts
@@ -58,6 +61,18 @@ func getLevelStarts() -> void:
 	
 	$Player.position = detectSpawnPoint().global_position
 
+func setDifficulty() -> void:
+	var diff = StickSingleton.Starting["Difficulty"]
+	if diff == 0:
+		self.scale.y = 0.5
+	elif diff == 1:
+		self.scale.y = 0.75
+	elif diff == 2:
+		self.scale.y = 1.0
+	else:
+		self.scale.y = 1.25
+	print(diff)
+	
 
 ##Chooses the correct spawn point based on the sublevel
 ##Moves Finish Lines if it is Challenge Mode

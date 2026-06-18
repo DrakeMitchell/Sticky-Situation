@@ -52,7 +52,7 @@ back = ExtResource("16_qrj5c")
 [node name="Level-0" type="Node" parent="."]
 
 [node name="Level_0_1" parent="Level-0" node_paths=PackedStringArray("player") instance=ExtResource("1_ljhf2")]
-position = Vector2(-780, -155)
+position = Vector2(-779, -154)
 LevelInfo = ExtResource("10_0hd4q")
 player = NodePath("../../Player")
 

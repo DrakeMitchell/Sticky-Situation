@@ -9,6 +9,7 @@ var windDir = -1
 var Armor
 var tempSpeed:int
 var tempSpinning:bool
+var difficultyMode
 @export var sticks: Array[Texture2D] = []
 
 
@@ -16,8 +17,28 @@ func _ready() -> void:
 	setStick()
 	setCameraZoom(2)
 
+func _process(_float) -> void:
+	setDifficultyMode()
 	
+	
+func setDifficultyMode():
+	if !get_tree().get_current_scene().name.contains("Gameplay"):
+		if Input.is_action_just_pressed("Easy Mode"):
+			difficultyMode = 0
+			self.scale.y = 0.5
+		if Input.is_action_just_pressed("Medium Mode"):
+			difficultyMode = 1
+			self.scale.y = 0.75
+		if Input.is_action_just_pressed("Normal Mode"):
+			difficultyMode = 2
+			self.scale.y = 1
+		if Input.is_action_just_pressed("Hard Mode"):
+			difficultyMode = 3
+			self.scale.y = 1.25
+		StickSingleton.Starting["Difficulty"] = difficultyMode
 		
+
+
 func setStick()->void:
 	if StickSingleton.Current["Level"]["Inverse"]:
 		StickSingleton.Starting["SpinDirection"] = -1

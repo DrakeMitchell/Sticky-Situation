@@ -14,6 +14,7 @@ var CheckPTPosition;
 
 #--Built In Functions--
 func ObjectHit(area: Area2D) -> void:
+	print(area.to_string())
 	#Checkpoint Detection
 	if area.name.contains("Check"):
 		StickSingleton.Current["Health"] = StickSingleton.Starting["Health"]
