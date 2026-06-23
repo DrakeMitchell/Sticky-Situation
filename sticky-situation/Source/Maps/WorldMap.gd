@@ -13,10 +13,6 @@ func _ready() -> void:
 	setToSavedPos()
 	setCompletionLabels()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("Escape"):
-		StickSingleton.resetStick()
-		get_tree().change_scene_to_file("res://Source/Maps/MainMenu.tscn")
 		
 #--Public Functions--
 ##Runs on ready, sets player to previously saved position

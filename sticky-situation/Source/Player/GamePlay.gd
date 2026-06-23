@@ -25,11 +25,12 @@ func _process(_delta: float) -> void:
 
 #--Public Functions
 func handleEscape()->void:
-	if Input.is_action_just_pressed("Escape"):
-		get_tree().change_scene_to_file("res://Source/Maps/WorldMap.tscn")
-		StickSingleton.finished = false
-		StickSingleton.Current["Level"]["Attempts"] = 1
-		StickSingleton.Current["Health"] = 3
+	#if Input.is_action_just_pressed("Escape"):
+		#get_tree().change_scene_to_file("res://Source/Maps/WorldMap.tscn")
+		#StickSingleton.finished = false
+		#StickSingleton.Current["Level"]["Attempts"] = 1
+		#StickSingleton.Current["Health"] = 3
+		pass
 		
 func handleDeath()->void:
 	if StickSingleton.Current["Health"] == 0:
@@ -48,6 +49,7 @@ func levelFinished()->void:
 	if StickSingleton.finished:
 		$HUD/WinMenu.setPlayer($Player)
 		$HUD/WinMenu.get_child(0).show()
+		$Player.Pause()
 
 ##Get all first checkpoints from any amount of levels and append them to levelStarts
 func getLevelStarts() -> void:

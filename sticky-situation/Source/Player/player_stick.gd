@@ -16,26 +16,44 @@ var difficultyMode
 func _ready() -> void:
 	setStick()
 	setCameraZoom(2)
+	UnPause()
+	setDifficultyMode()
 
 func _process(_float) -> void:
-	setDifficultyMode()
+	handlePauseAction()
 	
+	
+func handlePauseAction():
+	if Input.is_action_just_pressed("Escape"):
+		if !StickSingleton.Current["GamePaused"]:
+			Pause();
+		else:
+			UnPause()
+			
+func Pause():
+		#Unhide Pause menu
+		$PauseMenu.get_child(0).show()
+		StickSingleton.Current["StickSpinning"] = false
+		StickSingleton.Current["Speed"] = 0
+		StickSingleton.Current["GamePaused"] = true
+			
+func UnPause():
+		$PauseMenu.get_child(0).hide()
+		StickSingleton.Current["StickSpinning"] = true
+		StickSingleton.Current["Speed"] = 300
+		StickSingleton.Current["GamePaused"] = false
 	
 func setDifficultyMode():
-	if !get_tree().get_current_scene().name.contains("Gameplay"):
-		if Input.is_action_just_pressed("Easy Mode"):
-			difficultyMode = 0
-			self.scale.y = 0.5
-		if Input.is_action_just_pressed("Medium Mode"):
-			difficultyMode = 1
-			self.scale.y = 0.75
-		if Input.is_action_just_pressed("Normal Mode"):
-			difficultyMode = 2
-			self.scale.y = 1
-		if Input.is_action_just_pressed("Hard Mode"):
-			difficultyMode = 3
-			self.scale.y = 1.25
-		StickSingleton.Starting["Difficulty"] = difficultyMode
+	difficultyMode = StickSingleton.Starting["Difficulty"];
+	if difficultyMode == 0:
+		self.scale.y = 0.5
+	elif difficultyMode == 1:
+		self.scale.y = 0.75
+	elif difficultyMode == 2:
+		self.scale.y = 1.0
+	else:
+		self.scale.y = 1.25
+	
 		
 
 
@@ -86,11 +104,14 @@ func _physics_process(_delta):
 		
 		#Speed Up button pressed and released
 		if Input.is_action_just_pressed("SpeedUpMove"):
-			tempSpeed = StickSingleton.Current["Speed"]
-			StickSingleton.Current["Speed"] += 200
+			if !StickSingleton.Current["GamePaused"]:
+				print(StickSingleton.Current["Speed"])
+				tempSpeed = StickSingleton.Current["Speed"]
+				StickSingleton.Current["Speed"] += 200
 		if Input.is_action_just_released("SpeedUpMove"):
-			if tempSpeed:
-				StickSingleton.Current["Speed"] = tempSpeed
+			if !StickSingleton.Current["GamePaused"]:
+				if tempSpeed:
+					StickSingleton.Current["Speed"] = tempSpeed
 		
 		#Spin Speed Up Button Pressed and Released
 		if Input.is_action_just_pressed("SpeedUpSpin"):

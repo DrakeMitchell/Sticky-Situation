@@ -8,7 +8,7 @@ var Starting = {
 	"Health": 3,
 	"SpinDirection":1,
 	"StickSpinning": true,
-	"Difficulty": 0
+	"Difficulty": 2
 }
 
 ##Current updated stats
@@ -18,6 +18,7 @@ var Current ={
 	"StickSpinning" : true,
 	"Speed" : 300,
 	"Armor" : false,
+	"GamePaused": false,
 	"Level":{
 		"LevelInformation" : LevelInformation,
 		"Inverse" : false,

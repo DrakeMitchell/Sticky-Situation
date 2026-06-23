@@ -14,7 +14,8 @@ func _on_button_pressed() -> void:
 	StickSingleton.finished = false
 	get_tree().change_scene_to_file("res://Source/Maps/WorldMap.tscn")
 	StickSingleton.Current["Level"]["Attempts"] = 1
-	StickSingleton.Current["Health"] = 3 # Replace with function body.
+	StickSingleton.Current["Health"] = 3
+	StickSingleton.Current["GamePaused"] = false # Replace with function body.
 	
 #--Public Functions
 ##Runs in process, sets up the correct labels and images for the win screen

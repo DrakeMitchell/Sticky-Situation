@@ -12,6 +12,7 @@ script = ExtResource("1_aa3wx")
 sticks = Array[Texture2D]([ExtResource("2_ed4ax"), ExtResource("2_twfit"), ExtResource("3_6tvwg")])
 
 [node name="WinMenuLayer" type="CanvasLayer" parent="."]
+layer = 3
 visible = false
 
 [node name="Control" type="Control" parent="WinMenuLayer"]

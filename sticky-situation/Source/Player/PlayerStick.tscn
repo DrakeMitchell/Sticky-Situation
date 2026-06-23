@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cs5wf6nomhapd"]
+[gd_scene load_steps=8 format=3 uid="uid://cs5wf6nomhapd"]
 
 [ext_resource type="Script" uid="uid://cu7ouys1edejn" path="res://Source/Player/player_stick.gd" id="1_m8hie"]
 [ext_resource type="Texture2D" uid="uid://d367vtoy6pqnh" path="res://Assets/Sticks/Potential New Stick.png" id="2_dj0iu"]
 [ext_resource type="Texture2D" uid="uid://pru3o30bbkmn" path="res://Assets/Sticks/New Stick 1 Damage.png" id="3_o2j2t"]
 [ext_resource type="Texture2D" uid="uid://pt1qpgw3dtjb" path="res://Assets/Sticks/New Stick 2 Damage.png" id="4_2dsy2"]
+[ext_resource type="PackedScene" uid="uid://p3tkaghnsff7" path="res://Source/Menus/PauseMenu.tscn" id="5_d7fei"]
+[ext_resource type="Script" uid="uid://cworgdbx8cddu" path="res://Autoloads/stick_singleton.gd" id="6_sty4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
 size = Vector2(20.4779, 128.188)
@@ -28,6 +30,11 @@ shape = SubResource("RectangleShape2D_li4yw")
 [node name="StickCollision2" type="CollisionShape2D" parent="."]
 position = Vector2(-0.0316381, -7.15256e-07)
 shape = SubResource("RectangleShape2D_li4yw")
+
+[node name="PauseMenu" parent="." instance=ExtResource("5_d7fei")]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("6_sty4n")
 
 [connection signal="area_entered" from="StickArea" to="." method="Object_Hit"]
 [connection signal="area_exited" from="StickArea" to="." method="Object_Exit"]
