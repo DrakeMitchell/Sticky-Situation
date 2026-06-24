@@ -142,6 +142,7 @@ func Object_Hit(area: Area2D) -> void:
 	elif area.name.contains("Wall"):
 		if not StickSingleton.Current["Armor"]:
 			_tempRotate = self.rotation
+			$StickImage.fade_in()
 			Dead = true
 			#Some sort of timer
 			$"../Timers/DeathTimer".start()

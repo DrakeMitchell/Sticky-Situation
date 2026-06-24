@@ -1,11 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs5wf6nomhapd"]
+[gd_scene load_steps=11 format=3 uid="uid://cs5wf6nomhapd"]
 
 [ext_resource type="Script" uid="uid://cu7ouys1edejn" path="res://Source/Player/player_stick.gd" id="1_m8hie"]
 [ext_resource type="Texture2D" uid="uid://d367vtoy6pqnh" path="res://Assets/Sticks/Potential New Stick.png" id="2_dj0iu"]
 [ext_resource type="Texture2D" uid="uid://pru3o30bbkmn" path="res://Assets/Sticks/New Stick 1 Damage.png" id="3_o2j2t"]
 [ext_resource type="Texture2D" uid="uid://pt1qpgw3dtjb" path="res://Assets/Sticks/New Stick 2 Damage.png" id="4_2dsy2"]
 [ext_resource type="PackedScene" uid="uid://p3tkaghnsff7" path="res://Source/Menus/PauseMenu.tscn" id="5_d7fei"]
+[ext_resource type="Shader" uid="uid://rkaco07n7wa4" path="res://Source/Player/PlayerStickHitFlash.gdshader" id="5_slb5u"]
+[ext_resource type="Script" uid="uid://dtx5epamb7l2n" path="res://Source/Player/stickHitFlash.gd" id="6_ek4es"]
 [ext_resource type="Script" uid="uid://cworgdbx8cddu" path="res://Autoloads/stick_singleton.gd" id="6_sty4n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ek4es"]
+shader = ExtResource("5_slb5u")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_amount = 0.0
+shader_parameter/solid_flash = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li4yw"]
 size = Vector2(20.4779, 128.188)
@@ -15,8 +23,11 @@ script = ExtResource("1_m8hie")
 sticks = Array[Texture2D]([ExtResource("2_dj0iu"), ExtResource("4_2dsy2"), ExtResource("3_o2j2t")])
 
 [node name="StickImage" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ek4es")
 position = Vector2(1.19209e-07, -7.15256e-07)
 texture = ExtResource("2_dj0iu")
+script = ExtResource("6_ek4es")
+await_time = 0.2
 
 [node name="StickArea" type="Area2D" parent="."]
 position = Vector2(0, -3.25002)
