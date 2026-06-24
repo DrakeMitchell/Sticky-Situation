@@ -44,7 +44,7 @@ func UnPause():
 		StickSingleton.Current["GamePaused"] = false
 	
 func setDifficultyMode():
-	difficultyMode = StickSingleton.Starting["Difficulty"];
+	difficultyMode = Saving.playerSettings["Difficulty"];
 	if difficultyMode == 0:
 		self.scale.y = 0.5
 	elif difficultyMode == 1:

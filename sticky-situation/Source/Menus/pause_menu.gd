@@ -26,6 +26,7 @@ func _on_main_menu_pressed() -> void:
 
 
 func _on_world_map_button_pressed() -> void:
+	Saving.playerStats["savedPos"] = $"..".position
 	$PauseMenuLayer.hide()
 	$"..".UnPause();
 	StickSingleton.finished = false
@@ -35,5 +36,6 @@ func _on_world_map_button_pressed() -> void:
 
 
 func _on_option_button_item_selected(index: int) -> void:
-	StickSingleton.Starting["Difficulty"] = index
+	#StickSingleton.Starting["Difficulty"] = index
+	Saving.playerSettings["Difficulty"] = index
 	$"..".setDifficultyMode()
